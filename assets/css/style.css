@@ -1,0 +1,596 @@
+/* 
+ * STAINLESS INDAH - MODERN STYLE
+ * Consolidated & Refined CSS
+ */
+
+/* --- VARIABLES & DESIGN SYSTEM --- */
+@import url('product-grid.css');
+
+:root {
+    /* Colors */
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --text-light: #ffffff;
+    --text-dim: #cccccc;
+    --bg-dark-overlay: rgba(0, 0, 0, 0.6);
+    --glass-bg: rgba(0, 0, 0, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(20, 20, 20, 0.6);
+
+    /* Typography */
+    --font-main: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --header-height: 80px;
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-family: var(--font-main);
+    color: var(--text-light);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Background Handling */
+body {
+    background: black;
+    /* Fallback */
+    background-image: url('../images/IMG_20240221_100202.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Dark Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark-overlay);
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* --- TYPOGRAPHY --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- SLIDESHOW (Legacy Support) --- */
+.slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.slideshow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 20s infinite;
+}
+
+.slideshow img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slideshow img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.slideshow img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+.slideshow img:nth-child(4) {
+    animation-delay: 15s;
+}
+
+@keyframes fade {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    5%,
+    25% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+}
+
+/* --- HEADER & NAV --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+header h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: relative;
+}
+
+/* Hover Effect for Nav */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 80%;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    width: 650px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-content a {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    font-size: 14px;
+    flex: 1 0 200px;
+    /* Responsive grid items */
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.dropdown-content a:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* --- MAIN CONTENT & LAYOUT --- */
+.wrapper {
+    padding-top: var(--header-height);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Headline Fixed (Hero Section) */
+.headline-fixed {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.headline-fixed h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.headline-fixed p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+/* --- PRODUCT CARDS --- */
+.produk-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.produk-item-link {
+    display: block;
+}
+
+.produk-item {
+    display: flex;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produk-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Product Info */
+.produk-text {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.produk-text h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.produk-text p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: var(--text-dim);
+}
+
+.spesifikasi {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.spesifikasi li {
+    margin-bottom: 8px;
+    color: #ddd;
+    position: relative;
+    padding-left: 10px;
+}
+
+.spesifikasi li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Button */
+.produk-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.produk-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+/* Product Swiper/Image */
+.swiper-container.produk-swiper {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.swiper-container:hover .swiper-slide img {
+    transform: scale(1.05);
+}
+
+
+/* --- FOOTER --- */
+.footer-keren {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+    border-top: none;
+    padding: 100px 5% 30px;
+    /* Increased top padding for smoother blend */
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.footer-kolom {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-kolom h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #fff, #aaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-kolom p {
+    color: var(--text-dim);
+    line-height: 1.8;
+}
+
+.footer-kolom h4 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: white;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-kolom ul li {
+    margin-bottom: 15px;
+}
+
+.footer-kolom ul li a {
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-kolom ul li a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #666;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    .dropdown-content {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Header Mobile */
+    header {
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Hamburger icon visible */
+        color: white;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 20px;
+        flex-direction: column;
+        display: none;
+        /* JS will toggle this */
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Mobile Dropdown */
+    .dropdown-content {
+        position: static;
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        background: transparent;
+        opacity: 1;
+        display: none;
+        /* Toggle with JS or CSS focus */
+        padding: 10px 0;
+        border: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        /* Simplified for mobile hover, better with tap interaction */
+    }
+
+    /* Components Responsive */
+    .produk-item {
+        flex-direction: column;
+    }
+
+    .swiper-container.produk-swiper {
+        width: 100%;
+        height: 300px;
+    }
+
+    .produk-text {
+        width: 100%;
+    }
+
+    .headline-fixed h2 {
+        font-size: 32px;
+    }
+}

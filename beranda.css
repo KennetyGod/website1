@@ -1,0 +1,364 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Gambar sebagai background seluruh halaman */
+body {
+  background: url('image/IMG_20240221_100202.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+  color: white;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ✅ Hanya mencegah scroll horizontal, scroll vertikal tetap bisa */
+  font-family: sans-serif;
+}
+
+.slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.slideshow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ubah 0.5 jadi lebih besar kalau mau lebih gelap */
+  z-index: 1;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 20s infinite;
+  z-index: 0;
+}
+
+.slideshow img:nth-child(1) {
+  animation-delay: 0s;
+}
+.slideshow img:nth-child(2) {
+  animation-delay: 5s;
+}
+.slideshow img:nth-child(3) {
+  animation-delay: 10s;
+}
+.slideshow img:nth-child(4) {
+  animation-delay: 15s;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+/* Tambahkan lapisan gelap agar teks lebih jelas (opsional) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* transparansi hitam */
+  z-index: -2;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* jangan transparan agar tidak nabrak gambar */
+  z-index: 1000;
+}
+li a {
+  display: inline-block; /* Agar transform bisa berfungsi */
+  text-decoration: none;
+  color: inherit;
+  transition: transform 1s ease; /* Smooth animasi */
+}
+
+li a:hover {
+  transform: translateY(4px); /* Turun 4px saat hover */
+}
+
+/* Navbar */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+
+  color: #007bff; /* contoh warna kuning keemasan saat hover */
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none; /* Defaultnya disembunyikan */
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateX(-50%);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+
+  /* Flex untuk horizontal */
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+
+  /* Lebar diatur supaya pas 2 baris */
+  width: 650px; /* Sesuaikan jika mau rapat/longgar */
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex; /* Muncul hanya saat hover */
+}
+
+.dropdown-content a {
+  padding: 8px 12px;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* teks tidak pecah */
+}
+
+
+/* Konten utama */
+.product {
+  padding: 40px;
+  border-radius: 8px;
+  margin: 40px;
+}
+
+.product h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  
+}
+
+.headline-fixed {
+  position:absolute;
+  top: 80px; /* Atur sesuai tinggi header */
+  width: 100%;
+  color: white;
+  padding-top: 100px;
+  text-align: left;
+  z-index: 999; /* pastikan di atas gambar/background */
+}
+
+.headline-fixed h2 {
+  margin: 0;
+  font-size: 50px;
+  text-align: left;
+}
+
+.headline-fixed p {
+  max-width: 900px;
+  margin: 10px  0;
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: left;
+
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-keren {
+  position: relative;
+  background-color: #222; /* Warna dasar footer */
+  color: #f4f4f4;
+  padding: 60px 40px 20px;
+  overflow: hidden;
+  background: linear-gradient(to top, rgba(0, 0, 0,0.7), transparent);
+  z-index: 2;
+}
+
+.footer-keren::before {
+  content: "";
+  position: absolute;
+  bottom: 100%; /* ditempatkan tepat di atas footer */
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent); /* dari hitam ke transparan */
+  z-index: 1; /* Pastikan di atas background, tapi di bawah konten */
+  pointer-events: none;
+}
+
+.footer-container, .footer-bottom {
+  position: relative; /* Agar tetap berada di atas gradient */
+  z-index: 1;
+}
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap; /* Agar responsif di HP */
+            justify-content: space-between;
+            gap: 40px; /* Jarak antar kolom */
+        }
+
+        .footer-kolom {
+            flex: 1; /* Memberi ruang yang fleksibel */
+            min-width: 250px; /* Lebar minimum kolom sebelum turun ke bawah */
+        }
+
+        /* Kolom tentang perusahaan */
+        .footer-kolom.tentang h3 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #efefef;
+        }
+
+        .footer-kolom.tentang p {
+            font-size: 15px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+        
+        /* Judul kolom lainnya */
+        .footer-kolom h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        /* Garis bawah hiasan di judul */
+        .footer-kolom h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #007bff; /* Warna biru sebagai aksen */
+        }
+
+        .footer-kolom ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-kolom ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-kolom ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease; /* Animasi halus saat hover */
+        }
+
+        /* Efek saat kursor menyentuh link */
+        .footer-kolom ul li a:hover {
+            color: #007bff; /* Warna link berubah */
+            padding-left: 5px; /* Link sedikit bergeser */
+        }
+        
+        /* Style untuk ikon */
+        .footer-kolom ul li i {
+            margin-right: 12px;
+            color: #007bff;
+            width: 20px; /* Agar ikon sejajar */
+        }
+
+        /* Bagian paling bawah (Copyright) */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #444; /* Garis pemisah */
+            z-index: 1;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        /* Penyesuaian untuk layar HP */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column; /* Ubah jadi vertikal */
+                text-align: center; /* Teks jadi rata tengah */
+            }
+            .footer-kolom h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .footer-kolom ul li {
+                justify-content: center;
+            }
+        }
+        
