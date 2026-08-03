@@ -44,4 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
             // e.stopPropagation(); // maybe needed if we want click-to-open
         });
     }
+    // --- Image Popup Logic ---
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('popupImg');
+    const closeBtn = document.querySelector('.close');
+
+    // Select all project gallery images
+    const projectImages = document.querySelectorAll('.project-gallery img');
+
+    if (modal && modalImg && projectImages.length > 0) {
+        projectImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                // Prevent default behavior if needed
+                e.preventDefault();
+                modal.style.display = 'flex'; // Use flex to center with existing CSS
+                modalImg.src = img.src;
+                // Optional: set alt text as caption if you had a caption element
+            });
+        });
+
+        // Close on 'x' click
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+
+        // Close on clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
 });

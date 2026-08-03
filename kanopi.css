@@ -229,7 +229,7 @@ nav ul li a:hover {
   justify-content: flex-start; /* konten tetap di atas */
   background-color: rgba(0, 0, 0, 0.5);
   text-align: left;
-  color: #ffffff;
+  color: #2c2929;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   position: relative; /* penting kalau mau absolute positioning di dalamnya */

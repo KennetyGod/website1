@@ -1,29 +1,41 @@
-﻿<!DOCTYPE html>
+
+param (
+    [string]$Year
+)
+
+$rootDir = "d:\stainless-indah-web"
+$yearDir = Join-Path $rootDir $Year
+$outputFile = Join-Path $rootDir "testimoni-$Year.html"
+
+if (-not (Test-Path $yearDir)) {
+    Write-Error "Directory $yearDir does not exist."
+    exit
+}
+
+# --- HEADER ---
+@"
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Furniture Store</title>
+  <title>Portofolio $Year - Stainless Indah</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="tentang.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Mengambil ikon dari Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 
 <body>
+  <!-- Slideshow Background (Optional, using same images as main page) -->
   <div class="slideshow">
     <img src="assets/images/IMG_20240221_100202.jpg" alt="Slide 1">
     <img src="assets/images/IMG_20230622_091238.jpg" alt="Slide 2">
     <img src="assets/images/IMG_20200615_123127.jpg" alt="Slide 3">
     <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4">
   </div>
-
 
   <header>
     <h1>Stainless Indah</h1>
@@ -57,92 +69,77 @@
     <main>
       <section class="product">
         <div class="headline-fixed">
-          <h2>Hendro Las</h2>
-          <p>Spesialis pengerjaan Pagar, Kanopi, Teralis, dan Konstruksi Kustom bahan Stainless Steel, Besi, dan Baja
-            Ringan di Pontianak. Rapi, Kuat, dan Indah.</p>
+          <h2>Portofolio $Year</h2>
+          <p>Dokumentasi pengerjaan proyek-proyek unggulan Stainless Indah sepanjang tahun $Year.</p>
         </div>
+      </section>
     </main>
 
-    <section class="about-info">
-      <div class="about-grid">
-        <!-- VISI -->
-        <div class="about-card visi">
-          <div class="card-icon">
-            <i class="fa-solid fa-eye"></i>
-          </div>
-          <div class="card-content">
-            <h3>Visi</h3>
-            <p>
-              [Isi Visi Perusahaan Anda di sini. Contoh: Menjadi bengkel las dan aplikator konstruksi terpercaya di
-              Kalimantan Barat yang mengedepankan kualitas dan kepuasan pelanggan.]
-            </p>
-          </div>
-        </div>
-
-        <!-- MISI -->
-        <div class="about-card misi">
-          <div class="card-icon">
-            <i class="fa-solid fa-bullseye"></i>
-          </div>
-          <div class="card-content">
-            <h3>Misi</h3>
-            <ul>
-              <li>[Isi Misi 1. Contoh: Memberikan hasil kerja yang rapi, kuat, dan indah.]</li>
-              <li>[Isi Misi 2. Contoh: Menggunakan material berkualitas sesuai standar.]</li>
-              <li>[Isi Misi 3. Contoh: Menyediakan pelayanan yang profesional dan tepat waktu.]</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- SEJARAH / HISTORY -->
-        <div class="about-card history">
-          <div class="card-icon">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-          </div>
-          <div class="card-content">
-            <h3>History</h3>
-            <p>
-              [Isi sejarah atau asal mula usaha Anda di sini. Contoh: Stainless Indah (Hendro Las) didirikan pada tahun
-              XXXX berawal dari semangat untuk menghadirkan solusi pengelasan dan konstruksi terbaik untuk perumahan...]
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="testimoni-section">
-      <h2 class="section-title">Arsip Portofolio</h2>
-      <div class="year-archive-grid">
-        <a href="testimoni-2025.html" class="year-card">
-          <h3>2025</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2024.html" class="year-card">
-          <h3>2024</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2023.html" class="year-card">
-          <h3>2023</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2022.html" class="year-card">
-          <h3>2022</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2017-2021.html" class="year-card">
-          <h3>2017 - 2021</h3>
-          <p>Arsip Karya Lama</p>
-        </a>
+      <h2 class="section-title">Hasil Karya $Year</h2>
+      <div class="project-container">
+"@ | Out-File -FilePath $outputFile -Encoding utf8
+
+# --- PROJECT CARDS ---
+# Get all subdirectories (projects)
+$projects = Get-ChildItem -Path $yearDir -Directory
+
+foreach ($project in $projects) {
+    $projectName = $project.Name
+    
+    # Get images (jpg, jpeg, png) - ensure recursion works
+    $images = Get-ChildItem -Path $project.FullName -Recurse | Where-Object { $_.Extension -match "jpg|jpeg|png" }
+    
+    # FILTER: Skip projects with fewer than 4 images
+    if ($images.Count -lt 4) {
+        Write-Host "Skipping $($project.Name) (Count: $($images.Count)) - Minimum 4 images required."
+        continue
+    }
+
+    # Start Project Card HTML
+    $cardStart = @"
+        <div class="project-card">
+          <div class="project-header"><h3>$projectName</h3><p class="project-date"><i class="far fa-calendar-alt"></i> $Year</p></div>
+          <div class="project-gallery">
+"@
+    $cardStart | Out-File -FilePath $outputFile -Append -Encoding utf8
+
+    # Display ALL sorted images (no limit)
+    foreach ($img in $images) {
+        # Calculate relative path from root
+        # Full path: D:\root\2025\proj\img.jpg
+        # Root path: D:\root\
+        # Relative: 2025\proj\img.jpg -> 2025/proj/img.jpg
+        
+        # Using string replacement
+        $rel = $img.FullName.Substring($rootDir.Length)
+        if ($rel.StartsWith("\")) { $rel = $rel.Substring(1) }
+        $rel = $rel -replace "\\", "/"
+        
+        $imgHTML = "            <img src=""$rel"" loading=""lazy"">"
+        $imgHTML | Out-File -FilePath $outputFile -Append -Encoding utf8
+    }
+
+    # End Project Card HTML
+    $cardEnd = @"
+          </div>
+          <div class="project-desc"><p>Projek pengerjaan $projectName tahun $Year</p></div>
+        </div>
+"@
+    $cardEnd | Out-File -FilePath $outputFile -Append -Encoding utf8
+}
+
+# --- FOOTER ---
+@"
       </div>
     </section>
-    <script src="assets/js/main.js"></script>
+
     <footer class="footer-keren">
       <div class="footer-container">
         <div class="footer-kolom tentang">
           <h3>Stainless Indah</h3>
           <p>Kami adalah spesialis bengkel las terpercaya di Pontianak, melayani berbagai kebutuhan pengerjaan las
-            seperti
-            stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan
+            seperti stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan
             pemasangan teralis, balkon, kanopi, pagar, fasad bangunan, hingga konstruksi khusus lainnya sesuai
             permintaan.
           </p>
@@ -159,7 +156,6 @@
                 Pontianak Serdam, Batara 2</a></li>
             <li><a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> 0811569863 (Admin
                 WA)</a></li>
-
           </ul>
         </div>
       </div>
@@ -173,6 +169,10 @@
     <span class="close">&times;</span>
     <img class="popup-content" id="popupImg">
   </div>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
+"@ | Out-File -FilePath $outputFile -Append -Encoding utf8
+
+Write-Host "Generated $outputFile"

@@ -1,82 +1,131 @@
-/* --- PRODUCT GRID - OVERLAY STYLE --- */
+/* --- PRODUCT GRID - SPLIT LAYOUT STYLE --- */
 .produk-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
+    grid-template-columns: repeat(2, 1fr);
+    /* Fixed 2 columns */
+    column-gap: 10px;
+    /* Reduced for wider boxes */
+    row-gap: 30px;
+    /* Vertical spacing (ke bawah) - lebih kecil */
+    padding: 60px 40px;
+    max-width: 2000px;
+    /* Increased for wider boxes */
+    margin: 0 auto;
+}
+
+.produk-grid .produk-item-link.full-width {
+    grid-column: span 2;
 }
 
 .produk-grid .produk-item {
     position: relative;
-    /* Base for absolute positioning */
     display: flex;
     flex-direction: column;
-    height: 250px;
-    /* Fixed height for the card */
+    height: 600px;
+    /* Increased from 500px */
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(20, 20, 20, 0.7);
+    /* Dark background for description area */
+    backdrop-filter: blur(10px);
 }
 
 .produk-grid .produk-item:hover {
-    transform: scale(1.02);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     z-index: 2;
 }
 
-/* Image fills the card */
+/* Image section - takes 60% of height */
 .produk-grid .produk-item img {
     width: 100%;
-    height: 100%;
+    height: 60%;
+    /* Fixed 60% for image */
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     z-index: 1;
+    transition: transform 0.5s ease;
 }
 
-/* Text Overlay at the bottom */
+.produk-grid .produk-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Text section - takes remaining 40% */
 .produk-grid .produk-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
+    height: 40%;
+    /* Fixed 40% for text */
     z-index: 2;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6) 70%, transparent);
+    padding: 35px 30px 25px 30px;
+    background: rgba(0, 0, 0, 0.85);
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    border-top: 2px solid rgba(0, 123, 255, 0.3);
 }
 
-/* Typography Overrides */
+/* Product name */
 .produk-grid .produk-text h3 {
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 36px;
+    margin-bottom: 15px;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     color: #fff;
-    /* Ensure it's white */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
 }
 
-/* Reduce description text size/length visual for the overlay */
+/* Product description */
 .produk-grid .produk-text p {
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 0;
-    line-height: 1.4;
-    color: #ddd;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    line-height: 1.6;
+    color: #d0d0d0;
 
-    /* Limit lines if needed, or let it grow if content is short */
+    /* Limit to 3 lines */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
+/* All items align left */
+.produk-grid .produk-item-link .produk-text {
+    text-align: left;
+}
+
 /* Hide button in grid view if it exists inside produk-text */
 .produk-grid .produk-button-wrapper {
     display: none;
+}
+
+/* Responsive - stack to 1 column on mobile */
+@media (max-width: 768px) {
+    .produk-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .produk-grid .produk-item {
+        height: 450px;
+    }
+
+    .produk-grid .produk-text {
+        padding: 20px;
+    }
+
+    .produk-grid .produk-text h3 {
+        font-size: 24px;
+    }
+
+    .produk-grid .produk-text p {
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+    }
 }

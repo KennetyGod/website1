@@ -13,11 +13,13 @@ body {
   color: white;
 }
 
-html, body {
+html,
+body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* ✅ Hanya mencegah scroll horizontal, scroll vertikal tetap bisa */
+  overflow-x: hidden;
+  /* ✅ Hanya mencegah scroll horizontal, scroll vertikal tetap bisa */
   font-family: sans-serif;
 }
 
@@ -39,7 +41,8 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Ubah 0.5 jadi lebih besar kalau mau lebih gelap */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Ubah 0.5 jadi lebih besar kalau mau lebih gelap */
   z-index: 1;
 }
 
@@ -56,23 +59,41 @@ html, body {
 .slideshow img:nth-child(1) {
   animation-delay: 0s;
 }
+
 .slideshow img:nth-child(2) {
   animation-delay: 5s;
 }
+
 .slideshow img:nth-child(3) {
   animation-delay: 10s;
 }
+
 .slideshow img:nth-child(4) {
   animation-delay: 15s;
 }
 
 @keyframes fade {
-  0% { opacity: 0; }
-  5% { opacity: 1; }
-  25% { opacity: 1; }
-  30% { opacity: 0; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
+
 .content {
   position: relative;
   z-index: 1;
@@ -80,6 +101,7 @@ html, body {
   text-align: center;
   padding-top: 100px;
 }
+
 /* Tambahkan lapisan gelap agar teks lebih jelas (opsional) */
 body::before {
   content: "";
@@ -88,7 +110,8 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* transparansi hitam */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* transparansi hitam */
   z-index: -2;
 }
 
@@ -98,18 +121,23 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent; /* jangan transparan agar tidak nabrak gambar */
+  background-color: transparent;
+  /* jangan transparan agar tidak nabrak gambar */
   z-index: 1000;
 }
+
 li a {
-  display: inline-block; /* Agar transform bisa berfungsi */
+  display: inline-block;
+  /* Agar transform bisa berfungsi */
   text-decoration: none;
   color: inherit;
-  transition: transform 1s ease; /* Smooth animasi */
+  transition: transform 1s ease;
+  /* Smooth animasi */
 }
 
 li a:hover {
-  transform: translateY(4px); /* Turun 4px saat hover */
+  transform: translateY(4px);
+  /* Turun 4px saat hover */
 }
 
 /* Navbar */
@@ -131,7 +159,8 @@ nav ul li a {
 /* Hover effect */
 nav ul li a:hover {
 
-  color: #007bff; /* contoh warna kuning keemasan saat hover */
+  color: #007bff;
+  /* contoh warna kuning keemasan saat hover */
 }
 
 /* Dropdown */
@@ -141,7 +170,8 @@ nav ul li a:hover {
 }
 
 .dropdown-content {
-  display: none; /* Defaultnya disembunyikan */
+  display: none;
+  /* Defaultnya disembunyikan */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -151,7 +181,8 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  grid-template-columns: repeat(5, auto); /* 6 kolom horizontal */
+  grid-template-columns: repeat(5, auto);
+  /* 6 kolom horizontal */
   gap: 10px;
   min-width: max-content;
   text-align: center;
@@ -170,7 +201,7 @@ nav ul li a:hover {
 
 .dropdown-content a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  display:grid
+  display: grid
 }
 
 .dropdown:hover .dropdown-content {
@@ -187,32 +218,35 @@ nav ul li a:hover {
 .product h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  
+
 }
 
 .headline-fixed {
-  position:absolute;
-  top: 80px; /* Atur sesuai tinggi header */
+  position: absolute;
+  top: 80px;
+  left: 0;
+  /* Atur sesuai tinggi header */
   width: 100%;
   color: white;
   padding-top: 100px;
-  text-align: left;
-  z-index: 999; /* pastikan di atas gambar/background */
+  text-align: center;
+  z-index: 999;
+  /* pastikan di atas gambar/background */
 }
 
 .headline-fixed h2 {
   margin: 0;
   font-size: 50px;
-  text-align: left;
+  text-align: center;
 }
 
 .headline-fixed p {
   max-width: 900px;
-  margin: 10px  0;
+  margin: 10px auto;
   font-size: 20px;
   line-height: 1.6;
-  text-align: left;
-
+  text-align: center;
+  padding: 0 20px;
 }
 
 
@@ -224,142 +258,216 @@ nav ul li a:hover {
   z-index: 1;
 }
 
-.footer-keren {
+
+/* Testimonial / Project Section */
+.testimoni-section {
   position: relative;
-  background-color: #222; /* Warna dasar footer */
-  color: #f4f4f4;
-  padding: 60px 40px 20px;
-  overflow: hidden;
-  background: linear-gradient(to top, rgba(0, 0, 0,0.7), transparent);
+  margin-top: 60px;
+  /* Reduced from 350px, parent takes care of spacing */
+  padding: 40px;
+  z-index: 10;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0) 20%);
+}
+
+.section-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 10px;
+  /* Center the title block */
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+}
+
+.project-header h3 {
+  font-size: 24px;
+  /*  color: #00bfd8; /* Cyan accent */
+  color: #007bff;
+  /* Blue looks clean against dark */
+  margin: 0;
+}
+
+.project-date {
+  color: #aaa;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
   z-index: 2;
 }
 
-.footer-keren::before {
-  content: "";
-  position: absolute;
-  bottom: 100%; /* ditempatkan tepat di atas footer */
-  left: 0;
-  width: 100%;
+.project-desc p {
+  color: #eee;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .testimoni-section {
+    margin-top: 60px;
+    /* Adjusted for mobile */
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+/* --- Visi, Misi, History --- */
+.about-info {
+  width: 95%;
+  max-width: 1400px;
+  margin: 300px auto 60px auto;
+  position: relative;
+  z-index: 10;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.about-card.history {
+  grid-column: span 2;
+}
+
+.about-card {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid #007bff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 123, 255, 0.15);
+  border-color: rgba(0, 123, 255, 0.3);
+}
+
+.card-icon {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  width: 60px;
   height: 60px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent); /* dari hitam ke transparan */
-  z-index: 1; /* Pastikan di atas background, tapi di bawah konten */
-  pointer-events: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
 }
 
-.footer-container, .footer-bottom {
-  position: relative; /* Agar tetap berada di atas gradient */
-  z-index: 1;
+.about-card h3 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
-        .footer-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap; /* Agar responsif di HP */
-            justify-content: space-between;
-            gap: 40px; /* Jarak antar kolom */
-        }
 
-        .footer-kolom {
-            flex: 1; /* Memberi ruang yang fleksibel */
-            min-width: 250px; /* Lebar minimum kolom sebelum turun ke bawah */
-        }
+.about-card p,
+.about-card ul {
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.8;
+}
 
-        /* Kolom tentang perusahaan */
-        .footer-kolom.tentang h3 {
-            font-size: 38px;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 15px;
-            color: #efefef;
-        }
+.about-card ul {
+  padding-left: 20px;
+}
 
-        .footer-kolom.tentang p {
-            font-size: 15px;
-            color: #ccc;
-            line-height: 1.7;
-        }
-        
-        /* Judul kolom lainnya */
-        .footer-kolom h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding-bottom: 10px;
-        }
+.about-card ul li {
+  margin-bottom: 12px;
+  list-style-type: disc;
+}
 
-        /* Garis bawah hiasan di judul */
-        .footer-kolom h4::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: #007bff; /* Warna biru sebagai aksen */
-        }
+@media (max-width: 900px) {
+  .about-info {
+    margin: 320px auto 40px auto;
+  }
 
-        .footer-kolom ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 
-        .footer-kolom ul li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
+  .about-card.history {
+    grid-column: span 1;
+  }
 
-        .footer-kolom ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease; /* Animasi halus saat hover */
-        }
-
-        /* Efek saat kursor menyentuh link */
-        .footer-kolom ul li a:hover {
-            color: #007bff; /* Warna link berubah */
-            padding-left: 5px; /* Link sedikit bergeser */
-        }
-        
-        /* Style untuk ikon */
-        .footer-kolom ul li i {
-            margin-right: 12px;
-            color: #007bff;
-            width: 20px; /* Agar ikon sejajar */
-        }
-
-        /* Bagian paling bawah (Copyright) */
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 40px;
-            border-top: 1px solid #444; /* Garis pemisah */
-            z-index: 1;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
-            color: #aaa;
-        }
-        
-        /* Penyesuaian untuk layar HP */
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column; /* Ubah jadi vertikal */
-                text-align: center; /* Teks jadi rata tengah */
-            }
-            .footer-kolom h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .footer-kolom ul li {
-                justify-content: center;
-            }
-        }
-        
+  .about-card {
+    padding: 30px;
+  }
+}
