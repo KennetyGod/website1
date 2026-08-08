@@ -135,7 +135,7 @@ body {
 .hero-visual-frame {
   margin-top: 50px;
   width: 100%;
-  height: clamp(320px, 50vh, 520px);
+  height: clamp(340px, 52vh, 540px);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -143,23 +143,82 @@ body {
   background: var(--bg-secondary);
 }
 
-.hero-visual-frame img {
+.heroSwiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.heroSwiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.heroSwiper .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   transition: transform 0.6s ease;
+  cursor: pointer;
 }
 
-.hero-visual-frame:hover img {
+.heroSwiper:hover .swiper-slide img {
   transform: scale(1.02);
 }
 
-.hero-visual-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0.4) 100%);
-  pointer-events: none;
+/* Nav Arrows Customization */
+.hero-prev,
+.hero-next {
+  color: #ffffff !important;
+  background: rgba(17, 17, 17, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+  z-index: 20 !important;
+}
+
+.hero-prev {
+  left: 20px !important;
+}
+
+.hero-next {
+  right: 20px !important;
+}
+
+.hero-prev::after,
+.hero-next::after {
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+.hero-prev:hover,
+.hero-next:hover {
+  background: var(--accent-blue) !important;
+  border-color: var(--accent-blue) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4) !important;
+}
+
+.hero-pagination .swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.4 !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero-pagination .swiper-pagination-bullet-active {
+  background: var(--accent-blue) !important;
+  opacity: 1 !important;
+  width: 26px !important;
+  border-radius: 6px !important;
 }
 
 /* ==========================================================================

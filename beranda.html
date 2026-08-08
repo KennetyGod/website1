@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -63,8 +64,28 @@
       </div>
 
       <div class="hero-visual-frame">
-        <img src="assets/images/kanopi acp 1.jpg" alt="Proyek Kanopi ACP Stainless Indah Pontianak">
-        <div class="hero-visual-overlay"></div>
+        <div class="swiper heroSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/images/kanopi acp 1.jpg" alt="Proyek Kanopi ACP">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/pagar dorong 1.jpg" alt="Proyek Pagar Dorong">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/railing tangga 1.jpg" alt="Proyek Railing Tangga">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/kanopi kaca 1.jpg" alt="Proyek Kanopi Kaca">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/balkon 1.jpg" alt="Proyek Balkon">
+            </div>
+          </div>
+          <div class="swiper-button-prev hero-prev"></div>
+          <div class="swiper-button-next hero-next"></div>
+          <div class="swiper-pagination hero-pagination"></div>
+        </div>
       </div>
     </section>
 
@@ -417,6 +438,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
