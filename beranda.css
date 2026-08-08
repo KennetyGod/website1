@@ -144,7 +144,9 @@ body {
 .hero-visual-frame {
   flex: 1;
   width: 100%;
-  height: clamp(480px, 70vh, 720px);
+  height: clamp(340px, 44vh, 460px);
+  aspect-ratio: 16 / 9;
+  max-height: 480px;
   border-radius: 14px;
   overflow: hidden;
   position: relative;
