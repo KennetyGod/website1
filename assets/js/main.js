@@ -22,24 +22,93 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Hero Swiper Initialization ---
-    if (document.querySelector('.heroSwiper') && typeof Swiper !== 'undefined') {
-        new Swiper('.heroSwiper', {
-            loop: true,
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-            },
-            speed: 800,
-            navigation: {
-                nextEl: '.hero-next',
-                prevEl: '.hero-prev',
-            },
-            pagination: {
-                el: '.hero-pagination',
-                clickable: true,
-            },
+    // --- Hero Custom Vanilla JS Slideshow ---
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.querySelector('.hero-arrow.hero-prev');
+    const nextBtn = document.querySelector('.hero-arrow.hero-next');
+
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        let slideInterval = null;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            slideInterval = setInterval(nextSlide, 3500);
+        }
+
+        function stopAutoSlide() {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                nextSlide();
+                startAutoSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                prevSlide();
+                startAutoSlide();
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                showSlide(index);
+                startAutoSlide();
+            });
         });
+
+        // Pause on hover
+        const visualFrame = document.querySelector('.hero-visual-frame');
+        if (visualFrame) {
+            visualFrame.addEventListener('mouseenter', stopAutoSlide);
+            visualFrame.addEventListener('mouseleave', startAutoSlide);
+        }
+
+        // Initialize first slide and start auto-play
+        showSlide(0);
+        startAutoSlide();
     }
 
     // --- Sticky Header on Scroll ---
