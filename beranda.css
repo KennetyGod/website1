@@ -1,365 +1,698 @@
-/* Reset dasar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ==========================================================================
+   STAINLESS INDAH - ARCHITECTURAL DARK MINIMALIST STYLESHEET
+   ========================================================================== */
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #111111;
+  --border-color: #292929;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-blue: #007bff;
+  --accent-blue-hover: #0056b3;
 }
 
-/* Gambar sebagai background seluruh halaman */
 body {
-  background: url('image/IMG_20240221_100202.jpg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: sans-serif;
-  color: white;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-html, body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* ✅ Hanya mencegah scroll horizontal, scroll vertikal tetap bisa */
-  font-family: sans-serif;
-}
-
-.slideshow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
+/* CONTAINER & LAYOUT */
+.main-container {
   width: 100%;
-  z-index: -1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-spacing {
+  margin-bottom: 110px;
+}
+
+/* SECTION TITLES */
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-title-sm {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-title-lg {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.hero-section {
+  padding-top: 135px;
+  padding-bottom: 60px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-headline {
+  font-size: clamp(32px, 4.8vw, 56px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.hero-subheadline {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 18px;
+  max-width: 700px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-blue);
+  color: #ffffff !important;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary-cta:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.btn-secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-cta:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue) !important;
+  transform: translateY(-2px);
+}
+
+.hero-visual-frame {
+  margin-top: 50px;
+  width: 100%;
+  height: clamp(320px, 50vh, 520px);
+  border-radius: 12px;
   overflow: hidden;
-  pointer-events: none;
+  position: relative;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
 }
 
-.slideshow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.25)
-  );
-  z-index: 1;
-}
-
-.slideshow img {
-  position: absolute;
+.hero-visual-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  animation: fade 20s infinite;
-  z-index: 0;
+  object-position: center;
+  transition: transform 0.6s ease;
 }
 
-.slideshow img:nth-child(1) {
-  animation-delay: 0s;
-}
-.slideshow img:nth-child(2) {
-  animation-delay: 5s;
-}
-.slideshow img:nth-child(3) {
-  animation-delay: 10s;
-}
-.slideshow img:nth-child(4) {
-  animation-delay: 15s;
+.hero-visual-frame:hover img {
+  transform: scale(1.02);
 }
 
-@keyframes fade {
-  0% { opacity: 0; }
-  5% { opacity: 1; }
-  25% { opacity: 1; }
-  30% { opacity: 0; }
-  100% { opacity: 0; }
-}
-.content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding-top: 100px;
-}
-/* Tambahkan lapisan gelap agar teks lebih jelas (opsional) */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* transparansi hitam */
-  z-index: -2;
-}
-
-/* Header */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent; /* jangan transparan agar tidak nabrak gambar */
-  z-index: 1000;
-}
-li a {
-  display: inline-block; /* Agar transform bisa berfungsi */
-  text-decoration: none;
-  color: inherit;
-  transition: transform 1s ease; /* Smooth animasi */
-}
-
-li a:hover {
-  transform: translateY(4px); /* Turun 4px saat hover */
-}
-
-/* Navbar */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 5px;
-}
-
-/* Hover effect */
-nav ul li a:hover {
-
-  color: #007bff; /* contoh warna kuning keemasan saat hover */
-}
-
-/* Dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none; /* Defaultnya disembunyikan */
+.hero-visual-overlay {
   position: absolute;
-  left: 50%;
-  top: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  transform: translateX(-50%);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  z-index: 1000;
-
-  /* Flex untuk horizontal */
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 10px;
-
-  /* Lebar diatur supaya pas 2 baris */
-  width: 650px; /* Sesuaikan jika mau rapat/longgar */
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex; /* Muncul hanya saat hover */
-}
-
-.dropdown-content a {
-  padding: 8px 12px;
-  color: #fff;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  white-space: nowrap; /* teks tidak pecah */
-}
-
-
-/* Konten utama */
-.product {
-  padding: 40px;
-  border-radius: 8px;
-  margin: 40px;
-}
-
-.product h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  
-}
-
-.headline-fixed {
-  position:absolute;
-  top: 80px; /* Atur sesuai tinggi header */
-  width: 100%;
-  color: white;
-  padding-top: 100px;
-  text-align: left;
-  z-index: 999; /* pastikan di atas gambar/background */
-}
-
-.headline-fixed h2 {
-  margin: 0;
-  font-size: 70px;
-  text-align: left;
-}
-
-.headline-fixed p {
-  max-width: 900px;
-  margin: 10px  0;
-  font-size: 20px;
-  line-height: 1.6;
-  text-align: left;
-
-}
-
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  position: relative;
-  z-index: 1;
-}
-
-.footer-keren {
-  position: relative;
-  background-color: #222; /* Warna dasar footer */
-  color: #f4f4f4;
-  padding: 60px 40px 20px;
-  overflow: hidden;
-  background: linear-gradient(to top, rgba(0, 0, 0,0.7), transparent);
-  z-index: 2;
-}
-
-.footer-keren::before {
-  content: "";
-  position: absolute;
-  bottom: 100%; /* ditempatkan tepat di atas footer */
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent); /* dari hitam ke transparan */
-  z-index: 1; /* Pastikan di atas background, tapi di bawah konten */
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0.4) 100%);
   pointer-events: none;
 }
 
-.footer-container, .footer-bottom {
-  position: relative; /* Agar tetap berada di atas gradient */
-  z-index: 1;
+/* ==========================================================================
+   2. TRUST / STATISTICS SECTION
+   ========================================================================== */
+.stats-bar {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: center;
+  text-align: center;
 }
-        .footer-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap; /* Agar responsif di HP */
-            justify-content: space-between;
-            gap: 40px; /* Jarak antar kolom */
-        }
 
-        .footer-kolom {
-            flex: 1; /* Memberi ruang yang fleksibel */
-            min-width: 250px; /* Lebar minimum kolom sebelum turun ke bawah */
-        }
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        /* Kolom tentang perusahaan */
-        .footer-kolom.tentang h3 {
-            font-size: 38px;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 15px;
-            color: #efefef;
-        }
+.stat-number {
+  font-size: clamp(32px, 3.5vw, 46px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
 
-        .footer-kolom.tentang p {
-            font-size: 15px;
-            color: #ccc;
-            line-height: 1.7;
-        }
-        
-        /* Judul kolom lainnya */
-        .footer-kolom h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding-bottom: 10px;
-        }
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
 
-        /* Garis bawah hiasan di judul */
-        .footer-kolom h4::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: #007bff; /* Warna biru sebagai aksen */
-        }
+/* ==========================================================================
+   3. KATEGORI PRODUK GRID
+   ========================================================================== */
+.product-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+}
 
-        .footer-kolom ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.category-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
 
-        .footer-kolom ul li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
+.category-card:hover {
+  border-color: rgba(0, 123, 255, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
 
-        .footer-kolom ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease; /* Animasi halus saat hover */
-        }
+.category-card-media {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
 
-        /* Efek saat kursor menyentuh link */
-        .footer-kolom ul li a:hover {
-            color: #007bff; /* Warna link berubah */
-            padding-left: 5px; /* Link sedikit bergeser */
-        }
-        
-        /* Style untuk ikon */
-        .footer-kolom ul li i {
-            margin-right: 12px;
-            color: #007bff;
-            width: 20px; /* Agar ikon sejajar */
-        }
+.category-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
 
-        /* Bagian paling bawah (Copyright) */
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 40px;
-            border-top: 1px solid #444; /* Garis pemisah */
-            z-index: 1;
-        }
+.category-card:hover .category-card-media img {
+  transform: scale(1.04);
+}
 
-        .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
-            color: #aaa;
-        }
-        
-        /* Penyesuaian untuk layar HP */
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column; /* Ubah jadi vertikal */
-                text-align: center; /* Teks jadi rata tengah */
-            }
-            .footer-kolom h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .footer-kolom ul li {
-                justify-content: center;
-            }
-        }
-        
+.category-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.category-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.category-card-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.category-card:hover .category-card-link {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   4. FEATURED PROJECT (PROYEK TERBARU)
+   ========================================================================== */
+.featured-project-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.featured-project-media {
+  width: 100%;
+  height: 380px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #000;
+}
+
+.featured-project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.featured-project-container:hover .featured-project-media img {
+  transform: scale(1.03);
+}
+
+.featured-project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-project-title {
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 6px;
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+
+.featured-specs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 16px;
+  margin-bottom: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.featured-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-spec-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.featured-spec-value {
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   5. MENGAPA STAINLESS INDAH (KEUNGGULAN)
+   ========================================================================== */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.why-us-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease;
+}
+
+.why-us-card:hover {
+  border-color: rgba(0, 123, 255, 0.4);
+}
+
+.why-us-number {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.why-us-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.why-us-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   6. ALUR PENGERJAAN TIMELINE
+   ========================================================================== */
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.workflow-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease;
+  position: relative;
+}
+
+.workflow-card:hover {
+  border-color: var(--accent-blue);
+}
+
+.workflow-step {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.workflow-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.workflow-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   7. ARSIP PORTOFOLIO KARYA
+   ========================================================================== */
+.portfolio-year-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.portfolio-year-row {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 24px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.portfolio-year-row:hover {
+  border-color: var(--accent-blue);
+  background: rgba(0, 123, 255, 0.04);
+  transform: translateX(4px);
+}
+
+.portfolio-year-text {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.portfolio-year-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   8. TESTIMONIAL ("APA KATA MEREKA")
+   ========================================================================== */
+.testimonial-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.rating-stars {
+  color: #ffc107;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-quote {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.testimonial-author {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.testimonial-role {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   9. CTA SECTION ("PUNYA RENCANA PROYEK?")
+   ========================================================================== */
+.cta-banner-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 64px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner-title {
+  font-size: clamp(28px, 3.8vw, 42px);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.cta-banner-subheadline {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-top: 14px;
+  margin-bottom: 36px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+.site-footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  padding: 60px 0 30px 0;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer-brand h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.footer-services h4,
+.footer-socials h4 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.footer-services p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.footer-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-social-links a {
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social-links a:hover {
+  color: var(--accent-blue);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1024px) {
+  .featured-project-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .workflow-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding-top: 110px;
+  }
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+    padding: 30px 20px;
+  }
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-year-row {
+    padding: 18px 24px;
+  }
+  .portfolio-year-text {
+    font-size: 28px;
+  }
+}

@@ -1,4 +1,4 @@
-// Main JavaScript for Stainless Indah
+﻿// Main JavaScript for Stainless Indah
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Stainless Indah Modern Script Loaded");
@@ -23,16 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Sticky Header on Scroll ---
+    // --- Sticky Header on Scroll (Unified Dark Glassmorphism) ---
     const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.background = "rgba(0, 0, 0, 0.9)";
-            header.style.padding = "0 5%"; // Slightly shrink or keep consistent
-        } else {
-            header.style.background = "rgba(0, 0, 0, 0.2)";
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            // Header maintains background consistently
+        });
+    }
 
     // --- Dropdown Mobile Click Handling ---
     // On mobile, clicking "Produk" should toggle the dropdown instead of navigating immediately if possible

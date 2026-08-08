@@ -1,19 +1,35 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Furniture Store</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="tentang.css" />
+  <title>Tentang Kami - Stainless Indah</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=300.0" />
+  <link rel="stylesheet" href="tentang.css?v=300.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?v=17.0">
 
-  <!-- Mengambil ikon dari Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <style>
+    /* Force center alignment for title */
+    .testimoni-section {
+      text-align: center !important;
+      width: 100% !important;
+      max-width: 1200px !important;
+      margin: 40px auto !important;
+    }
+    .testimoni-section .section-title,
+    .section-title,
+    h2.section-title {
+      text-align: center !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -24,9 +40,11 @@
     <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4">
   </div>
 
-
   <header>
-    <h1>Stainless Indah</h1>
+    <a href="beranda.html" class="brand-container">
+      <img src="assets/images/logo-cropped.png" alt="Logo Stainless Indah" class="site-logo">
+      <h1>Stainless Indah</h1>
+    </a>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
@@ -41,7 +59,6 @@
             <a href="kontruksi baja.html">Kontruksi Baja</a>
             <a href="balkon.html">Balkon</a>
             <a href="teralis.html">Teralis</a>
-
             <a href="fasad.html">Fasad</a>
             <a href="pintu.html">Pintu</a>
             <a href="kerangka meja.html">Kerangka Meja</a>
@@ -55,111 +72,95 @@
 
   <div class="wrapper">
     <main>
-      <section class="product">
-        <div class="headline-fixed">
-          <h2>Hendro Las</h2>
-          <p>Spesialis pengerjaan Pagar, Kanopi, Teralis, dan Konstruksi Kustom bahan Stainless Steel, Besi, dan Baja
-            Ringan di Pontianak. Rapi, Kuat, dan Indah.</p>
-        </div>
-    </main>
+      <section class="headline-fixed">
+        <h2>Stainless Indah (Hendro Las)</h2>
+        <p>Spesialis bengkel las dan aplikator konstruksi terpercaya di Pontianak, Kalimantan Barat. Melayani pengerjaan Pagar, Kanopi, Teralis, Balkon, Fasad, dan Konstruksi Kustom Stainless Steel, Besi, dan Baja Berat. Rapi, Kuat, dan Indah.</p>
+      </section>
 
-    <section class="about-info">
-      <div class="about-grid">
-        <!-- VISI -->
-        <div class="about-card visi">
-          <div class="card-icon">
-            <i class="fa-solid fa-eye"></i>
-          </div>
-          <div class="card-content">
-            <h3>Visi</h3>
-            <p>
-              [Isi Visi Perusahaan Anda di sini. Contoh: Menjadi bengkel las dan aplikator konstruksi terpercaya di
-              Kalimantan Barat yang mengedepankan kualitas dan kepuasan pelanggan.]
-            </p>
-          </div>
-        </div>
-
-        <!-- MISI -->
-        <div class="about-card misi">
-          <div class="card-icon">
-            <i class="fa-solid fa-bullseye"></i>
-          </div>
-          <div class="card-content">
-            <h3>Misi</h3>
-            <ul>
-              <li>[Isi Misi 1. Contoh: Memberikan hasil kerja yang rapi, kuat, dan indah.]</li>
-              <li>[Isi Misi 2. Contoh: Menggunakan material berkualitas sesuai standar.]</li>
-              <li>[Isi Misi 3. Contoh: Menyediakan pelayanan yang profesional dan tepat waktu.]</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- SEJARAH / HISTORY -->
+      <!-- TATA LETAK: SEJARAH DI PALING ATAS, VISI & MISI DIBAWAHNYA BERSEBELAHAN -->
+      <section class="about-info">
+        <!-- 1. SEJARAH & PENGALAMAN (DI PALING ATAS, DIATAS VISI MISI) -->
         <div class="about-card history">
           <div class="card-icon">
             <i class="fa-solid fa-clock-rotate-left"></i>
           </div>
           <div class="card-content">
-            <h3>History</h3>
-            <p>
-              [Isi sejarah atau asal mula usaha Anda di sini. Contoh: Stainless Indah (Hendro Las) didirikan pada tahun
-              XXXX berawal dari semangat untuk menghadirkan solusi pengelasan dan konstruksi terbaik untuk perumahan...]
-            </p>
+            <h3>Sejarah & Pengalaman</h3>
+            <p>Stainless Indah (Hendro Las) telah berpengalaman bertahun-tahun dalam melayani berbagai proyek perumahan, toko, kantor, hingga gedung komersial di Pontianak dan sekitarnya dengan dedikasi hasil kerja sempurna.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="testimoni-section">
-      <h2 class="section-title">Arsip Portofolio</h2>
-      <div class="year-archive-grid">
-        <a href="testimoni-2025.html" class="year-card">
-          <h3>2025</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2024.html" class="year-card">
-          <h3>2024</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2023.html" class="year-card">
-          <h3>2023</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2022.html" class="year-card">
-          <h3>2022</h3>
-          <p>Lihat Karya & Testimoni</p>
-        </a>
-        <a href="testimoni-2017-2021.html" class="year-card">
-          <h3>2017 - 2021</h3>
-          <p>Arsip Karya Lama</p>
-        </a>
-      </div>
-    </section>
-    <script src="assets/js/main.js"></script>
+        <!-- 2. VISI & MISI (DIBAWAH SEJARAH, BERSEBELAHAN) -->
+        <div class="about-top-grid">
+          <!-- VISI -->
+          <div class="about-card visi">
+            <div class="card-icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="card-content">
+              <h3>Visi</h3>
+              <p>Menjadi bengkel las dan aplikator konstruksi terpercaya di Kalimantan Barat yang senantiasa mengedepankan presisi tinggi, kualitas material terbaik, serta kepuasan pelanggan secara berkelanjutan.</p>
+            </div>
+          </div>
+
+          <!-- MISI -->
+          <div class="about-card misi">
+            <div class="card-icon">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div class="card-content">
+              <h3>Misi</h3>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> <span>Memberikan hasil pengerjaan pengelasan yang rapi, kokoh, tahan lama, dan bernilai estetika tinggi.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Menggunakan material stainless steel, besi, dan baja berat berkualitas unggul sesuai standar keselamatan.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Menyediakan pelayanan profesional, transparan, dan pengiriman/pemasangan tepat waktu.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARSIP PORTOFOLIO KARYA -->
+      <section class="testimoni-section">
+        <h2 class="section-title">Arsip Portofolio Karya</h2>
+        <div class="year-archive-grid">
+          <a href="testimoni-2025.html" class="year-card">
+            <h3>2025</h3>
+            <p>Lihat Karya & Testimoni</p>
+          </a>
+          <a href="testimoni-2024.html" class="year-card">
+            <h3>2024</h3>
+            <p>Lihat Karya & Testimoni</p>
+          </a>
+          <a href="testimoni-2023.html" class="year-card">
+            <h3>2023</h3>
+            <p>Lihat Karya & Testimoni</p>
+          </a>
+          <a href="testimoni-2022.html" class="year-card">
+            <h3>2022</h3>
+            <p>Lihat Karya & Testimoni</p>
+          </a>
+          <a href="testimoni-2017-2021.html" class="year-card">
+            <h3>2017 - 2021</h3>
+            <p>Arsip Karya Lama</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer-keren">
       <div class="footer-container">
         <div class="footer-kolom tentang">
           <h3>Stainless Indah</h3>
-          <p>Kami adalah spesialis bengkel las terpercaya di Pontianak, melayani berbagai kebutuhan pengerjaan las
-            seperti
-            stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan
-            pemasangan teralis, balkon, kanopi, pagar, fasad bangunan, hingga konstruksi khusus lainnya sesuai
-            permintaan.
-          </p>
+          <p>Kami adalah spesialis bengkel las terpercaya di Pontianak, melayani berbagai kebutuhan pengerjaan las seperti stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan pemasangan teralis, balkon, kanopi, pagar, fasad bangunan, hingga konstruksi khusus lainnya sesuai permintaan.</p>
         </div>
         <div class="footer-kolom">
           <h4>Kontak Kami</h4>
           <ul>
-            <li><a href="https://www.instagram.com/stainless.indah/" target="_blank"><i class="fab fa-instagram"></i>
-                Instagram</a></li>
-            <li><a href="https://www.facebook.com/bengkel.stainlessindah.9" target="_blank"><i
-                  class="fab fa-facebook-f"></i> Facebook</a></li>
-            <li><a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank"><i
-                  class="fa-solid fa-location-dot"></i>
-                Pontianak Serdam, Batara 2</a></li>
-            <li><a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> 0811569863 (Admin
-                WA)</a></li>
-
+            <li><a href="https://www.instagram.com/stainless.indah/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.facebook.com/bengkel.stainlessindah.9" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank"><i class="fa-solid fa-location-dot"></i> Pontianak Serdam, Batara 2</a></li>
+            <li><a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> 0811569863 (Admin WA)</a></li>
           </ul>
         </div>
       </div>
@@ -168,11 +169,7 @@
       </div>
     </footer>
   </div>
-  <!-- Popup Modal -->
-  <div id="imageModal" class="popup">
-    <span class="close">&times;</span>
-    <img class="popup-content" id="popupImg">
-  </div>
-</body>
 
+  <script src="assets/js/main.js"></script>
+</body>
 </html>

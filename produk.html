@@ -4,16 +4,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Furniture Store</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/product-grid.css" />
+  <title>Produk Kami - Stainless Indah</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=500.0" />
+  <link rel="stylesheet" href="produk.css?v=500.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?v=11.0">
 
-  <!-- Mengambil ikon dari Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <style>
+    /* Force description text color to clean white and normal case */
+    .produk-text p,
+    .produk-item .produk-text p {
+      color: #ffffff !important;
+      text-transform: none !important;
+      font-size: 14px !important;
+      line-height: 1.6 !important;
+      opacity: 0.95 !important;
+    }
+    /* Remove white background hover box on navigation & dropdown links */
+    nav ul li a:hover,
+    nav ul li a:focus,
+    .dropbtn:hover,
+    .dropdown:hover > .dropbtn {
+      background: transparent !important;
+      background-color: transparent !important;
+      color: #007bff !important;
+      box-shadow: none !important;
+    }
+    .dropdown-content a {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    .dropdown-content a:hover {
+      background: #007bff !important;
+      color: #ffffff !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -24,9 +51,11 @@
     <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4">
   </div>
 
-
   <header>
-    <h1>Stainless Indah</h1>
+    <a href="beranda.html" class="brand-container">
+      <img src="assets/images/logo-cropped.png" alt="Logo Stainless Indah" class="site-logo">
+      <h1>Stainless Indah</h1>
+    </a>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
@@ -41,7 +70,6 @@
             <a href="kontruksi baja.html">Kontruksi Baja</a>
             <a href="balkon.html">Balkon</a>
             <a href="teralis.html">Teralis</a>
-
             <a href="fasad.html">Fasad</a>
             <a href="pintu.html">Pintu</a>
             <a href="kerangka meja.html">Kerangka Meja</a>
@@ -57,171 +85,255 @@
     <main>
 
       <section class="headline-fixed">
-        <h2>Product</h2>
-        <p>Spesialis pengerjaan Pagar, Kanopi, Teralis, dan Konstruksi Kustom bahan Stainless Steel, Besi, dan Baja
-          Ringan
-          di Pontianak. Rapi, Kuat, dan Indah.</p>
+        <h2>Kategori Produk Kami</h2>
+        <p>Spesialis pengerjaan Pagar, Kanopi, Teralis, Balkon, Fasad, dan Konstruksi Kustom Stainless Steel, Besi, dan Baja Berat di Pontianak. Rapi, Kuat, dan Indah.</p>
       </section>
 
-      <section class="produk-grid">
+      <section class="produk-container">
+        <!-- 1. KANOPI -->
         <a href="kanopi.html" class="produk-item-link">
           <div class="produk-item">
-            <img src="Foto Proyek/2022/Sub%20Bidang%20Masing%20-%20Masing%20Proyek/Kanopi/IMG_20201130_151119.jpg"
-              alt="Kanopi Stainless">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2022/Sub%20Bidang%20Masing%20-%20Masing%20Proyek/Kanopi/IMG_20201130_151119.jpg" alt="Kanopi Stainless">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Kanopi</h3>
-              <p>Desain modern dan tahan karat, cocok untuk perlindungan luar ruangan rumah, toko, maupun kantor Anda.
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="pagar.html" class="produk-item-link">
-          <div class="produk-item">
-            <img src="Foto Proyek/2024/Pagar Dorong Billy/IMG_20240704_091235.jpg" alt="Pagar Besi">
-            <div class="produk-text">
-              <h3>Pagar</h3>
-              <p>Pagar minimalis hingga klasik dengan material besi berkualitas, mempercantik sekaligus menjaga keamanan
-                properti.</p>
-            </div>
-          </div>
-        </a>
-        <a href="tangga.html" class="produk-item-link">
-          <div class="produk-item">
-            <img src="Foto Proyek/2022/Sub Bidang Masing - Masing Proyek/Railling Tangga/IMG_20210105_130626.jpg"
-              alt="Tangga Baja">
-            <div class="produk-text">
-              <h3>Railing Tangga</h3>
-              <p>Struktur kuat dan presisi tinggi untuk berbagai kebutuhan bangunan bertingkat, gudang, maupun rumah
-                modern.
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="teralis.html" class="produk-item-link">
-          <div class="produk-item">
-            <img src="Foto Proyek/2022/Sub Bidang Masing - Masing Proyek/Teralis/Teralis Semi Tempa.jpg"
-              alt="Teralis Jendela">
-            <div class="produk-text">
-              <h3>Teralis </h3>
-              <p>Teralis dengan desain dekoratif dan struktur kokoh, memberikan keamanan ekstra tanpa mengurangi
-                keindahan.
-              </p>
+              <p>Desain modern dan tahan karat, cocok untuk perlindungan carport, teras, maupun halaman bangunan Anda.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Koleksi Kanopi <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
 
+        <!-- 2. PAGAR -->
+        <a href="pagar.html" class="produk-item-link">
+          <div class="produk-item">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2024/Pagar Dorong Billy/IMG_20240704_091235.jpg" alt="Pagar Besi">
+                </div>
+              </div>
+            </div>
+            <div class="produk-text">
+              <h3>Pagar</h3>
+              <p>Pagar minimalis hingga klasik dengan material besi & stainless berkualitas, mempercantik dan menjaga keamanan properti.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Koleksi Pagar <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- 3. RAILING TANGGA -->
+        <a href="tangga.html" class="produk-item-link">
+          <div class="produk-item">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2022/Sub Bidang Masing - Masing Proyek/Railling Tangga/IMG_20210105_130626.jpg" alt="Railing Tangga">
+                </div>
+              </div>
+            </div>
+            <div class="produk-text">
+              <h3>Railing Tangga</h3>
+              <p>Struktur kuat dan presisi tinggi untuk berbagai kebutuhan tangga bangunan bertingkat, rumah, maupun gedung modern.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Railing Tangga <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- 4. TERALIS -->
+        <a href="teralis.html" class="produk-item-link">
+          <div class="produk-item">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2022/Sub Bidang Masing - Masing Proyek/Teralis/Teralis Semi Tempa.jpg" alt="Teralis Jendela">
+                </div>
+              </div>
+            </div>
+            <div class="produk-text">
+              <h3>Teralis</h3>
+              <p>Teralis jendela & pintu dengan desain dekoratif dan struktur kokoh, memberikan keamanan ekstra tanpa mengurangi estetika.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Koleksi Teralis <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- 5. BALKON -->
         <a href="balkon.html" class="produk-item-link">
           <div class="produk-item">
-            <img src="Foto Proyek/2024/Safeii Purnama/IMG_20240708_091625.jpg" alt="Balkon">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2024/Safeii Purnama/IMG_20240708_091625.jpg" alt="Balkon">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Balkon</h3>
-              <p>Pagar balkon stainless atau besi yang estetis dan kuat, memberikan kenyamanan dan tampilan elegan pada
-                bangunan.</p>
+              <p>Pagar balkon stainless atau besi yang estetis dan kuat, memberikan kenyamanan dan tampilan elegan pada bangunan lantai 2+.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Koleksi Balkon <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
+
+        <!-- 6. KONTRUKSI BAJA -->
         <a href="kontruksi baja.html" class="produk-item-link">
           <div class="produk-item">
-            <img src="Foto Proyek/2022/Sub%20Bidang%20Masing%20-%20Masing%20Proyek/Baja%20Berat/IMG_20181130_084551.jpg"
-              alt="Kontruksi">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2022/Sub%20Bidang%20Masing%20-%20Masing%20Proyek/Baja%20Berat/IMG_20181130_084551.jpg" alt="Kontruksi Baja">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Kontruksi Baja</h3>
-              <p>Solusi konstruksi rangka baja ringan hingga berat untuk bangunan industri, komersial, maupun rumah
-                tinggal.
-              </p>
+              <p>Solusi konstruksi rangka baja ringan hingga baja berat untuk gudang, pabrik, bangunan komersial, maupun rumah tinggal.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Kontruksi Baja <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
+
+        <!-- 7. FASAD -->
         <a href="fasad.html" class="produk-item-link">
           <div class="produk-item">
-            <img src="Foto Proyek/2024/Karya Baru Micky/1736414004520.jpg" alt="Fasad">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2024/Karya Baru Micky/1736414004520.jpg" alt="Fasad">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Fasad</h3>
-              <p>Tampilan luar bangunan yang menawan dan modern dengan sentuhan logam dan kaca, meningkatkan citra
-                properti
-                Anda.</p>
+              <p>Tampilan luar bangunan yang menawan dan modern dengan sentuhan logam dan kaca, meningkatkan citra properti Anda.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Koleksi Fasad <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
+
+        <!-- 8. PINTU -->
         <a href="pintu.html" class="produk-item-link">
           <div class="produk-item">
-            <img src="Foto Proyek/2024/Ko Haris Tanray 2/IMG_20240510_080834.jpg" alt="Pintu">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2024/Ko Haris Tanray 2/IMG_20240510_080834.jpg" alt="Pintu">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Pintu</h3>
-              <p>Berbagai jenis pintu berkualitas tinggi mulai dari pintu lipat, rolling door, hingga pintu handerson
-                untuk keamanan dan estetika.</p>
+              <p>Berbagai jenis pintu berkualitas tinggi mulai dari pintu lipat, rolling door, hingga pintu henderson untuk keamanan & estetika.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Koleksi Pintu <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
+
+        <!-- 9. KERANGKA MEJA -->
         <a href="kerangka meja.html" class="produk-item-link">
           <div class="produk-item">
-            <img src="Foto Proyek/2024/Meja Marmer/IMG_20240205_090751.jpg" alt="Kerangka Meja">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2024/Meja Marmer/IMG_20240205_090751.jpg" alt="Kerangka Meja">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Kerangka Meja</h3>
-              <p>Tampilan luar bangunan yang menawan dan modern dengan sentuhan logam dan kaca, meningkatkan citra
-                properti
-                Anda.</p>
+              <p>Kerangka meja stainless & besi presisi tinggi untuk meja makan, meja marmer, cafe, maupun furniture kantor kustom.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Kerangka Meja <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
+
+        <!-- 10. KACA -->
         <a href="kaca.html" class="produk-item-link">
           <div class="produk-item">
-            <img
-              src="Foto Proyek/2022/Sub Bidang Masing - Masing Proyek/Kusen Aluminium/Konstruksi Kaca gudang Stain.jpg"
-              alt="Kaca">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2022/Sub Bidang Masing - Masing Proyek/Kusen Aluminium/Konstruksi Kaca gudang Stain.jpg" alt="Kaca">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Kaca</h3>
-              <p>Tampilan luar bangunan yang menawan dan modern dengan sentuhan logam dan kaca, meningkatkan citra
-                properti
-                Anda.</p>
+              <p>Pengerjaan kanopi kaca, partisi kaca, tempered & laminated glass berkualitas tinggi untuk interior maupun eksterior.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Koleksi Kaca <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
-        <a href="custom.html" class="produk-item-link full-width">
+
+        <!-- 11. CUSTOM -->
+        <a href="custom.html" class="produk-item-link">
           <div class="produk-item">
-            <img src="Foto Proyek/2024/Lift Barang Gudang Lokale/IMG_20240425_093757.jpg" alt="Custom">
+            <div class="swiper-container produk-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Foto Proyek/2024/Lift Barang Gudang Lokale/IMG_20240425_093757.jpg" alt="Custom">
+                </div>
+              </div>
+            </div>
             <div class="produk-text">
               <h3>Custom</h3>
-              <p>Tampilan luar bangunan yang menawan dan modern dengan sentuhan logam dan kaca, meningkatkan citra
-                properti
-                Anda.</p>
+              <p>Pengerjaan las khusus kustom seperti lift barang gudang, konstruksi khusus, rak industri, dan pesanan sesuai rancangan Anda.</p>
+              <div class="produk-button-wrapper">
+                <span class="produk-button">Lihat Proyek Custom <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </div>
         </a>
       </section>
     </main>
 
-    <script src="assets/js/main.js"></script>
+    <footer class="footer-keren">
+      <div class="footer-container">
+        <div class="footer-kolom tentang">
+          <h3>Stainless Indah</h3>
+          <p>Kami adalah spesialis bengkel las terpercaya di Pontianak, melayani berbagai kebutuhan pengerjaan las seperti stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan pemasangan teralis, balkon, kanopi, pagar, fasad bangunan, hingga konstruksi khusus lainnya sesuai permintaan.</p>
+        </div>
+        <div class="footer-kolom">
+          <h4>Kontak Kami</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/stainless.indah/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.facebook.com/bengkel.stainlessindah.9" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank"><i class="fa-solid fa-location-dot"></i> Pontianak Serdam, Batara 2</a></li>
+            <li><a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> 0811569863 (Admin WA)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Stainless Indah. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/main.js"></script>
 </body>
-
-<footer class="footer-keren">
-  <div class="footer-container">
-    <div class="footer-kolom tentang">
-      <h3>Stainless Indah</h3>
-      <p>Kami adalah spesialis bengkel las terpercaya di Pontianak, melayani berbagai kebutuhan pengerjaan las seperti
-        stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan
-        pemasangan teralis, balkon, kanopi, pagar, fasad bangunan, hingga konstruksi khusus lainnya sesuai permintaan.
-      </p>
-    </div>
-    <div class="footer-kolom">
-      <h4>Kontak Kami</h4>
-      <ul>
-        <li><a href="https://www.instagram.com/stainless.indah/" target="_blank"><i class="fab fa-instagram"></i>
-            Instagram</a></li>
-        <li><a href="https://www.facebook.com/bengkel.stainlessindah.9" target="_blank"><i
-              class="fab fa-facebook-f"></i> Facebook</a></li>
-        <li><a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank"><i class="fa-solid fa-location-dot"></i>
-            Pontianak Serdam, Batara 2</a></li>
-        <li><a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> 0811569863 (Admin
-            WA)</a></li>
-
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Stainless Indah. All Rights Reserved.</p>
-  </div>
-</footer>
-</div>
-
 </html>

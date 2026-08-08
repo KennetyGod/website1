@@ -4,29 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stainless Indah</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>STAINLESS INDAH — Solusi Stainless Steel &amp; Konstruksi Pontianak</title>
+  <link rel="stylesheet" href="assets/css/product-grid.css?v=20260808_2000" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260808_2000" />
+  <link rel="stylesheet" href="beranda.css?v=20260808_2000" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Mengambil ikon dari Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
 </head>
 
 <body>
-  <div class="slideshow">
-    <img src="assets/images/IMG_20240221_100202.jpg" alt="Slide 1">
-    <img src="assets/images/IMG_20230622_091238.jpg" alt="Slide 2">
-    <img src="assets/images/IMG_20200615_123127.jpg" alt="Slide 3">
-    <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4">
-  </div>
 
-
+  <!-- HEADER NAVIGASI -->
   <header>
-    <h1>Stainless Indah</h1>
+    <a href="beranda.html" class="brand-container">
+      <img src="assets/images/logo-cropped.png" alt="Logo STAINLESS INDAH" class="site-logo">
+      <h1>STAINLESS INDAH</h1>
+    </a>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
@@ -41,7 +36,6 @@
             <a href="kontruksi baja.html">Kontruksi Baja</a>
             <a href="balkon.html">Balkon</a>
             <a href="teralis.html">Teralis</a>
-
             <a href="fasad.html">Fasad</a>
             <a href="pintu.html">Pintu</a>
             <a href="kerangka meja.html">Kerangka Meja</a>
@@ -53,587 +47,377 @@
     </nav>
   </header>
 
-  <div class="wrapper">
-    <main>
-      <!-- Hero Slideshow Section -->
-      <section class="hero-slideshow">
-        <div class="swiper-container mySwiper">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <img src="assets/images/kanopi acp 1.jpg" alt="Promo Kanopi" onclick="showPopup(this)">
+  <main class="main-container">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section section-spacing">
+      <div class="hero-content">
+        <h1 class="hero-headline">Solusi Stainless Steel &amp; Konstruksi Berkualitas di Pontianak</h1>
+        <p class="hero-subheadline">Pengerjaan Pagar, Kanopi, Railing, Terali, Balkon, dan Konstruksi Baja Custom.</p>
+        <div class="hero-cta-group">
+          <a href="https://wa.me/+62811569863" target="_blank" class="btn-primary-cta">
+            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Konsultasi Gratis
+          </a>
+          <a href="#portfolio" class="btn-secondary-cta">Lihat Portfolio →</a>
+        </div>
+      </div>
+
+      <div class="hero-visual-frame">
+        <img src="assets/images/kanopi acp 1.jpg" alt="Proyek Kanopi ACP Stainless Indah Pontianak">
+        <div class="hero-visual-overlay"></div>
+      </div>
+    </section>
+
+    <!-- 2. TRUST / STATISTICS SECTION -->
+    <section class="section-spacing">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Tahun Pengalaman</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Proyek Dikerjakan</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Komitmen Kualitas</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Pontianak</span>
+          <span class="stat-label">&amp; Sekitarnya</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. KATEGORI PRODUK -->
+    <section class="section-spacing">
+      <div class="section-header">
+        <span class="section-title-sm">Layanan &amp; Fabrikasi</span>
+        <h2 class="section-title-lg">KATEGORI PRODUK</h2>
+      </div>
+
+      <div class="product-category-grid">
+        <!-- Kanopi -->
+        <a href="kanopi.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/kanopi acp 1.jpg" alt="Kanopi ACP & Kaca">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Kanopi</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- Pagar -->
+        <a href="pagar.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/pagar mati 1.jpg" alt="Pagar Stainless & Besi">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Pagar</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- Balkon -->
+        <a href="balkon.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/balkon 1.jpg" alt="Railing Balkon Minimalis">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Balkon</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- Railing Tangga -->
+        <a href="tangga.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/railing tangga 2.jpg" alt="Railing Tangga Stainless">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Railing Tangga</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- Teralis -->
+        <a href="teralis.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/Teralis.jpg" alt="Teralis Jendela & Pintu">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Teralis</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- Konstruksi Baja -->
+        <a href="kontruksi baja.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/Baja Berat.jpg" alt="Konstruksi Baja Berat">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Konstruksi Baja</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. FEATURED PROJECT (PROYEK TERBARU) -->
+    <section class="section-spacing">
+      <div class="section-header">
+        <span class="section-title-sm">Highlight Pekerjaan</span>
+        <h2 class="section-title-lg">PROYEK TERBARU</h2>
+      </div>
+
+      <div class="featured-project-container">
+        <div class="featured-project-media">
+          <img src="assets/images/kanopi kaca 1.jpg" alt="Proyek Terbaru Kanopi ACP Pontianak">
+        </div>
+        <div class="featured-project-info">
+          <span class="section-title-sm">Kanopi Premium</span>
+          <h3 class="featured-project-title">Kanopi ACP &amp; Kaca Tempered Custom</h3>
+
+          <div class="featured-specs-list">
+            <div class="featured-spec-item">
+              <span class="featured-spec-label">Jenis</span>
+              <span class="featured-spec-value">Kanopi ACP</span>
             </div>
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <img src="assets/images/pagar dorong 1.jpg" alt="Promo Pagar" onclick="showPopup(this)">
+            <div class="featured-spec-item">
+              <span class="featured-spec-label">Lokasi</span>
+              <span class="featured-spec-value">Pontianak</span>
             </div>
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-              <img src="assets/images/railing tangga 1.jpg" alt="Promo Railing" onclick="showPopup(this)">
+            <div class="featured-spec-item">
+              <span class="featured-spec-label">Material</span>
+              <span class="featured-spec-value">ACP + Hollow Galvanis</span>
             </div>
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-              <img src="assets/images/kanopi kaca 1.jpg" alt="Promo Kaca" onclick="showPopup(this)">
+            <div class="featured-spec-item">
+              <span class="featured-spec-label">Status</span>
+              <span class="featured-spec-value">Completed</span>
             </div>
           </div>
-          <!-- Navigation Buttons -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+
+          <a href="kanopi.html" class="btn-secondary-cta" style="align-self: flex-start;">Lihat Proyek →</a>
         </div>
-        <!-- Pagination (Moved Outside) -->
-        <div class="swiper-pagination"></div>
-      </section>
+      </div>
+    </section>
 
-      <section class="product">
-        <div class="headline-fixed">
-          <h2>Kualitas Las Terbaik di Pontianak</h2>
-          <p>Spesialis pengerjaan Pagar, Kanopi, Teralis, dan Konstruksi Kustom bahan Stainless Steel, Besi, dan Baja
-            Ringan di Pontianak. Rapi, Kuat, dan Indah.</p>
+    <!-- 5. MENGAPA STAINLESS INDAH -->
+    <section class="section-spacing">
+      <div class="section-header">
+        <span class="section-title-sm">Keunggulan Layanan</span>
+        <h2 class="section-title-lg">MENGAPA STAINLESS INDAH?</h2>
+      </div>
+
+      <div class="why-us-grid">
+        <div class="why-us-card">
+          <span class="why-us-number">01</span>
+          <h4 class="why-us-title">Kualitas Material</h4>
+          <p class="why-us-desc">Material disesuaikan dengan kebutuhan dan kondisi proyek untuk daya tahan maksimal.</p>
         </div>
-      </section>
 
-      <!-- Product Grid Menu -->
-      <section class="product-grid-menu">
-        <div class="product-grid-container">
-          <a href="kanopi.html" class="product-card">
-            <img src="assets/images/kanopi acp 1.jpg" alt="Kanopi">
-            <div class="product-card-overlay">
-              <h3>Kanopi</h3>
-            </div>
-          </a>
-          <a href="balkon.html" class="product-card">
-            <img src="assets/images/balkon 1.jpg" alt="Balkon">
-            <div class="product-card-overlay">
-              <h3>Balkon</h3>
-            </div>
-          </a>
-          <a href="pagar.html" class="product-card">
-            <img src="assets/images/pagar mati 1.jpg" alt="Pagar">
-            <div class="product-card-overlay">
-              <h3>Pagar</h3>
-            </div>
-          </a>
-          <a href="tangga.html" class="product-card">
-            <img src="assets/images/railing tangga 2.jpg" alt="Railing Tangga">
-            <div class="product-card-overlay">
-              <h3>Railing Tangga</h3>
-            </div>
-          </a>
-          <a href="teralis.html" class="product-card">
-            <img src="assets/images/Teralis.jpg" alt="Teralis">
-            <div class="product-card-overlay">
-              <h3>Teralis</h3>
-            </div>
-          </a>
-          <a href="kontruksi baja.html" class="product-card">
-            <img src="assets/images/Baja Berat.jpg" alt="Kontruksi Baja">
-            <div class="product-card-overlay">
-              <h3>Kontruksi Baja</h3>
-            </div>
-          </a>
-          <a href="kaca.html" class="product-card">
-            <img src="assets/images/Kaca .jpg" alt="Kaca">
-            <div class="product-card-overlay">
-              <h3>Kaca</h3>
-            </div>
-          </a>
-
-          <a href="fasad.html" class="product-card">
-            <img src="assets/images/fasad 1.jpg" alt="Fasad">
-            <div class="product-card-overlay">
-              <h3>Fasad</h3>
-            </div>
-          </a>
-          <a href="pintu.html" class="product-card">
-            <img src="assets/images/gerbang 1.jpg" alt="Pintu">
-            <div class="product-card-overlay">
-              <h3>Pintu</h3>
-            </div>
-          </a>
-          <a href="kerangka meja.html" class="product-card">
-            <img src="assets/images/IMG_20200615_123127.jpg" alt="Kerangka Meja">
-            <div class="product-card-overlay">
-              <h3>Kerangka Meja</h3>
-            </div>
-          </a>
-          <a href="custom.html" class="product-card">
-            <img src="assets/images/kanop acp 5.jpg" alt="Custom">
-            <div class="product-card-overlay">
-              <h3>Custom</h3>
-            </div>
-          </a>
+        <div class="why-us-card">
+          <span class="why-us-number">02</span>
+          <h4 class="why-us-title">Pengerjaan Custom</h4>
+          <p class="why-us-desc">Desain dan ukuran dapat disesuaikan dengan presisi kebutuhan arsitektur bangunan.</p>
         </div>
-      </section>
 
-      <!-- Year Archive Section (Slider) -->
-      <section class="testimoni-section">
-        <h2 class="section-title">Arsip Portofolio</h2>
-        <div class="swiper-container yearSwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide year-slide">
-              <a href="testimoni-2017.html" class="year-card">
-                <h3>2017</h3>
-                <p>Lihat Karya & Testimoni</p>
-              </a>
-            </div>
-            <div class="swiper-slide year-slide">
-              <a href="testimoni-2018.html" class="year-card">
-                <h3>2018</h3>
-                <p>Lihat Karya & Testimoni</p>
-              </a>
-            </div>
-            <div class="swiper-slide year-slide">
-              <a href="testimoni-2020.html" class="year-card">
-                <h3>2020</h3>
-                <p>Lihat Karya & Testimoni</p>
-              </a>
-            </div>
-            <div class="swiper-slide year-slide">
-              <a href="testimoni-2022.html" class="year-card">
-                <h3>2022</h3>
-                <p>Lihat Karya & Testimoni</p>
-              </a>
-            </div>
-            <div class="swiper-slide year-slide">
-              <a href="testimoni-2023.html" class="year-card">
-                <h3>2023</h3>
-                <p>Lihat Karya & Testimoni</p>
-              </a>
-            </div>
-            <div class="swiper-slide year-slide">
-              <a href="testimoni-2024.html" class="year-card">
-                <h3>2024</h3>
-                <p>Lihat Karya & Testimoni</p>
-              </a>
-            </div>
-            <div class="swiper-slide year-slide">
-              <a href="testimoni-2025.html" class="year-card">
-                <h3>2025</h3>
-                <p>Lihat Karya & Testimoni</p>
-              </a>
-            </div>
+        <div class="why-us-card">
+          <span class="why-us-number">03</span>
+          <h4 class="why-us-title">Pengerjaan Profesional</h4>
+          <p class="why-us-desc">Dikerjakan teknisi berpengalaman dengan memperhatikan detail, kekuatan, dan finishing rapi.</p>
+        </div>
+
+        <div class="why-us-card">
+          <span class="why-us-number">04</span>
+          <h4 class="why-us-title">Survey &amp; Konsultasi</h4>
+          <p class="why-us-desc">Konsultasikan kebutuhan proyek dan lokasi secara langsung sebelum proses pembuatan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ALUR PENGERJAAN -->
+    <section class="section-spacing">
+      <div class="section-header">
+        <span class="section-title-sm">Tahapan Kerja</span>
+        <h2 class="section-title-lg">ALUR PENGERJAAN</h2>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-card">
+          <span class="workflow-step">01 — KONSULTASI</span>
+          <h4 class="workflow-title">Konsultasi</h4>
+          <p class="workflow-desc">Sampaikan kebutuhan proyek dan model yang diinginkan.</p>
+        </div>
+
+        <div class="workflow-card">
+          <span class="workflow-step">02 — SURVEY</span>
+          <h4 class="workflow-title">Survey</h4>
+          <p class="workflow-desc">Pengukuran presisi dan pengecekan kondisi lokasi.</p>
+        </div>
+
+        <div class="workflow-card">
+          <span class="workflow-step">03 — PENAWARAN</span>
+          <h4 class="workflow-title">Penawaran</h4>
+          <p class="workflow-desc">Estimasi biaya transparan dan spesifikasi pekerjaan.</p>
+        </div>
+
+        <div class="workflow-card">
+          <span class="workflow-step">04 — PRODUKSI</span>
+          <h4 class="workflow-title">Produksi</h4>
+          <p class="workflow-desc">Fabrikasi bengkel las sesuai kesepakatan spesifikasi.</p>
+        </div>
+
+        <div class="workflow-card">
+          <span class="workflow-step">05 — INSTALASI</span>
+          <h4 class="workflow-title">Instalasi</h4>
+          <p class="workflow-desc">Pemasangan dan finishing akhir di lokasi proyek.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ARSIP PORTOFOLIO KARYA -->
+    <section id="portfolio" class="section-spacing">
+      <div class="section-header">
+        <span class="section-title-sm">Dokumentasi Proyek</span>
+        <h2 class="section-title-lg">ARSIP PORTOFOLIO KARYA</h2>
+      </div>
+
+      <div class="portfolio-year-list">
+        <a href="testimoni-2025.html" class="portfolio-year-row">
+          <span class="portfolio-year-text">2025</span>
+          <span class="portfolio-year-link">Lihat Karya →</span>
+        </a>
+
+        <a href="testimoni-2024.html" class="portfolio-year-row">
+          <span class="portfolio-year-text">2024</span>
+          <span class="portfolio-year-link">Lihat Karya →</span>
+        </a>
+
+        <a href="testimoni-2023.html" class="portfolio-year-row">
+          <span class="portfolio-year-text">2023</span>
+          <span class="portfolio-year-link">Lihat Karya →</span>
+        </a>
+
+        <a href="testimoni-2022.html" class="portfolio-year-row">
+          <span class="portfolio-year-text">2022</span>
+          <span class="portfolio-year-link">Lihat Karya →</span>
+        </a>
+
+        <a href="testimoni-2020.html" class="portfolio-year-row">
+          <span class="portfolio-year-text">2020</span>
+          <span class="portfolio-year-link">Lihat Karya →</span>
+        </a>
+
+        <a href="testimoni-2018.html" class="portfolio-year-row">
+          <span class="portfolio-year-text">2018</span>
+          <span class="portfolio-year-link">Lihat Karya →</span>
+        </a>
+
+        <a href="testimoni-2017.html" class="portfolio-year-row">
+          <span class="portfolio-year-text">2017</span>
+          <span class="portfolio-year-link">Lihat Karya →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 8. APA KATA MEREKA (TESTIMONIAL) -->
+    <section class="section-spacing">
+      <div class="testimonial-header-wrapper">
+        <div>
+          <span class="section-title-sm">Ulasan Klien</span>
+          <h2 class="section-title-lg">APA KATA MEREKA</h2>
+        </div>
+        <div class="rating-badge">
+          <span class="rating-stars">★★★★★</span>
+          <span>5.0 Google Review</span>
+        </div>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Pengerjaan kanopi ACP sangat rapi dan kokoh. Tim Stainless Indah sangat profesional dari mulai survey hingga pemasangan selesai tepat waktu."</p>
+          <div>
+            <div class="testimonial-author">Bpk. Hendra</div>
+            <div class="testimonial-role">Pemilik Rumah — Pontianak</div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
-      </section>
 
-    </main>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Railing tangga stainless kaca pesanan kami hasilnya sangat elegan dan presisi. Material tebal dan finishing lasnya sangat bersih."</p>
+          <div>
+            <div class="testimonial-author">Ibu Siska</div>
+            <div class="testimonial-role">Proyek Ruko — Kubu Raya</div>
+          </div>
+        </div>
 
-    <!-- Popup Container -->
-    <div id="imagePopup" class="popup" onclick="hidePopup()">
-      <span class="close">&times;</span>
-      <img class="popup-content" id="popupImg">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Sangat puas dengan konstruksi pagar dorong stainless. Pelayanan konsultasi ramah dan memberikan solusi terbaik sesuai budget."</p>
+          <div>
+            <div class="testimonial-author">Bpk. Anton</div>
+            <div class="testimonial-role">Proyek Perumahan — Pontianak</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA SECTION -->
+    <section class="section-spacing">
+      <div class="cta-banner-box">
+        <h2 class="cta-banner-title">PUNYA RENCANA PROYEK?</h2>
+        <p class="cta-banner-subheadline">Konsultasikan kebutuhan proyek Anda bersama Stainless Indah.</p>
+        <a href="https://wa.me/+62811569863" target="_blank" class="btn-primary-cta" style="font-size: 16px; padding: 16px 36px;">
+          <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Konsultasi Gratis →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 10. FOOTER SEDERHANA -->
+  <footer class="site-footer">
+    <div class="main-container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <h3>STAINLESS INDAH</h3>
+          <p>Bengkel las dan spesialis konstruksi stainless steel, besi, baja berat, serta kaca terpercaya di Pontianak. Mengutamakan presisi, kekuatan, dan estetika arsitektural.</p>
+        </div>
+
+        <div class="footer-services">
+          <h4>Layanan Fabrikasi</h4>
+          <p>Pagar · Kanopi · Railing · Terali · Balkon · Konstruksi Baja</p>
+        </div>
+
+        <div class="footer-socials">
+          <h4>Kontak &amp; Lokasi</h4>
+          <div class="footer-social-links">
+            <a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank">
+              <i class="fa-solid fa-location-dot"></i> Pontianak, Kalimantan Barat
+            </a>
+            <a href="https://wa.me/+62811569863" target="_blank">
+              <i class="fab fa-whatsapp"></i> WhatsApp Admin
+            </a>
+            <a href="https://www.instagram.com/stainless.indah/" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="mailto:info@stainlessindah.com">
+              <i class="fa-solid fa-envelope"></i> Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 STAINLESS INDAH. All Rights Reserved.</span>
+        <span>Pontianak, Kalimantan Barat, Indonesia</span>
+      </div>
     </div>
+  </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <!-- Custom Slideshow Script & Styles -->
-    <style>
-      /* Hero Slideshow Styles */
-      .hero-slideshow {
-        width: 100%;
-        max-width: 1400px;
-        /* Increased from 1200px */
-        margin: 20px auto;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      }
-
-      .swiper-container.mySwiper {
-        width: 100%;
-        height: 60vh;
-        /* Adjust height as requested "lumayan gede" */
-      }
-
-      .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #000;
-      }
-
-      .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-
-      .swiper-slide img:hover {
-        transform: scale(1.02);
-      }
-
-      /* Navigation Customization */
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: white;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-        top: 50%;
-        transform: translateY(-50%);
-        margin-top: 0;
-        /* Reset default margin */
-      }
-
-      .swiper-pagination {
-        position: static !important;
-        /* Force static positioning */
-        margin-top: 15px;
-        margin-bottom: 20px;
-      }
-
-      .swiper-pagination-bullet {
-        width: 12px;
-        height: 12px;
-        background: #fff;
-        opacity: 0.5;
-        margin: 0 5px;
-      }
-
-      .swiper-pagination-bullet-active {
-        background-color: #007bff;
-        opacity: 1;
-      }
-
-      /* Responsive */
-      @media screen and (max-width: 768px) {
-        .swiper-container.mySwiper {
-          height: 40vh;
-        }
-      }
-
-      /* Specific Styles for "Kualitas Las..." Section */
-      .headline-fixed {
-        width: 100%;
-        max-width: 1400px;
-        margin: 20px auto;
-        padding: 40px;
-        text-align: center;
-        background: transparent;
-        border-radius: 12px;
-      }
-
-      /* Unified Section Title Style (Based on Request) */
-      .section-title,
-      .headline-fixed h2 {
-        font-size: 3em;
-        /* Adjusted size */
-        font-weight: 700;
-        color: #ffffff;
-        text-align: center;
-        text-transform: uppercase;
-        /* Uppercase as per image */
-        margin-bottom: 30px;
-        position: relative;
-        display: inline-block;
-        /* For underline width */
-        padding-bottom: 15px;
-        /* Space for underline */
-        letter-spacing: 2px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .section-title::after,
-      .headline-fixed h2::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        /* Short line */
-        height: 4px;
-        /* Thickness */
-        background-color: #007bff;
-        /* Blue color as per image */
-        border-radius: 2px;
-      }
-
-      .headline-fixed p {
-        font-size: 1.2em;
-        /* Adjusted Description */
-        color: #e0e0e0;
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.6;
-        margin-top: 20px;
-      }
-
-      /* Product Grid Menu Styles */
-      .product-grid-menu {
-        max-width: 1400px;
-        margin: 40px auto;
-        padding: 0 20px;
-      }
-
-      .product-grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 35px;
-        justify-content: center;
-        width: 100%;
-      }
-
-      .product-card {
-        position: relative;
-        height: 320px;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
-        text-decoration: none;
-        display: block;
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .product-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 25px 50px rgba(0, 123, 255, 0.25);
-        z-index: 10;
-        border-color: rgba(0, 123, 255, 0.6);
-      }
-
-      .product-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
-      }
-
-      .product-card:hover img {
-        transform: scale(1.12) rotate(1deg);
-        filter: brightness(0.65);
-      }
-
-      .product-card-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 30px 25px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        pointer-events: none;
-        transition: padding 0.4s ease;
-        z-index: 3;
-      }
-
-      .product-card:hover .product-card-overlay {
-        padding-bottom: 45px;
-      }
-
-      .product-card h3 {
-        color: white;
-        font-size: 1.8em;
-        margin: 0;
-        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        position: relative;
-        display: inline-block;
-        transition: color 0.3s ease;
-      }
-
-      .product-card:hover h3 {
-        color: #e0f0ff;
-      }
-
-      .product-card h3::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background-color: #007bff;
-        transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
-      }
-
-      .product-card:hover h3::after {
-        width: 100%;
-      }
-
-
-
-      /* Year Swiper Styles */
-      .testimoni-section {
-        text-align: center;
-        width: 100%;
-        padding-top: 20px;
-      }
-
-      .yearSwiper {
-        padding: 40px 0 80px 0;
-        /* Remove side padding to maximize width */
-        width: 100%;
-        overflow: visible;
-        /* Allow content to bleed */
-        position: relative;
-        /* Context for nav buttons */
-      }
-
-      .year-slide {
-        width: 500px;
-        /* Consistent wider width */
-        /* Fixed width for slides */
-        height: auto;
-        display: flex;
-        justify-content: center;
-        padding: 0 30px;
-        /* Increased gap */
-        background-color: transparent !important;
-        /* Override generic swiper-slide black bg */
-      }
-
-      /* Override year-card margins inside slider */
-      .yearSwiper .year-card {
-        margin: 0;
-        width: 100%;
-        height: 280px;
-        /* Fixed height for uniform rectangular shape */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.05);
-        /* Glass effect */
-        border: 1px solid rgba(0, 123, 255, 0.3);
-        /* Faint blue border */
-        box-shadow: none;
-        /* No shadow by default */
-        backdrop-filter: blur(5px);
-        border-radius: 15px;
-        /* Slightly less rounded for "more rectangular" feel */
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        /* Bouncy pop transition */
-      }
-
-      .yearSwiper .year-card h3 {
-        font-size: 64px;
-        /* Slightly smaller to fit 2017-2021 better */
-        margin-bottom: 10px;
-        line-height: 1.1;
-      }
-
-      .yearSwiper .year-card:hover {
-        background: rgba(0, 123, 255, 0.1);
-        border-color: var(--primary-color);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-        /* Strong pop-up shadow */
-        transform: scale(1.1) !important;
-        /* The "Pop Up" Effect */
-        z-index: 10;
-      }
-
-      @media screen and (max-width: 768px) {
-        .year-slide {
-          width: 85%;
-          /* Responsive width on mobile */
-          padding: 0 10px;
-          /* Smaller padding on mobile */
-        }
-
-        .yearSwiper {
-          padding: 20px 0 60px 0;
-        }
-
-        .yearSwiper .year-card {
-          height: 200px;
-          /* Smaller height on mobile */
-        }
-
-        .yearSwiper .year-card h3 {
-          font-size: 48px;
-        }
-      }
-    </style>
-
-    <script>
-      // Initialize Swiper
-      var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        centeredSlides: true,
-        autoplay: {
-          delay: 4000, // 4 seconds
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-
-
-      // Year Swiper Initialization
-      var yearSwiper = new Swiper(".yearSwiper", {
-        loop: false,
-        slidesPerView: "auto",
-        spaceBetween: 0, /* Spacing handled by padding in slide */
-        centeredSlides: true,
-        grabCursor: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-
-      // Popup Logic
-      function showPopup(imgElement) {
-        var popup = document.getElementById("imagePopup");
-        var popupImg = document.getElementById("popupImg");
-        popup.style.display = "flex"; // Use flex for centering
-        popupImg.src = imgElement.src;
-      }
-
-      function hidePopup() {
-        document.getElementById("imagePopup").style.display = "none";
-      }
-    </script>
-
-    <footer class="footer-keren">
-      <div class="footer-container">
-        <div class="footer-kolom tentang">
-          <h3>Stainless Indah</h3>
-          <p>Kami adalah spesialis bengkel las terpercaya di Pontianak, melayani berbagai kebutuhan pengerjaan las
-            seperti
-            stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan
-            pemasangan teralis, balkon, kanopi, pagar, fasad bangunan, hingga konstruksi khusus lainnya sesuai
-            permintaan.
-          </p>
-        </div>
-        <div class="footer-kolom">
-          <h4>Kontak Kami</h4>
-          <ul>
-            <li><a href="https://www.instagram.com/stainless.indah/" target="_blank"><i class="fab fa-instagram"></i>
-                Instagram</a></li>
-            <li><a href="https://www.facebook.com/bengkel.stainlessindah.9" target="_blank"><i
-                  class="fab fa-facebook-f"></i> Facebook</a></li>
-            <li><a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank"><i
-                  class="fa-solid fa-location-dot"></i>
-                Pontianak Serdam, Batara 2</a></li>
-            <li><a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> 0811569863 (Admin
-                WA)</a></li>
-
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Stainless Indah. All Rights Reserved.</p>
-      </div>
-    </footer>
-  </div>
-
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
