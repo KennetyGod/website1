@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Pause on hover
-        const visualFrame = document.querySelector('.hero-visual-frame');
+        const visualFrame = document.querySelector('.hero-slideshow-outer') || document.querySelector('.hero-visual-frame');
         if (visualFrame) {
             visualFrame.addEventListener('mouseenter', stopAutoSlide);
             visualFrame.addEventListener('mouseleave', startAutoSlide);
