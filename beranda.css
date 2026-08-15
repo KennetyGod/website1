@@ -22,7 +22,7 @@ body {
 /* CONTAINER & LAYOUT */
 .main-container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1720px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -144,13 +144,19 @@ body {
 .hero-visual-frame {
   flex: 1;
   width: 100%;
-  height: clamp(380px, 52vh, 520px);
-  border-radius: 14px;
+  height: clamp(340px, 48vh, 500px);
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
   border: 1px solid var(--border-color);
   background: #000000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  cursor: grab;
+  user-select: none;
+}
+
+.hero-visual-frame:active {
+  cursor: grabbing;
 }
 
 .hero-slideshow {
@@ -185,6 +191,11 @@ body {
 }
 
 .hero-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   min-width: 100%;
@@ -194,8 +205,15 @@ body {
   object-fit: cover;
   object-position: center center;
   display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s ease;
 }
-  transition: transform 0.6s ease;
+
+.hero-visual-frame:hover .hero-slide.active img {
+  transform: scale(1.02);
 }
 
 .hero-slide.active:hover img {
@@ -331,73 +349,113 @@ body {
 /* ==========================================================================
    3. KATEGORI PRODUK GRID
    ========================================================================== */
+/* ==========================================================================
+   3. KATEGORI PRODUK GRID (HUGE WIDESCREEN DISPLAY - LANDSCAPE RECTANGLES)
+   ========================================================================== */
 .product-category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 28px;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 36px !important;
+  width: 100% !important;
 }
 
 .category-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important; /* Foto ATAS, Nama BAWAH */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   text-decoration: none !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
 }
 
 .category-card:hover {
-  border-color: rgba(0, 123, 255, 0.5);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 123, 255, 0.65) !important;
+  transform: translateY(-8px) !important;
+  box-shadow: 0 22px 50px rgba(0, 123, 255, 0.3), 0 15px 40px rgba(0, 0, 0, 0.9) !important;
 }
 
 .category-card-media {
-  width: 100%;
-  height: 240px;
-  overflow: hidden;
-  position: relative;
-  background: #000;
+  width: 100% !important;
+  height: 340px !important; /* Sangat Besar & Gagah dengan bentuk Persegi Panjang Kesamping! */
+  overflow: hidden !important;
+  position: relative !important;
+  background: #000000 !important;
 }
 
 .category-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.5s ease;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
 }
 
 .category-card:hover .category-card-media img {
-  transform: scale(1.04);
+  transform: scale(1.06) !important;
 }
 
 .category-card-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex-grow: 1;
-  justify-content: space-between;
+  width: 100% !important;
+  padding: 20px 24px !important;
+  display: flex !important;
+  flex-direction: row !important; /* Title di kiri, Link di kanan */
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  background: rgba(18, 18, 18, 0.97) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-sizing: border-box !important;
 }
 
 .category-card-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 0;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  letter-spacing: 0.3px !important;
+  line-height: 1.2 !important;
 }
 
 .category-card-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--accent-blue);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.3s ease;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #007bff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  transition: all 0.3s ease !important;
+}
+
+.category-card:hover .category-card-link {
+  color: #3395ff !important;
+  transform: translateX(6px) !important;
+}
+
+/* Card Wide / Memanjang Span 2 Kolom */
+.category-card.card-wide {
+  grid-column: 1 / -1 !important;
+}
+
+.category-card.card-wide .category-card-media {
+  height: 380px !important;
+}
+
+@media (max-width: 900px) {
+  .product-category-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .category-card-media {
+    height: 250px !important;
+  }
 }
 
 .category-card:hover .category-card-link {
@@ -824,4 +882,101 @@ body {
   .portfolio-year-text {
     font-size: 28px;
   }
+}
+
+/* ==========================================================================
+   FEATURED PROJECT MINI SLIDESHOW (PROYEK TERBARU)
+   ========================================================================== */
+.featured-project-media {
+  position: relative !important;
+  width: 100% !important;
+  height: clamp(320px, 35vw, 440px) !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  background: #000000 !important;
+}
+
+.featured-slide {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out !important;
+  cursor: pointer !important;
+}
+
+.featured-slide.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.featured-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.featured-nav {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  transition: all 0.3s ease !important;
+}
+
+.featured-nav:hover {
+  background: rgba(0, 123, 255, 0.9) !important;
+  border-color: #007bff !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.featured-prev {
+  left: 14px !important;
+}
+
+.featured-next {
+  right: 14px !important;
+}
+
+.featured-dots {
+  position: absolute !important;
+  bottom: 14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  gap: 8px !important;
+  z-index: 10 !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  padding: 6px 14px !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.featured-dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.featured-dot.active {
+  background: #007bff !important;
+  width: 26px !important;
+  border-radius: 5px !important;
 }

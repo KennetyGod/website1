@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STAINLESS INDAH — Solusi Stainless Steel &amp; Konstruksi Pontianak</title>
+  <title>STAINLESS INDAH — Solusi Fabrikasi &amp; Instalasi Stainless, Aluminium, dan Kaca di Pontianak</title>
   <link rel="stylesheet" href="assets/css/product-grid.css?v=20260808_99999" />
   <link rel="stylesheet" href="assets/css/style.css?v=20260808_99999" />
   <link rel="stylesheet" href="beranda.css?v=20260808_99999" />
@@ -27,13 +27,19 @@
     .hero-visual-frame {
       flex: 1 !important;
       width: 100% !important;
-      height: clamp(380px, 52vh, 520px) !important;
-      border-radius: 14px !important;
+      height: clamp(340px, 48vh, 500px) !important;
+      border-radius: 16px !important;
       overflow: hidden !important;
       position: relative !important;
       border: 1px solid #292929 !important;
       background: #000000 !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7) !important;
+      cursor: grab !important;
+      user-select: none !important;
+    }
+
+    .hero-visual-frame:active {
+      cursor: grabbing !important;
     }
 
     .hero-slideshow {
@@ -44,6 +50,8 @@
       bottom: 0 !important;
       width: 100% !important;
       height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     .hero-slide {
@@ -54,10 +62,12 @@
       bottom: 0 !important;
       width: 100% !important;
       height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
       opacity: 0 !important;
       visibility: hidden !important;
       transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out !important;
-      background: #000000 !important;
+      background: transparent !important;
       display: block !important;
     }
 
@@ -68,6 +78,11 @@
     }
 
     .hero-slide img {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
       width: 100% !important;
       height: 100% !important;
       min-width: 100% !important;
@@ -77,6 +92,15 @@
       object-fit: cover !important;
       object-position: center center !important;
       display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: transform 0.4s ease !important;
+    }
+
+    .hero-visual-frame:hover .hero-slide.active img {
+      transform: scale(1.02) !important;
     }
 
     /* Outer Side Arrow Buttons - NO OVERLAP ON IMAGE */
@@ -145,13 +169,16 @@
       .hero-slideshow-outer {
         gap: 8px !important;
       }
+
       .hero-arrow {
         width: 44px !important;
         height: 44px !important;
       }
+
       .hero-arrow i {
         font-size: 16px !important;
       }
+
       .hero-visual-frame {
         height: 380px !important;
       }
@@ -163,20 +190,21 @@
 
   <!-- HEADER NAVIGASI -->
   <header>
-    <a href="beranda.html" class="brand-container">
+    <a href="index.html" class="brand-container">
       <img src="assets/images/logo-cropped.png" alt="Logo STAINLESS INDAH" class="site-logo">
       <h1>STAINLESS INDAH</h1>
     </a>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
-        <li><a href="beranda.html">Beranda</a></li>
+        <li><a href="index.html">Beranda</a></li>
         <li class="dropdown">
           <b><a href="produk.html" class="dropbtn">Produk</a></b>
           <div class="dropdown-content">
             <a href="kanopi.html">Kanopi</a>
             <a href="tangga.html">Railing Tangga</a>
             <a href="pagar.html">Pagar</a>
+            <a href="anti maling.html">Anti Maling</a>
             <a href="kaca.html">Kaca</a>
             <a href="kontruksi baja.html">Kontruksi Baja</a>
             <a href="balkon.html">Balkon</a>
@@ -184,6 +212,7 @@
             <a href="fasad.html">Fasad</a>
             <a href="pintu.html">Pintu</a>
             <a href="kerangka meja.html">Kerangka Meja</a>
+            <a href="tempa.html">Tempa</a>
             <a href="custom.html">Custom</a>
           </div>
         </li>
@@ -197,8 +226,8 @@
     <!-- 1. HERO SECTION -->
     <section class="hero-section section-spacing">
       <div class="hero-content">
-        <h1 class="hero-headline">Solusi Stainless Steel &amp; Konstruksi Berkualitas di Pontianak</h1>
-        <p class="hero-subheadline">Pengerjaan Pagar, Kanopi, Railing, Terali, Balkon, dan Konstruksi Baja Custom.</p>
+        <h1 class="hero-headline">Solusi Fabrikasi &amp; Instalasi Stainless, Aluminium, dan Kaca di Pontianak</h1>
+        <p class="hero-subheadline">Melayani pengerjaan Kanopi, Pagar, Railing Tangga, Balkon, Teralis, Fasad, Pintu, Kaca, Anti Maling, Kerangka Meja, Besi Tempa, Konstruksi Baja, hingga Fabrikasi Custom.</p>
         <div class="hero-cta-group">
           <a href="https://wa.me/+62811569863" target="_blank" class="btn-primary-cta">
             <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Konsultasi Gratis
@@ -263,7 +292,7 @@
           <span class="stat-label">Komitmen Kualitas</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">Pontianak</span>
+          <span class="stat-number">Kalimantan Barat</span>
           <span class="stat-label">&amp; Sekitarnya</span>
         </div>
       </div>
@@ -277,10 +306,10 @@
       </div>
 
       <div class="product-category-grid">
-        <!-- Kanopi -->
+        <!-- 1. Kanopi -->
         <a href="kanopi.html" class="category-card">
           <div class="category-card-media">
-            <img src="assets/images/kanopi acp 1.jpg" alt="Kanopi ACP & Kaca">
+            <img src="assets/images/kanopi-cat.jpg" alt="Kanopi ACP & Kaca">
           </div>
           <div class="category-card-body">
             <h3 class="category-card-title">Kanopi</h3>
@@ -288,32 +317,10 @@
           </div>
         </a>
 
-        <!-- Pagar -->
-        <a href="pagar.html" class="category-card">
-          <div class="category-card-media">
-            <img src="assets/images/pagar mati 1.jpg" alt="Pagar Stainless & Besi">
-          </div>
-          <div class="category-card-body">
-            <h3 class="category-card-title">Pagar</h3>
-            <span class="category-card-link">Lihat Detail →</span>
-          </div>
-        </a>
-
-        <!-- Balkon -->
-        <a href="balkon.html" class="category-card">
-          <div class="category-card-media">
-            <img src="assets/images/balkon 1.jpg" alt="Railing Balkon Minimalis">
-          </div>
-          <div class="category-card-body">
-            <h3 class="category-card-title">Balkon</h3>
-            <span class="category-card-link">Lihat Detail →</span>
-          </div>
-        </a>
-
-        <!-- Railing Tangga -->
+        <!-- 2. Railing Tangga -->
         <a href="tangga.html" class="category-card">
           <div class="category-card-media">
-            <img src="assets/images/railing tangga 2.jpg" alt="Railing Tangga Stainless">
+            <img src="assets/images/tangga-cat.jpg" alt="Railing Tangga Stainless & Besi">
           </div>
           <div class="category-card-body">
             <h3 class="category-card-title">Railing Tangga</h3>
@@ -321,10 +328,65 @@
           </div>
         </a>
 
-        <!-- Teralis -->
+        <!-- 3. Pagar -->
+        <a href="pagar.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/pagar-cat.jpg" alt="Pagar Stainless & Besi">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Pagar</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 4. Anti Maling -->
+        <a href="anti maling.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/antimaling-cat.jpg" alt="Pengaman & Pagar Anti Maling">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Anti Maling</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 5. Kaca -->
+        <a href="kaca.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/kaca-cat.jpg" alt="Kaca Tempered & Partisi Kaca">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Kaca</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 6. Konstruksi Baja -->
+        <a href="kontruksi baja.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/baja-cat.jpg" alt="Konstruksi Baja Berat & WF">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Konstruksi Baja</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 7. Balkon -->
+        <a href="balkon.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/balkon-cat.jpg" alt="Railing Balkon Minimalis">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Balkon</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 8. Teralis -->
         <a href="teralis.html" class="category-card">
           <div class="category-card-media">
-            <img src="assets/images/Teralis.jpg" alt="Teralis Jendela & Pintu">
+            <img src="assets/images/teralis-cat.jpg" alt="Teralis Jendela & Pintu">
           </div>
           <div class="category-card-body">
             <h3 class="category-card-title">Teralis</h3>
@@ -332,54 +394,123 @@
           </div>
         </a>
 
-        <!-- Konstruksi Baja -->
-        <a href="kontruksi baja.html" class="category-card">
+        <!-- 9. Fasad -->
+        <a href="fasad.html" class="category-card">
           <div class="category-card-media">
-            <img src="assets/images/Baja Berat.jpg" alt="Konstruksi Baja Berat">
+            <img src="assets/images/fasad-cat.jpg" alt="Fasad Bangunan & ACP">
           </div>
           <div class="category-card-body">
-            <h3 class="category-card-title">Konstruksi Baja</h3>
+            <h3 class="category-card-title">Fasad</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 10. Pintu -->
+        <a href="pintu.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/pintu-cat.jpg" alt="Pintu Stainless & Besi">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Pintu</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 11. Kerangka Meja -->
+        <a href="kerangka meja.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/meja-cat.jpg" alt="Kerangka Meja Stainless & Custom">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Kerangka Meja</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 12. Tempa -->
+        <a href="tempa.html" class="category-card">
+          <div class="category-card-media">
+            <img src="assets/images/tempa-cat.jpg" alt="Besi Tempa Classic & Ornamen">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Tempa</h3>
+            <span class="category-card-link">Lihat Detail →</span>
+          </div>
+        </a>
+
+        <!-- 13. Custom -->
+        <a href="custom.html" class="category-card card-wide">
+          <div class="category-card-media">
+            <img src="assets/images/custom-cat.jpg" alt="Fabrikasi Custom Stainless & Besi">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">Custom</h3>
             <span class="category-card-link">Lihat Detail →</span>
           </div>
         </a>
       </div>
     </section>
 
-    <!-- 4. FEATURED PROJECT (PROYEK TERBARU) -->
+    <!-- 4. FEATURED PROJECT (PROYEK TERBARU 2025) -->
     <section class="section-spacing">
       <div class="section-header">
-        <span class="section-title-sm">Highlight Pekerjaan</span>
-        <h2 class="section-title-lg">PROYEK TERBARU</h2>
+        <span class="section-title-sm">Highlight Pekerjaan 2025</span>
+        <h2 class="section-title-lg">PROYEK TERBARU (2025)</h2>
       </div>
 
       <div class="featured-project-container">
-        <div class="featured-project-media">
-          <img src="assets/images/kanopi kaca 1.jpg" alt="Proyek Terbaru Kanopi ACP Pontianak">
+        <div class="featured-project-media featured-slideshow-outer">
+          <div class="featured-slide active">
+            <img src="Foto Proyek/2025/Karya Tani Pak Nyap/IMG_20250610_084303.jpg" alt="Karya Tani Pak Nyap Foto 1">
+          </div>
+          <div class="featured-slide">
+            <img src="Foto Proyek/2025/Karya Tani Pak Nyap/IMG_20250610_084315.jpg" alt="Karya Tani Pak Nyap Foto 2">
+          </div>
+          <div class="featured-slide">
+            <img src="Foto Proyek/2025/Karya Tani Pak Nyap/IMG_20250610_084327.jpg" alt="Karya Tani Pak Nyap Foto 3">
+          </div>
+          <div class="featured-slide">
+            <img src="Foto Proyek/2025/Karya Tani Pak Nyap/IMG_20250610_084343.jpg" alt="Karya Tani Pak Nyap Foto 4">
+          </div>
+
+          <!-- Tombol Manual Navigation -->
+          <button class="featured-nav featured-prev" aria-label="Foto Sebelumnya"><i
+              class="fas fa-chevron-left"></i></button>
+          <button class="featured-nav featured-next" aria-label="Foto Selanjutnya"><i
+              class="fas fa-chevron-right"></i></button>
+
+          <!-- Titik Indikator / Dots -->
+          <div class="featured-dots">
+            <span class="featured-dot active" data-index="0"></span>
+            <span class="featured-dot" data-index="1"></span>
+            <span class="featured-dot" data-index="2"></span>
+            <span class="featured-dot" data-index="3"></span>
+          </div>
         </div>
         <div class="featured-project-info">
-          <span class="section-title-sm">Kanopi Premium</span>
-          <h3 class="featured-project-title">Kanopi ACP &amp; Kaca Tempered Custom</h3>
+          <span class="section-title-sm">Proyek Unggulan 2025</span>
+          <h3 class="featured-project-title">Projek Pengerjaan Karya Tani Pak Nyap</h3>
 
           <div class="featured-specs-list">
             <div class="featured-spec-item">
-              <span class="featured-spec-label">Jenis</span>
-              <span class="featured-spec-value">Kanopi ACP</span>
+              <span class="featured-spec-label">Proyek</span>
+              <span class="featured-spec-value">Karya Tani Pak Nyap</span>
+            </div>
+            <div class="featured-spec-item">
+              <span class="featured-spec-label">Tahun</span>
+              <span class="featured-spec-value">2025</span>
             </div>
             <div class="featured-spec-item">
               <span class="featured-spec-label">Lokasi</span>
-              <span class="featured-spec-value">Pontianak</span>
-            </div>
-            <div class="featured-spec-item">
-              <span class="featured-spec-label">Material</span>
-              <span class="featured-spec-value">ACP + Hollow Galvanis</span>
+              <span class="featured-spec-value">Pontianak &amp; Sekitarnya</span>
             </div>
             <div class="featured-spec-item">
               <span class="featured-spec-label">Status</span>
-              <span class="featured-spec-value">Completed</span>
+              <span class="featured-spec-value">Selesai (Completed)</span>
             </div>
           </div>
 
-          <a href="kanopi.html" class="btn-secondary-cta" style="align-self: flex-start;">Lihat Proyek →</a>
+          <a href="testimoni-2025.html" class="btn-secondary-cta" style="align-self: flex-start;">Lihat Proyek →</a>
         </div>
       </div>
     </section>
@@ -407,7 +538,8 @@
         <div class="why-us-card">
           <span class="why-us-number">03</span>
           <h4 class="why-us-title">Pengerjaan Profesional</h4>
-          <p class="why-us-desc">Dikerjakan teknisi berpengalaman dengan memperhatikan detail, kekuatan, dan finishing rapi.</p>
+          <p class="why-us-desc">Dikerjakan teknisi berpengalaman dengan memperhatikan detail, kekuatan, dan finishing
+            rapi.</p>
         </div>
 
         <div class="why-us-card">
@@ -518,7 +650,8 @@
 
       <div class="testimonial-grid">
         <div class="testimonial-card">
-          <p class="testimonial-quote">"Pengerjaan kanopi ACP sangat rapi dan kokoh. Tim Stainless Indah sangat profesional dari mulai survey hingga pemasangan selesai tepat waktu."</p>
+          <p class="testimonial-quote">"Pengerjaan kanopi ACP sangat rapi dan kokoh. Tim Stainless Indah sangat
+            profesional dari mulai survey hingga pemasangan selesai tepat waktu."</p>
           <div>
             <div class="testimonial-author">Bpk. Hendra</div>
             <div class="testimonial-role">Pemilik Rumah — Pontianak</div>
@@ -526,7 +659,8 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">"Railing tangga stainless kaca pesanan kami hasilnya sangat elegan dan presisi. Material tebal dan finishing lasnya sangat bersih."</p>
+          <p class="testimonial-quote">"Railing tangga stainless kaca pesanan kami hasilnya sangat elegan dan presisi.
+            Material tebal dan finishing lasnya sangat bersih."</p>
           <div>
             <div class="testimonial-author">Ibu Siska</div>
             <div class="testimonial-role">Proyek Ruko — Kubu Raya</div>
@@ -534,7 +668,8 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">"Sangat puas dengan konstruksi pagar dorong stainless. Pelayanan konsultasi ramah dan memberikan solusi terbaik sesuai budget."</p>
+          <p class="testimonial-quote">"Sangat puas dengan konstruksi pagar dorong stainless. Pelayanan konsultasi ramah
+            dan memberikan solusi terbaik sesuai budget."</p>
           <div>
             <div class="testimonial-author">Bpk. Anton</div>
             <div class="testimonial-role">Proyek Perumahan — Pontianak</div>
@@ -548,7 +683,8 @@
       <div class="cta-banner-box">
         <h2 class="cta-banner-title">PUNYA RENCANA PROYEK?</h2>
         <p class="cta-banner-subheadline">Konsultasikan kebutuhan proyek Anda bersama Stainless Indah.</p>
-        <a href="https://wa.me/+62811569863" target="_blank" class="btn-primary-cta" style="font-size: 16px; padding: 16px 36px;">
+        <a href="https://wa.me/+62811569863" target="_blank" class="btn-primary-cta"
+          style="font-size: 16px; padding: 16px 36px;">
           <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Konsultasi Gratis →
         </a>
       </div>
@@ -557,12 +693,14 @@
   </main>
 
   <!-- 10. FOOTER SEDERHANA -->
+  <!-- FOOTER UNIFORM -->
   <footer class="site-footer">
     <div class="main-container">
       <div class="footer-top-grid">
         <div class="footer-brand">
           <h3>STAINLESS INDAH</h3>
-          <p>Bengkel las dan spesialis konstruksi stainless steel, besi, baja berat, serta kaca terpercaya di Pontianak. Mengutamakan presisi, kekuatan, dan estetika arsitektural.</p>
+          <p>Bengkel las dan spesialis konstruksi stainless steel, besi, baja berat, serta kaca terpercaya di Pontianak.
+            Mengutamakan presisi dan kekuatan struktur.</p>
         </div>
 
         <div class="footer-services">
@@ -597,98 +735,6 @@
   </footer>
 
   <script src="assets/js/main.js?v=20260808_99999"></script>
-
-  <script>
-    (function initHeroSlideshow() {
-      function setup() {
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.hero-dot');
-        const prevBtn = document.querySelector('.hero-arrow.hero-prev');
-        const nextBtn = document.querySelector('.hero-arrow.hero-next');
-
-        if (!slides || slides.length === 0) return;
-
-        let currentIndex = 0;
-        let timer = null;
-
-        function goToSlide(index) {
-          slides.forEach((s, i) => {
-            if (i === index) {
-              s.classList.add('active');
-            } else {
-              s.classList.remove('active');
-            }
-          });
-          dots.forEach((d, i) => {
-            if (i === index) {
-              d.classList.add('active');
-            } else {
-              d.classList.remove('active');
-            }
-          });
-          currentIndex = index;
-        }
-
-        function next() {
-          let n = (currentIndex + 1) % slides.length;
-          goToSlide(n);
-        }
-
-        function prev() {
-          let p = (currentIndex - 1 + slides.length) % slides.length;
-          goToSlide(p);
-        }
-
-        function startTimer() {
-          stopTimer();
-          timer = setInterval(next, 3000);
-        }
-
-        function stopTimer() {
-          if (timer) clearInterval(timer);
-        }
-
-        if (nextBtn) {
-          nextBtn.onclick = function(e) {
-            e.preventDefault();
-            next();
-            startTimer();
-          };
-        }
-
-        if (prevBtn) {
-          prevBtn.onclick = function(e) {
-            e.preventDefault();
-            prev();
-            startTimer();
-          };
-        }
-
-        dots.forEach((dot, idx) => {
-          dot.onclick = function(e) {
-            e.preventDefault();
-            goToSlide(idx);
-            startTimer();
-          };
-        });
-
-        const frame = document.querySelector('.hero-slideshow-outer');
-        if (frame) {
-          frame.onmouseenter = stopTimer;
-          frame.onmouseleave = startTimer;
-        }
-
-        goToSlide(0);
-        startTimer();
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setup);
-      } else {
-        setup();
-      }
-    })();
-  </script>
 </body>
 
 </html>

@@ -637,43 +637,41 @@ main {
 .popup {
     display: none;
     position: fixed;
-    z-index: 10000;
+    z-index: 100000;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    /* Prevent scrolling background */
-    background-color: rgba(0, 0, 0, 0.95);
-    /* Darker background */
+    background-color: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     justify-content: center;
-    /* Flex centering */
     align-items: center;
-    /* Flex centering */
     padding: 20px;
+    box-sizing: border-box;
 }
 
-.popup-content {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 95%;
-    /* Larger */
-    max-height: 95vh;
-    /* Larger */
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    animation-name: zoom;
-    animation-duration: 0.4s;
+.popup-content,
+.popup-image,
+#popupImg {
+    display: block !important;
+    width: 92vw !important;
+    max-width: 1300px !important;
+    height: clamp(340px, 60vh, 580px) !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    animation: popupZoom 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes zoom {
+@keyframes popupZoom {
     from {
-        transform: scale(0.8);
+        transform: scale(0.85);
         opacity: 0;
     }
-
     to {
         transform: scale(1);
         opacity: 1;
@@ -683,25 +681,33 @@ main {
 .close {
     position: absolute;
     top: 20px;
-    right: 40px;
-    color: #fff;
-    font-size: 50px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 44px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     cursor: pointer;
-    z-index: 10001;
+    z-index: 100001;
+    line-height: 1;
+    opacity: 0.85;
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+    color: #007bff;
+    transform: scale(1.15) rotate(90deg);
+    opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
     .popup-content {
-        width: 95%;
+        max-width: 98vw;
+        max-height: 88vh;
+    }
+    .close {
+        top: 15px;
+        right: 20px;
+        font-size: 38px;
     }
 }
 
@@ -1121,6 +1127,177 @@ section.product h2,
 .headline-fixed p,
 .product p,
 section.product p {
+    color: #a0a0a0 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* ==========================================================================
+   MASTER ZERO BLANK SPACE SLIDESHOW & PRODUCT IMAGE FIT OVERRIDE
+   ========================================================================== */
+.hero-visual-frame,
+.hero-slideshow,
+.hero-slide,
+.produk-item,
+.produk-item .swiper-container,
+.produk-item .produk-swiper,
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.hero-slide img,
+.swiper-slide img,
+.produk-swiper img,
+.produk-item img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+}
     color: #d0d0d0 !important;
     text-shadow: none !important;
+}
+
+/* ==========================================================================
+   GLOBAL UNIFORM FOOTER STYLES
+   ========================================================================== */
+.site-footer {
+  background: #0d0d0d !important;
+  border-top: 1px solid #222222 !important;
+  padding: 60px 0 30px 0 !important;
+  width: 100% !important;
+  margin-top: 60px !important;
+}
+
+.site-footer .main-container {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+}
+
+.footer-top-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 2fr 1fr !important;
+  gap: 40px !important;
+  margin-bottom: 48px !important;
+}
+
+.footer-brand h3 {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+  letter-spacing: 0.5px !important;
+}
+
+.footer-brand p {
+  font-size: 14px !important;
+  color: #a0a0a0 !important;
+  line-height: 1.6 !important;
+}
+
+.footer-services h4,
+.footer-socials h4 {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: #ffffff !important;
+  margin-bottom: 16px !important;
+}
+
+.footer-services p {
+  font-size: 14px !important;
+  color: #a0a0a0 !important;
+  line-height: 1.8 !important;
+}
+
+.footer-social-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.footer-social-links a {
+  color: #a0a0a0 !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.footer-social-links a:hover {
+  color: #007bff !important;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid #222222 !important;
+  padding-top: 24px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 13px !important;
+  color: #888888 !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+/* FORCE ALL SECTION TITLES & TESTIMONI HEADINGS TO BE CENTERED PERFECTLY */
+.section-title,
+.testimoni-section .section-title,
+.testimoni-section h2,
+.product-title,
+.page-title,
+h2.section-title,
+.headline-fixed,
+.headline-fixed h2,
+.headline-fixed p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.section-title::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 }

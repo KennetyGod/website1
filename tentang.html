@@ -4,57 +4,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tentang Kami - Stainless Indah</title>
+  <title>Tentang Kami — Stainless Indah Pontianak</title>
   <link rel="stylesheet" href="assets/css/style.css?v=300.0" />
   <link rel="stylesheet" href="tentang.css?v=300.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?v=17.0">
-
-  <style>
-    /* Force center alignment for title */
-    .testimoni-section {
-      text-align: center !important;
-      width: 100% !important;
-      max-width: 1200px !important;
-      margin: 40px auto !important;
-    }
-    .testimoni-section .section-title,
-    .section-title,
-    h2.section-title {
-      text-align: center !important;
-      width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      display: block !important;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="slideshow">
-    <img src="assets/images/IMG_20240221_100202.jpg" alt="Slide 1">
-    <img src="assets/images/IMG_20230622_091238.jpg" alt="Slide 2">
-    <img src="assets/images/IMG_20200615_123127.jpg" alt="Slide 3">
-    <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4">
-  </div>
-
   <header>
-    <a href="beranda.html" class="brand-container">
+    <a href="index.html" class="brand-container">
       <img src="assets/images/logo-cropped.png" alt="Logo Stainless Indah" class="site-logo">
       <h1>Stainless Indah</h1>
     </a>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
-        <li><a href="beranda.html">Beranda</a></li>
+        <li><a href="index.html">Beranda</a></li>
         <li class="dropdown">
           <b><a href="produk.html" class="dropbtn">Produk</a></b>
           <div class="dropdown-content">
             <a href="kanopi.html">Kanopi</a>
             <a href="tangga.html">Railing Tangga</a>
             <a href="pagar.html">Pagar</a>
+            <a href="anti maling.html">Anti Maling</a>
             <a href="kaca.html">Kaca</a>
             <a href="kontruksi baja.html">Kontruksi Baja</a>
             <a href="balkon.html">Balkon</a>
@@ -62,6 +37,7 @@
             <a href="fasad.html">Fasad</a>
             <a href="pintu.html">Pintu</a>
             <a href="kerangka meja.html">Kerangka Meja</a>
+            <a href="tempa.html">Tempa</a>
             <a href="custom.html">Custom</a>
           </div>
         </li>
@@ -71,101 +47,462 @@
   </header>
 
   <div class="wrapper">
-    <main>
-      <section class="headline-fixed">
-        <h2>Stainless Indah (Hendro Las)</h2>
-        <p>Spesialis bengkel las dan aplikator konstruksi terpercaya di Pontianak, Kalimantan Barat. Melayani pengerjaan Pagar, Kanopi, Teralis, Balkon, Fasad, dan Konstruksi Kustom Stainless Steel, Besi, dan Baja Berat. Rapi, Kuat, dan Indah.</p>
-      </section>
-
-      <!-- TATA LETAK: SEJARAH DI PALING ATAS, VISI & MISI DIBAWAHNYA BERSEBELAHAN -->
-      <section class="about-info">
-        <!-- 1. SEJARAH & PENGALAMAN (DI PALING ATAS, DIATAS VISI MISI) -->
-        <div class="about-card history">
-          <div class="card-icon">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-          </div>
-          <div class="card-content">
-            <h3>Sejarah & Pengalaman</h3>
-            <p>Stainless Indah (Hendro Las) telah berpengalaman bertahun-tahun dalam melayani berbagai proyek perumahan, toko, kantor, hingga gedung komersial di Pontianak dan sekitarnya dengan dedikasi hasil kerja sempurna.</p>
-          </div>
+    <main class="about-page-container">
+      
+      <!-- 1. HERO — PERKENALKAN IDENTITAS PERUSAHAAN -->
+      <section class="about-hero">
+        <div class="about-hero-text">
+          <span class="about-hero-tag">STAINLESS INDAH (HENDRO LAS)</span>
+          <h1 class="about-hero-title">DIBANGUN DARI PENGALAMAN,<br>DIKERJAKAN DENGAN PRESISI</h1>
+          <p class="about-hero-subheadline">
+            Bengkel las dan spesialis fabrikasi untuk kebutuhan hunian, komersial, dan konstruksi di Pontianak, Kalimantan Barat. Mengutamakan presisi material dan kekuatan struktur.
+          </p>
+          <a href="#arsip-portofolio" class="about-hero-cta">
+            Lihat Project <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
-
-        <!-- 2. VISI & MISI (DIBAWAH SEJARAH, BERSEBELAHAN) -->
-        <div class="about-top-grid">
-          <!-- VISI -->
-          <div class="about-card visi">
-            <div class="card-icon">
-              <i class="fa-solid fa-eye"></i>
-            </div>
-            <div class="card-content">
-              <h3>Visi</h3>
-              <p>Menjadi bengkel las dan aplikator konstruksi terpercaya di Kalimantan Barat yang senantiasa mengedepankan presisi tinggi, kualitas material terbaik, serta kepuasan pelanggan secara berkelanjutan.</p>
-            </div>
-          </div>
-
-          <!-- MISI -->
-          <div class="about-card misi">
-            <div class="card-icon">
-              <i class="fa-solid fa-bullseye"></i>
-            </div>
-            <div class="card-content">
-              <h3>Misi</h3>
-              <ul>
-                <li><i class="fas fa-check-circle"></i> <span>Memberikan hasil pengerjaan pengelasan yang rapi, kokoh, tahan lama, dan bernilai estetika tinggi.</span></li>
-                <li><i class="fas fa-check-circle"></i> <span>Menggunakan material stainless steel, besi, dan baja berat berkualitas unggul sesuai standar keselamatan.</span></li>
-                <li><i class="fas fa-check-circle"></i> <span>Menyediakan pelayanan profesional, transparan, dan pengiriman/pemasangan tepat waktu.</span></li>
-              </ul>
-            </div>
-          </div>
+        <div class="about-hero-media about-hero-logo-container">
+          <img src="assets/images/logo.png" alt="Logo Stainless Indah" class="about-hero-logo-img">
         </div>
       </section>
 
-      <!-- ARSIP PORTOFOLIO KARYA -->
-      <section class="testimoni-section">
-        <h2 class="section-title">Arsip Portofolio Karya</h2>
-        <div class="year-archive-grid">
-          <a href="testimoni-2025.html" class="year-card">
-            <h3>2025</h3>
-            <p>Lihat Karya & Testimoni</p>
+      <!-- 2. TRUST BAR / COMPANY FACTS -->
+      <section class="about-trust-bar">
+        <div class="trust-item">
+          <span class="trust-val">FABRIKASI CUSTOM</span>
+          <span class="trust-label">Spesialisasi Utama</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-val">10+ TAHUN</span>
+          <span class="trust-label">Pengalaman Kerja</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-val">100+ PROYEK</span>
+          <span class="trust-label">Terkerjakan Sempurna</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-val">PONTIANAK</span>
+          <span class="trust-label">Kalimantan Barat</span>
+        </div>
+      </section>
+
+      <!-- 3. SECTION "PERJALANAN KAMI" (VISUAL TIMELINE) -->
+      <section class="about-timeline-section">
+        <div class="ab-section-header">
+          <span class="ab-section-tag">Jejak Langkah</span>
+          <h2 class="ab-section-title">PERJALANAN KAMI</h2>
+          <p class="ab-section-desc">Dari bengkel las hingga menjadi partner fabrikasi untuk berbagai kebutuhan hunian.</p>
+        </div>
+
+        <div class="timeline-track-horizontal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2017</span>
+            <span class="timeline-title">AWAL PERJALANAN</span>
+            <p class="timeline-desc">Memulai perjalanan sebagai bengkel las (Hendro Las) dan mengerjakan berbagai kebutuhan fabrikasi di Pontianak.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2021</span>
+            <span class="timeline-title">PENGEMBANGAN</span>
+            <p class="timeline-desc">Memperluas pengerjaan fabrikasi stainless steel, pagar dorong, kanopi ACP, dan partisi kaca.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2024</span>
+            <span class="timeline-title">PERTUMBUHAN PROJECT</span>
+            <p class="timeline-desc">Dipercaya menangani berbagai proyek hunian mewah &amp; bangunan komersial di Pontianak &amp; sekitarnya.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2025 - NOW</span>
+            <span class="timeline-title">STAINLESS INDAH</span>
+            <p class="timeline-desc">Berdiri kokoh sebagai aplikator konstruksi &amp; spesialis las terdepan dengan standar presisi tinggi.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SECTION "VISI & NILAI KAMI" -->
+      <section class="about-vision-section">
+        <div class="vision-banner">
+          <span class="vision-tag">Visi Perusahaan</span>
+          <p class="vision-quote">
+            "Menjadi bengkel las dan aplikator konstruksi terpercaya di Kalimantan Barat dengan mengutamakan presisi, kualitas material, dan kepuasan pelanggan secara berkelanjutan."
+          </p>
+        </div>
+
+        <div class="ab-section-header" style="margin-bottom: 36px;">
+          <span class="ab-section-tag">Prinsip Kerja</span>
+          <h2 class="ab-section-title">NILAI UTAMA KAMI</h2>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-num">01</span>
+            <h3 class="value-title">PRESISI</h3>
+            <p class="value-desc">Pengerjaan yang mengutamakan detail, kerapian potongan, dan ketepatan ukuran di lapangan.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-num">02</span>
+            <h3 class="value-title">KUALITAS</h3>
+            <p class="value-desc">Material tebal standar tinggi dan proses las disesuaikan dengan beban serta kebutuhan proyek.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-num">03</span>
+            <h3 class="value-title">PELAYANAN</h3>
+            <p class="value-desc">Komunikasi ramah, konsultasi rinci, dan pelayanan yang profesional serta transparan.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-num">04</span>
+            <h3 class="value-title">KETEPATAN</h3>
+            <p class="value-desc">Berkomitmen penuh pada proses pengerjaan, estimasi waktu, dan garansi hasil akhir.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SECTION "KEMAMPUAN KAMI" -->
+      <section class="about-capabilities-section">
+        <div class="ab-section-header">
+          <span class="ab-section-tag">Spesialisasi Teknis</span>
+          <h2 class="ab-section-title">KEMAMPUAN KAMI</h2>
+          <p class="ab-section-desc">Dari fabrikasi hingga instalasi, kami menangani berbagai kebutuhan konstruksi sesuai karakter proyek.</p>
+        </div>
+
+        <div class="capabilities-grid">
+          <div class="capability-card">
+            <span class="cap-num">01</span>
+            <h3 class="cap-title">FABRIKASI</h3>
+            <div class="cap-list">
+              <span>Stainless Steel</span>
+              <span>Besi Holo &amp; Plat</span>
+              <span>Baja Berat / WF</span>
+              <span>Aluminium &amp; ACP</span>
+            </div>
+          </div>
+
+          <div class="capability-card">
+            <span class="cap-num">02</span>
+            <h3 class="cap-title">PENGELASAN</h3>
+            <div class="cap-list">
+              <span>Las Listrik Heavy-Duty</span>
+              <span>Pengerjaan Sambungan Precision</span>
+              <span>Finishing Halus Tahan Karat</span>
+            </div>
+          </div>
+
+          <div class="capability-card">
+            <span class="cap-num">03</span>
+            <h3 class="cap-title">KONSTRUKSI</h3>
+            <div class="cap-list">
+              <span>Kanopi ACP &amp; Kaca</span>
+              <span>Pagar Lipat &amp; Dorong</span>
+              <span>Railing Tangga &amp; Balkon</span>
+              <span>Fasad &amp; Partisi Kaca</span>
+            </div>
+          </div>
+
+          <div class="capability-card">
+            <span class="cap-num">04</span>
+            <h3 class="cap-title">INSTALASI</h3>
+            <div class="cap-list">
+              <span>Survey &amp; Pengukuran</span>
+              <span>Rancangan Spesifikasi</span>
+              <span>Pengerjaan Workshop</span>
+              <span>Pemasangan Lapangan</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. SECTION "CARA KAMI BEKERJA" (PROCESS FLOW) -->
+      <section class="about-process-section">
+        <div class="ab-section-header">
+          <span class="ab-section-tag">Alur Kerja Teraplikasi</span>
+          <h2 class="ab-section-title">DARI RENCANA MENJADI HASIL</h2>
+          <p class="ab-section-desc">Setiap pekerjaan dimulai dari memahami kebutuhan hingga memastikan hasil terpasang dengan baik.</p>
+        </div>
+
+        <div class="process-flow-horizontal">
+          <div class="process-step-card">
+            <span class="step-num">01</span>
+            <h3 class="step-title">KONSULTASI</h3>
+            <p class="step-desc">Memahami kebutuhan, fungsi ruang, dan konsep desain proyek Anda.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">02</span>
+            <h3 class="step-title">SURVEY</h3>
+            <p class="step-desc">Pengukuran presisi dan pengecekan kondisi struktur di lokasi.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">03</span>
+            <h3 class="step-title">PENAWARAN</h3>
+            <p class="step-desc">Menentukan material, ketebalan spesifikasi, dan estimasi biaya.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">04</span>
+            <h3 class="step-title">FABRIKASI</h3>
+            <p class="step-desc">Proses pemotongan, perakitan, &amp; pengelasan presisi di workshop.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">05</span>
+            <h3 class="step-title">INSTALASI</h3>
+            <p class="step-desc">Pemasangan aman dan pengecekan hasil akhir hingga rapi sempurna.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. SECTION "DI BALIK SETIAP PEKERJAAN" (EDITORIAL IMAGE LAYOUT) -->
+      <section class="about-editorial-section">
+        <div class="ab-section-header">
+          <span class="ab-section-tag">Dokumentasi Lapangan</span>
+          <h2 class="ab-section-title">DI BALIK SETIAP PEKERJAAN</h2>
+          <p class="ab-section-desc">Dikerjakan langsung oleh tim yang memahami proses dari fabrikasi hingga instalasi.</p>
+        </div>
+
+        <div class="editorial-layout">
+          <div class="editorial-main">
+            <img src="Foto Proyek/2025/Mawar Indah/IMG_20250707_083802.jpg" alt="Proses Fabrikasi Workshop">
+            <div class="editorial-caption">Proses Pengerjaan &amp; Pengelasan Presisi di Workshop Stainless Indah</div>
+          </div>
+          <div class="editorial-sub-grid">
+            <div class="editorial-sub">
+              <img src="Foto Proyek/2025/Karya Tani Pak Nyap/IMG_20250610_084303.jpg" alt="Finishing Detail">
+              <div class="editorial-caption">Finishing &amp; Perakitan Rangka Heavy Duty</div>
+            </div>
+            <div class="editorial-sub">
+              <img src="Foto Proyek/2025/Meliau/IMG-20251211-WA0040.jpg" alt="Pemasangan Lapangan">
+              <div class="editorial-caption">Instalasi Lapangan Tepat Waktu &amp; Rapi</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. SECTION "HASIL PEKERJAAN KAMI" (PROOF OF WORK) -->
+      <section class="about-projects-section">
+        <div class="ab-section-header">
+          <span class="ab-section-tag">Bukti Pengerjaan</span>
+          <h2 class="ab-section-title">HASIL PEKERJAAN KAMI</h2>
+          <p class="ab-section-desc">Beberapa pekerjaan yang menjadi bagian dari perjalanan Stainless Indah.</p>
+        </div>
+
+        <div class="proof-projects-grid">
+          <a href="testimoni-2025.html" class="proof-card">
+            <div class="proof-card-media">
+              <img src="Foto Proyek/2025/Mawar Indah/IMG_20250707_083802.jpg" alt="Proyek Mawar Indah">
+            </div>
+            <div class="proof-card-body">
+              <span class="proof-card-cat">KANOPI ACP &amp; STAINLESS</span>
+              <h3 class="proof-card-title">Proyek Mawar Indah 2025</h3>
+              <span class="proof-card-loc">Private Residence — Pontianak</span>
+            </div>
           </a>
-          <a href="testimoni-2024.html" class="year-card">
-            <h3>2024</h3>
-            <p>Lihat Karya & Testimoni</p>
+
+          <a href="testimoni-2025.html" class="proof-card">
+            <div class="proof-card-media">
+              <img src="Foto Proyek/2025/Karya Tani Pak Nyap/IMG_20250610_084303.jpg" alt="Proyek Karya Tani">
+            </div>
+            <div class="proof-card-body">
+              <span class="proof-card-cat">PAGAR &amp; GERBANG HEAVY-DUTY</span>
+              <h3 class="proof-card-title">Proyek Karya Tani Pak Nyap</h3>
+              <span class="proof-card-loc">Residential Project — Pontianak</span>
+            </div>
           </a>
-          <a href="testimoni-2023.html" class="year-card">
-            <h3>2023</h3>
-            <p>Lihat Karya & Testimoni</p>
+
+          <a href="testimoni-2025.html" class="proof-card">
+            <div class="proof-card-media">
+              <img src="assets/images/balkon-cat.jpg" alt="Railing Tangga">
+            </div>
+            <div class="proof-card-body">
+              <span class="proof-card-cat">RAILING TANGGA STAINLESS</span>
+              <h3 class="proof-card-title">Proyek Railling Tangga Pak Nyap</h3>
+              <span class="proof-card-loc">Modern Living — Pontianak</span>
+            </div>
           </a>
-          <a href="testimoni-2022.html" class="year-card">
-            <h3>2022</h3>
-            <p>Lihat Karya & Testimoni</p>
+
+          <a href="testimoni-2025.html" class="proof-card">
+            <div class="proof-card-media">
+              <img src="Foto Proyek/2025/lift Barang Pak Nyap/IMG_20250915_143148.jpg" alt="Lift Barang Gudang">
+            </div>
+            <div class="proof-card-body">
+              <span class="proof-card-cat">LIFT BARANG &amp; FABRIKASI GUDANG</span>
+              <h3 class="proof-card-title">Proyek Lift Barang Pak Nyap</h3>
+              <span class="proof-card-loc">Commercial Warehouse — Pontianak</span>
+            </div>
           </a>
-          <a href="testimoni-2017-2021.html" class="year-card">
-            <h3>2017 - 2021</h3>
-            <p>Arsip Karya Lama</p>
+        </div>
+
+        <div class="proof-cta-center">
+          <a href="#arsip-portofolio" class="proof-cta-link">
+            Lihat Semua Project &amp; Testimoni <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </section>
+
+      <!-- 8.5 ARSIP PORTOFOLIO KARYA (NAVIGASI ARSIP TAHUN) -->
+      <section id="arsip-portofolio" class="about-archive-section">
+        <div class="ab-section-header">
+          <span class="ab-section-tag">Jejak Karya Lengkap</span>
+          <h2 class="ab-section-title">ARSIP PORTOFOLIO KARYA</h2>
+          <p class="ab-section-desc">Eksplorasi dokumentasi pengerjaan proyek Stainless Indah dari tahun ke tahun.</p>
+        </div>
+
+        <div class="archive-years-grid">
+          <a href="testimoni-2025.html" class="archive-year-card archive-year-wide highlight">
+            <div class="archive-year-left">
+              <div class="archive-year-top">
+                <span class="archive-year-num">2025</span>
+                <span class="archive-badge">Terbaru</span>
+              </div>
+              <p class="archive-year-desc">Dokumentasi Proyek Unggulan 2025</p>
+            </div>
+            <div class="archive-year-right">
+              <span class="archive-year-link">Lihat Karya 2025 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+
+          <a href="testimoni-2024.html" class="archive-year-card">
+            <div class="archive-year-top">
+              <span class="archive-year-num">2024</span>
+            </div>
+            <p class="archive-year-desc">Dokumentasi Proyek 2024</p>
+            <span class="archive-year-link">Lihat Karya 2024 <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <a href="testimoni-2023.html" class="archive-year-card">
+            <div class="archive-year-top">
+              <span class="archive-year-num">2023</span>
+            </div>
+            <p class="archive-year-desc">Dokumentasi Proyek 2023</p>
+            <span class="archive-year-link">Lihat Karya 2023 <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <a href="testimoni-2022.html" class="archive-year-card">
+            <div class="archive-year-top">
+              <span class="archive-year-num">2022</span>
+            </div>
+            <p class="archive-year-desc">Dokumentasi Proyek 2022</p>
+            <span class="archive-year-link">Lihat Karya 2022 <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <a href="testimoni-2020.html" class="archive-year-card">
+            <div class="archive-year-top">
+              <span class="archive-year-num">2020</span>
+            </div>
+            <p class="archive-year-desc">Dokumentasi Proyek 2020</p>
+            <span class="archive-year-link">Lihat Karya 2020 <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <a href="testimoni-2018.html" class="archive-year-card">
+            <div class="archive-year-top">
+              <span class="archive-year-num">2018</span>
+            </div>
+            <p class="archive-year-desc">Dokumentasi Proyek 2018</p>
+            <span class="archive-year-link">Lihat Karya 2018 <i class="fas fa-arrow-right"></i></span>
+          </a>
+
+          <a href="testimoni-2017.html" class="archive-year-card">
+            <div class="archive-year-top">
+              <span class="archive-year-num">2017</span>
+            </div>
+            <p class="archive-year-desc">Arsip Proyek Awal 2017</p>
+            <span class="archive-year-link">Lihat Karya 2017 <i class="fas fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 9. TESTIMONIAL SECTION -->
+      <section class="about-testimonial-section">
+        <div class="ab-section-header">
+          <span class="ab-section-tag">Ulasan Klien</span>
+          <h2 class="ab-section-title">APA KATA MEREKA</h2>
+        </div>
+
+        <div class="ab-testimonial-grid">
+          <div class="ab-testi-card">
+            <p class="ab-testi-quote">"Pengerjaan kanopi ACP sangat rapi dan kokoh. Tim Stainless Indah sangat profesional dari mulai survey hingga pemasangan selesai tepat waktu."</p>
+            <div>
+              <div class="ab-testi-author">Bpk. Hendra</div>
+              <div class="ab-testi-role">Pemilik Rumah — Pontianak</div>
+            </div>
+          </div>
+
+          <div class="ab-testi-card">
+            <p class="ab-testi-quote">"Railing tangga stainless kaca pesanan kami hasilnya sangat elegan dan presisi. Material tebal dan finishing lasnya sangat bersih."</p>
+            <div>
+              <div class="ab-testi-author">Ibu Siska</div>
+              <div class="ab-testi-role">Proyek Ruko — Kubu Raya</div>
+            </div>
+          </div>
+
+          <div class="ab-testi-card">
+            <p class="ab-testi-quote">"Sangat puas dengan konstruksi pagar dorong stainless. Pelayanan konsultasi ramah dan memberikan solusi terbaik sesuai budget."</p>
+            <div>
+              <div class="ab-testi-author">Bpk. Anton</div>
+              <div class="ab-testi-role">Proyek Perumahan — Pontianak</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. FINAL CTA SECTION -->
+      <section class="about-final-cta-section">
+        <h2 class="final-cta-title">PUNYA RENCANA PROYEK?</h2>
+        <p class="final-cta-sub">Diskusikan kebutuhan fabrikasi Anda bersama Stainless Indah.</p>
+        <a href="https://wa.me/+62811569863" target="_blank" class="btn-final-wa">
+          <i class="fab fa-whatsapp"></i> KONSULTASI VIA WHATSAPP →
+        </a>
+      </section>
+
     </main>
 
-    <footer class="footer-keren">
-      <div class="footer-container">
-        <div class="footer-kolom tentang">
-          <h3>Stainless Indah</h3>
-          <p>Kami adalah spesialis bengkel las terpercaya di Pontianak, melayani berbagai kebutuhan pengerjaan las seperti stainless steel, besi, baja berat, hingga kaca. Kami mengerjakan beragam proyek mulai dari pembuatan dan pemasangan teralis, balkon, kanopi, pagar, fasad bangunan, hingga konstruksi khusus lainnya sesuai permintaan.</p>
+    <!-- FOOTER UNIFORM -->
+    <footer class="site-footer">
+      <div class="main-container">
+        <div class="footer-top-grid">
+          <div class="footer-brand">
+            <h3>STAINLESS INDAH</h3>
+            <p>Bengkel las dan spesialis konstruksi stainless steel, besi, baja berat, serta kaca terpercaya di Pontianak.
+              Mengutamakan presisi dan kekuatan struktur.</p>
+          </div>
+
+          <div class="footer-services">
+            <h4>Layanan Fabrikasi</h4>
+            <p>Pagar · Kanopi · Railing · Terali · Balkon · Konstruksi Baja</p>
+          </div>
+
+          <div class="footer-socials">
+            <h4>Kontak &amp; Lokasi</h4>
+            <div class="footer-social-links">
+              <a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank">
+                <i class="fa-solid fa-location-dot"></i> Pontianak, Kalimantan Barat
+              </a>
+              <a href="https://wa.me/+62811569863" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Admin
+              </a>
+              <a href="https://www.instagram.com/stainless.indah/" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+              <a href="mailto:info@stainlessindah.com">
+                <i class="fa-solid fa-envelope"></i> Email Us
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="footer-kolom">
-          <h4>Kontak Kami</h4>
-          <ul>
-            <li><a href="https://www.instagram.com/stainless.indah/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="https://www.facebook.com/bengkel.stainlessindah.9" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-            <li><a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank"><i class="fa-solid fa-location-dot"></i> Pontianak Serdam, Batara 2</a></li>
-            <li><a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> 0811569863 (Admin WA)</a></li>
-          </ul>
+
+        <div class="footer-bottom-bar">
+          <span>© 2026 STAINLESS INDAH. All Rights Reserved.</span>
+          <span>Pontianak, Kalimantan Barat, Indonesia</span>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Stainless Indah. All Rights Reserved.</p>
       </div>
     </footer>
   </div>
