@@ -1233,6 +1233,16 @@ section.product p {
   line-height: 1.8 !important;
 }
 
+.footer-services a {
+  color: #a0a0a0 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.footer-services a:hover {
+  color: #007bff !important;
+}
+
 .footer-social-links {
   display: flex !important;
   flex-direction: column !important;

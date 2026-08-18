@@ -94,10 +94,10 @@
 
 <body>
   <div class="slideshow">
-    <img src="assets/images/IMG_20240221_100202.jpg" alt="Slide 1">
-    <img src="assets/images/IMG_20230622_091238.jpg" alt="Slide 2">
-    <img src="assets/images/IMG_20200615_123127.jpg" alt="Slide 3">
-    <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4">
+    <img src="assets/images/IMG_20240221_100202.jpg" alt="Slide 1" loading="lazy" decoding="async">
+    <img src="assets/images/IMG_20230622_091238.jpg" alt="Slide 2" loading="lazy" decoding="async">
+    <img src="assets/images/IMG_20200615_123127.jpg" alt="Slide 3" loading="lazy" decoding="async">
+    <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4" loading="lazy" decoding="async">
   </div>
 
   <header>
@@ -146,8 +146,8 @@
           <div class="produk-item">
             <div class="swiper-container produk-swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/images/kaca-cat.jpg" alt="Kisi - Kisi Kaca 1" onclick="showPopup(this)"></div>
-                <div class="swiper-slide"><img src="assets/images/komersial-apotek.jpg" alt="Kisi - Kisi Kaca 2" onclick="showPopup(this)"></div>
+                <div class="swiper-slide"><img src="assets/images/kaca-cat.jpg" alt="Kisi - Kisi Kaca 1" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="assets/images/komersial-apotek.jpg" alt="Kisi - Kisi Kaca 2" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
               </div>
             </div>
             <div class="produk-text">
@@ -170,10 +170,10 @@
           <div class="produk-item">
             <div class="swiper-container produk-swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/images/komersial-klinik.jpg" alt="Pintu Sliding Kaca" onclick="showPopup(this)"></div>
-                <div class="swiper-slide"><img src="Foto Proyek/2025/Sekat Kaca Optik Pancasila/IMG_20250610_103514.jpg" alt="Pintu Tempered" onclick="showPopup(this)"></div>
-                <div class="swiper-slide"><img src="assets/images/kaca-cat.jpg" alt="Pintu Swing" onclick="showPopup(this)"></div>
-                <div class="swiper-slide"><img src="assets/images/komersial-apotek.jpg" alt="Pintu Grand River" onclick="showPopup(this)"></div>
+                <div class="swiper-slide"><img src="assets/images/komersial-klinik.jpg" alt="Pintu Sliding Kaca" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="Foto Proyek/2025/Sekat Kaca Optik Pancasila/IMG_20250610_103514.jpg" alt="Pintu Tempered" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="assets/images/kaca-cat.jpg" alt="Pintu Swing" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="assets/images/komersial-apotek.jpg" alt="Pintu Grand River" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
               </div>
             </div>
             <div class="produk-text">
@@ -206,7 +206,7 @@
 
           <div class="footer-services">
             <h4>Layanan Fabrikasi</h4>
-            <p>Pagar · Kanopi · Railing · Terali · Balkon · Konstruksi Baja</p>
+            <p><a href="kanopi.html">Kanopi</a> · <a href="pagar.html">Pagar</a> · <a href="tangga.html">Railing Tangga</a> · <a href="balkon.html">Balkon</a> · <a href="teralis.html">Teralis</a> · <a href="fasad.html">Fasad</a> · <a href="pintu.html">Pintu</a> · <a href="kaca.html">Kaca</a> · <a href="anti maling.html">Anti Maling</a> · <a href="kerangka meja.html">Kerangka Meja</a> · <a href="tempa.html">Besi Tempa</a> · <a href="kontruksi baja.html">Konstruksi Baja</a> · <a href="custom.html">Fabrikasi Custom</a></p>
           </div>
 
           <div class="footer-socials">
@@ -238,7 +238,7 @@
 
   <div id="imagePopup" class="popup" onclick="hidePopup()">
     <span class="close">&times;</span>
-    <img class="popup-content" id="popupImg">
+    <img class="popup-content" id="popupImg" loading="lazy" decoding="async">
   </div>
 
   <script src="assets/js/main.js"></script>

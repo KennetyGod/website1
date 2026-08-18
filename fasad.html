@@ -32,10 +32,10 @@
 
 <body>
   <div class="slideshow">
-    <img src="assets/images/IMG_20240221_100202.jpg" alt="Slide 1">
-    <img src="assets/images/IMG_20230622_091238.jpg" alt="Slide 2">
-    <img src="assets/images/IMG_20200615_123127.jpg" alt="Slide 3">
-    <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4">
+    <img src="assets/images/IMG_20240221_100202.jpg" alt="Slide 1" loading="lazy" decoding="async">
+    <img src="assets/images/IMG_20230622_091238.jpg" alt="Slide 2" loading="lazy" decoding="async">
+    <img src="assets/images/IMG_20200615_123127.jpg" alt="Slide 3" loading="lazy" decoding="async">
+    <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4" loading="lazy" decoding="async">
   </div>
 
   <header>
@@ -74,7 +74,7 @@
     <main>
       <section class="headline-fixed">
         <h2>Fasad</h2>
-        <p>Fasad bangunan adalah wajah pertama yang dilihat. Kami mengerjakan fasad dengan material ACP, plat besi cutting laser, dan hollow galvanis untuk tampilan eksterior yang modern, presisi, dan berkarakter kuat.</p>
+        <p>Fasad bangunan adalah wajah pertama yang dilihat. Kami mengerjakan fasad dengan material ACP dan hollow galvanis untuk tampilan eksterior yang modern, presisi, dan berkarakter kuat.</p>
       </section>
 
       <div class="produk-container">
@@ -84,8 +84,8 @@
           <div class="produk-item">
             <div class="swiper-container produk-swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/images/fasad-cat.jpg" alt="Fasad ACP 1" onclick="showPopup(this)"></div>
-                <div class="swiper-slide"><img src="assets/images/komersial-gaiamall.jpg" alt="Fasad ACP 2" onclick="showPopup(this)"></div>
+                <div class="swiper-slide"><img src="assets/images/fasad-cat.jpg" alt="Fasad ACP 1" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="assets/images/komersial-gaiamall.jpg" alt="Fasad ACP 2" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
               </div>
             </div>
             <div class="produk-text">
@@ -107,8 +107,8 @@
           <div class="produk-item">
             <div class="swiper-container produk-swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="Foto Proyek/2024/Fasad 28 okt/IMG_20241019_154137.jpg" alt="Fasad Bangunan 1" onclick="showPopup(this)"></div>
-                <div class="swiper-slide"><img src="Foto Proyek/2024/Momoyo Ngabang/IMG-20240408-WA0003.jpg" alt="Fasad Bangunan 2" onclick="showPopup(this)"></div>
+                <div class="swiper-slide"><img src="Foto Proyek/2024/Fasad 28 okt/IMG_20241019_154137.jpg" alt="Fasad Bangunan 1" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
+                <div class="swiper-slide"><img src="Foto Proyek/2024/Momoyo Ngabang/IMG-20240408-WA0003.jpg" alt="Fasad Bangunan 2" onclick="showPopup(this)" loading="lazy" decoding="async"></div>
               </div>
             </div>
             <div class="produk-text">
@@ -140,7 +140,7 @@
           </div>
           <div class="footer-services">
             <h4>Layanan Fabrikasi</h4>
-            <p>Pagar · Kanopi · Railing · Terali · Balkon · Konstruksi Baja</p>
+            <p><a href="kanopi.html">Kanopi</a> · <a href="pagar.html">Pagar</a> · <a href="tangga.html">Railing Tangga</a> · <a href="balkon.html">Balkon</a> · <a href="teralis.html">Teralis</a> · <a href="fasad.html">Fasad</a> · <a href="pintu.html">Pintu</a> · <a href="kaca.html">Kaca</a> · <a href="anti maling.html">Anti Maling</a> · <a href="kerangka meja.html">Kerangka Meja</a> · <a href="tempa.html">Besi Tempa</a> · <a href="kontruksi baja.html">Konstruksi Baja</a> · <a href="custom.html">Fabrikasi Custom</a></p>
           </div>
           <div class="footer-socials">
             <h4>Kontak &amp; Lokasi</h4>
@@ -162,7 +162,7 @@
 
   <div id="imagePopup" class="popup" onclick="hidePopup()">
     <span class="close">&times;</span>
-    <img class="popup-content" id="popupImg">
+    <img class="popup-content" id="popupImg" loading="lazy" decoding="async">
   </div>
 
   <script src="assets/js/main.js"></script>

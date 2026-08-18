@@ -276,6 +276,14 @@ main {
     box-sizing: border-box !important;
 }
 
+.produk-item-link.produk-item-wide,
+.produk-item-wide {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
 .produk-item {
     display: flex !important;
     flex-direction: column !important;
