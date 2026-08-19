@@ -1,0 +1,162 @@
+/* 
+ * STAINLESS INDAH - TEMPA STYLE
+ * Consolidated & Refined CSS
+ */
+
+/* --- VARIABLES & DESIGN SYSTEM --- */
+@import url('assets/css/product-grid.css');
+
+:root {
+    /* Colors */
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --text-light: #ffffff;
+    --text-dim: #cccccc;
+    --bg-dark-overlay: rgba(0, 0, 0, 0.85);
+    --glass-bg: rgba(0, 0, 0, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(20, 20, 20, 0.6);
+
+    /* Typography */
+    --font-main: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --header-height: 80px;
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-family: var(--font-main);
+    color: var(--text-light);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Background Handling - Solid Black */
+body {
+    background: #000000 !important;
+    background-image: none !important;
+}
+
+/* Dark Overlay & Slideshow Disabled */
+body::before {
+    display: none !important;
+    content: none !important;
+}
+
+.slideshow {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* --- TYPOGRAPHY --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- SITE FOOTER --- */
+.site-footer {
+    background: #0d0d0d;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 0 20px;
+    margin-top: 60px;
+    color: #e0e0e0;
+}
+
+.footer-top-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-brand h3 {
+    color: #007bff;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+.footer-services h4,
+.footer-socials h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.footer-services p {
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+.footer-services a {
+    color: #ccc;
+}
+
+.footer-services a:hover {
+    color: #007bff;
+}
+
+.footer-social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.footer-social-links a:hover {
+    color: #007bff;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
