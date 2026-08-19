@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * STAINLESS INDAH - TEMPA STYLE
  * Consolidated & Refined CSS
  */
@@ -8,8 +8,8 @@
 
 :root {
     /* Colors */
-    --primary-color: #007bff;
-    --primary-dark: #0056b3;
+    --primary-color: #00f2fe;
+    --primary-dark: #0099ff;
     --text-light: #ffffff;
     --text-dim: #cccccc;
     --bg-dark-overlay: rgba(0, 0, 0, 0.85);
@@ -96,7 +96,7 @@ ul {
 }
 
 .footer-brand h3 {
-    color: #007bff;
+    color: #00f2fe;
     font-size: 1.3rem;
     margin-bottom: 12px;
 }
@@ -124,7 +124,7 @@ ul {
 }
 
 .footer-services a:hover {
-    color: #007bff;
+    color: #00f2fe;
 }
 
 .footer-social-links a {
@@ -137,7 +137,7 @@ ul {
 }
 
 .footer-social-links a:hover {
-    color: #007bff;
+    color: #00f2fe;
 }
 
 .footer-bottom-bar {
@@ -160,3 +160,4 @@ ul {
         text-align: center;
     }
 }
+

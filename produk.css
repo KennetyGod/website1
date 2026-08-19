@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * STAINLESS INDAH - MODERN STYLE
  * Consolidated & Refined CSS
  */
@@ -8,8 +8,8 @@
 
 :root {
     /* Colors */
-    --primary-color: #007bff;
-    --primary-dark: #0056b3;
+    --primary-color: #00f2fe;
+    --primary-dark: #0099ff;
     --text-light: #ffffff;
     --text-dim: #cccccc;
     --bg-dark-overlay: rgba(0, 0, 0, 0.85);
@@ -204,7 +204,7 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
     color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
 }
 
 /* Dropdown */
@@ -212,50 +212,13 @@ nav ul li a:hover {
     position: relative;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: rgba(20, 20, 20, 0.95);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    width: 650px;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
 
-.dropdown:hover .dropdown-content {
-    display: flex;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
 
-.dropdown-content a {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    font-size: 14px;
-    flex: 1 0 200px;
-    /* Responsive grid items */
-    text-align: center;
-    border: 1px solid transparent;
-}
+.dropdown:hover 
 
-.dropdown-content a:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-}
+
+
+
 
 /* Mobile Menu Toggle */
 .menu-toggle {
@@ -402,12 +365,12 @@ main {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
 }
 
 .produk-button:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.6);
 }
 
 /* Product Swiper/Image */
@@ -545,9 +508,7 @@ main {
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 1024px) {
-    .dropdown-content {
-        width: 90vw;
-    }
+    
 }
 
 @media (max-width: 768px) {
@@ -598,23 +559,9 @@ main {
     }
 
     /* Mobile Dropdown */
-    .dropdown-content {
-        position: static;
-        transform: none;
-        width: 100%;
-        box-shadow: none;
-        background: transparent;
-        opacity: 1;
-        display: none;
-        /* Toggle with JS or CSS focus */
-        padding: 10px 0;
-        border: none;
-    }
+    
 
-    .dropdown:hover .dropdown-content {
-        display: flex;
-        /* Simplified for mobile hover, better with tap interaction */
-    }
+    .dropdown:hover 
 
     /* Components Responsive */
     .produk-item {
@@ -1148,7 +1095,7 @@ section.product p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #007bff;
+  color: #00f2fe;
   margin-bottom: 8px;
 }
 
@@ -1192,9 +1139,9 @@ section.product p {
 
 .needs-card:hover {
   background: #161616;
-  border-color: rgba(0, 123, 255, 0.5);
+  border-color: rgba(0, 242, 254, 0.5);
   transform: translateY(-5px);
-  box-shadow: 0 18px 45px rgba(0, 123, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 18px 45px rgba(0, 242, 254, 0.2), 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .needs-card-media {
@@ -1236,8 +1183,8 @@ section.product p {
 
 .needs-card:hover .needs-number {
   opacity: 1;
-  color: #007bff;
-  border-color: rgba(0, 123, 255, 0.5);
+  color: #00f2fe;
+  border-color: rgba(0, 242, 254, 0.5);
 }
 
 .needs-media-overlay {
@@ -1286,7 +1233,7 @@ section.product p {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #007bff;
+  color: #00f2fe;
   font-weight: 600;
   display: block;
   margin-bottom: 2px;
@@ -1302,7 +1249,7 @@ section.product p {
 .needs-cta-link {
   font-size: 14.5px;
   font-weight: 600;
-  color: #007bff;
+  color: #00f2fe;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1374,16 +1321,16 @@ section.product p {
 }
 
 .needs-tab-btn:hover {
-  background: rgba(0, 123, 255, 0.15);
-  border-color: rgba(0, 123, 255, 0.4);
+  background: rgba(0, 242, 254, 0.15);
+  border-color: rgba(0, 242, 254, 0.4);
   color: #ffffff;
 }
 
 .needs-tab-btn.active {
-  background: #007bff;
-  border-color: #007bff;
+  background: #00f2fe;
+  border-color: #00f2fe;
   color: #ffffff;
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
 }
 
 .needs-tab-btn.active i {
@@ -1410,7 +1357,7 @@ section.product p {
 }
 
 .sol-card:hover {
-  border-color: rgba(0, 123, 255, 0.5);
+  border-color: rgba(0, 242, 254, 0.5);
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
@@ -1449,7 +1396,7 @@ section.product p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #007bff;
+  color: #00f2fe;
 }
 
 .sol-card-title {
@@ -1469,7 +1416,7 @@ section.product p {
 .sol-card-link {
   font-size: 13.5px;
   font-weight: 600;
-  color: #007bff;
+  color: #00f2fe;
   display: inline-flex;
   align-items: center;
   gap: 6px;

@@ -96,6 +96,10 @@ try {
 
             if (Test-Path -LiteralPath $filePath -PathType Container) {
                 $filePath = [System.IO.Path]::Combine($filePath, "index.html")
+            } elseif (-not (Test-Path -LiteralPath $filePath -PathType Leaf)) {
+                if (Test-Path -LiteralPath "$filePath.html" -PathType Leaf) {
+                    $filePath = "$filePath.html"
+                }
             }
 
             $fullPath = [System.IO.Path]::GetFullPath($filePath)

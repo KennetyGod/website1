@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * STAINLESS INDAH - MODERN STYLE
  * Consolidated & Refined CSS
  */
@@ -8,8 +8,8 @@
 
 :root {
     /* Colors */
-    --primary-color: #007bff;
-    --primary-dark: #0056b3;
+    --primary-color: #00f2fe;
+    --primary-dark: #0099ff;
     --text-light: #ffffff;
     --text-dim: #cccccc;
     --bg-dark-overlay: rgba(0, 0, 0, 0.85);
@@ -205,7 +205,7 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
     color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
 }
 
 /* Dropdown */
@@ -213,50 +213,13 @@ nav ul li a:hover {
     position: relative;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: rgba(20, 20, 20, 0.95);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    width: 650px;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
 
-.dropdown:hover .dropdown-content {
-    display: flex;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
 
-.dropdown-content a {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    font-size: 14px;
-    flex: 1 0 200px;
-    /* Responsive grid items */
-    text-align: center;
-    border: 1px solid transparent;
-}
+.dropdown:hover 
 
-.dropdown-content a:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-}
+
+
+
 
 /* Mobile Menu Toggle */
 .menu-toggle {
@@ -401,12 +364,12 @@ main {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
 }
 
 .produk-button:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.6);
 }
 
 /* Product Swiper/Image */
@@ -544,9 +507,7 @@ main {
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 1024px) {
-    .dropdown-content {
-        width: 90vw;
-    }
+    
 }
 
 @media (max-width: 768px) {
@@ -597,23 +558,9 @@ main {
     }
 
     /* Mobile Dropdown */
-    .dropdown-content {
-        position: static;
-        transform: none;
-        width: 100%;
-        box-shadow: none;
-        background: transparent;
-        opacity: 1;
-        display: none;
-        /* Toggle with JS or CSS focus */
-        padding: 10px 0;
-        border: none;
-    }
+    
 
-    .dropdown:hover .dropdown-content {
-        display: flex;
-        /* Simplified for mobile hover, better with tap interaction */
-    }
+    .dropdown:hover 
 
     /* Components Responsive */
     .produk-item {
@@ -1160,15 +1107,15 @@ section.product p {
 
 .about-card:hover {
     transform: translateY(-6px) !important;
-    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.25) !important;
-    border-color: rgba(0, 123, 255, 0.5) !important;
+    box-shadow: 0 20px 40px rgba(0, 242, 254, 0.25) !important;
+    border-color: rgba(0, 242, 254, 0.5) !important;
 }
 
 .card-icon {
     font-size: 30px !important;
-    color: #007bff !important;
-    background: rgba(0, 123, 255, 0.12) !important;
-    border: 1px solid rgba(0, 123, 255, 0.3) !important;
+    color: #00f2fe !important;
+    background: rgba(0, 242, 254, 0.12) !important;
+    border: 1px solid rgba(0, 242, 254, 0.3) !important;
     width: 60px !important;
     height: 60px !important;
     border-radius: 16px !important;
@@ -1176,7 +1123,7 @@ section.product p {
     align-items: center !important;
     justify-content: center !important;
     flex-shrink: 0 !important;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2) !important;
 }
 
 .card-content {
@@ -1216,7 +1163,7 @@ section.product p {
 }
 
 .card-content ul li i {
-    color: #007bff !important;
+    color: #00f2fe !important;
     font-size: 16px !important;
     margin-top: 3px !important;
     flex-shrink: 0 !important;
@@ -1249,9 +1196,9 @@ section.product p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #007bff;
-  background: rgba(0, 123, 255, 0.1);
-  border: 1px solid rgba(0, 123, 255, 0.25);
+  color: #00f2fe;
+  background: rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.25);
   padding: 6px 16px;
   border-radius: 20px;
   margin-bottom: 18px;
@@ -1279,21 +1226,21 @@ section.product p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #007bff;
+  background: #00f2fe;
   color: #ffffff;
   font-weight: 600;
   font-size: 15px;
   padding: 14px 30px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.35);
   text-decoration: none !important;
 }
 
 .about-hero-cta:hover {
-  background: #0056b3;
+  background: #0099ff;
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 10px 28px rgba(0, 242, 254, 0.5);
 }
 
 .about-hero-media {
@@ -1327,7 +1274,7 @@ section.product p {
   height: 560px;
   background: radial-gradient(circle at center, #262626 0%, #050505 100%);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 55px rgba(0, 123, 255, 0.35);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 55px rgba(0, 242, 254, 0.35);
 }
 
 .about-hero-logo-img {
@@ -1392,7 +1339,7 @@ section.product p {
   font-size: 11.5px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #007bff;
+  color: #00f2fe;
   font-weight: 600;
 }
 
@@ -1408,7 +1355,7 @@ section.product p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #007bff;
+  color: #00f2fe;
   margin-bottom: 8px;
 }
 
@@ -1465,15 +1412,15 @@ section.product p {
   height: 16px;
   border-radius: 50%;
   background: #050505;
-  border: 3px solid #007bff;
+  border: 3px solid #00f2fe;
   margin-bottom: 20px;
   margin-top: 24px;
   transition: all 0.3s ease;
 }
 
 .timeline-item:hover .timeline-dot {
-  background: #007bff;
-  box-shadow: 0 0 12px rgba(0, 123, 255, 0.8);
+  background: #00f2fe;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
   transform: scale(1.2);
 }
 
@@ -1490,7 +1437,7 @@ section.product p {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #007bff;
+  color: #00f2fe;
   margin-bottom: 8px;
 }
 
@@ -1508,7 +1455,7 @@ section.product p {
 .vision-banner {
   background: #0d0d0d;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 4px solid #007bff;
+  border-left: 4px solid #00f2fe;
   border-radius: 12px;
   padding: 36px 40px;
   margin-bottom: 48px;
@@ -1519,7 +1466,7 @@ section.product p {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #007bff;
+  color: #00f2fe;
   margin-bottom: 8px;
   display: block;
 }
@@ -1546,14 +1493,14 @@ section.product p {
 }
 
 .value-card:hover {
-  border-color: rgba(0, 123, 255, 0.4);
+  border-color: rgba(0, 242, 254, 0.4);
   transform: translateY(-4px);
 }
 
 .value-num {
   font-size: 14px;
   font-weight: 700;
-  color: #007bff;
+  color: #00f2fe;
   opacity: 0.8;
   margin-bottom: 6px;
   display: block;
@@ -1594,14 +1541,14 @@ section.product p {
 }
 
 .capability-card:hover {
-  border-color: rgba(0, 123, 255, 0.4);
+  border-color: rgba(0, 242, 254, 0.4);
   transform: translateY(-4px);
 }
 
 .cap-num {
   font-size: 13px;
   font-weight: 700;
-  color: #007bff;
+  color: #00f2fe;
   margin-bottom: 8px;
   display: block;
 }
@@ -1631,7 +1578,7 @@ section.product p {
 
 .cap-list span::before {
   content: '•';
-  color: #007bff;
+  color: #00f2fe;
 }
 
 /* 6. CARA KAMI BEKERJA (PROCESS FLOW) */
@@ -1656,14 +1603,14 @@ section.product p {
 }
 
 .process-step-card:hover {
-  border-color: rgba(0, 123, 255, 0.5);
+  border-color: rgba(0, 242, 254, 0.5);
   transform: translateY(-4px);
 }
 
 .step-num {
   font-size: 16px;
   font-weight: 700;
-  color: #007bff;
+  color: #00f2fe;
   margin-bottom: 8px;
   display: block;
 }
@@ -1773,7 +1720,7 @@ section.product p {
 }
 
 .proof-card:hover {
-  border-color: rgba(0, 123, 255, 0.5);
+  border-color: rgba(0, 242, 254, 0.5);
   transform: translateY(-5px);
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
 }
@@ -1804,7 +1751,7 @@ section.product p {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #007bff;
+  color: #00f2fe;
   margin-bottom: 4px;
   display: block;
 }
@@ -1828,7 +1775,7 @@ section.product p {
 .proof-cta-link {
   font-size: 15px;
   font-weight: 600;
-  color: #007bff;
+  color: #00f2fe;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1878,18 +1825,18 @@ section.product p {
 
 .ab-testi-role {
   font-size: 12.5px;
-  color: #007bff;
+  color: #00f2fe;
 }
 
 /* 10. FINAL CTA SECTION */
 .about-final-cta-section {
   background: #0d0d0d;
-  border: 1px solid rgba(0, 123, 255, 0.25);
+  border: 1px solid rgba(0, 242, 254, 0.25);
   border-radius: 20px;
   padding: 60px 32px;
   text-align: center;
   margin-bottom: 60px;
-  box-shadow: 0 16px 40px rgba(0, 123, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 242, 254, 0.12);
 }
 
 .final-cta-title {
@@ -1912,21 +1859,21 @@ section.product p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #007bff;
+  background: #00f2fe;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   padding: 16px 36px;
   border-radius: 30px;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
   text-decoration: none !important;
 }
 
 .btn-final-wa:hover {
-  background: #0056b3;
+  background: #0099ff;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 242, 254, 0.6);
 }
 
 /* ARSIP PORTOFOLIO KARYA BY YEAR SECTION */
@@ -1957,8 +1904,8 @@ section.product p {
 }
 
 .archive-year-card.highlight {
-  border-color: rgba(0, 123, 255, 0.4);
-  background: linear-gradient(180deg, #111111 0%, rgba(0, 123, 255, 0.06) 100%);
+  border-color: rgba(0, 242, 254, 0.4);
+  background: linear-gradient(180deg, #111111 0%, rgba(0, 242, 254, 0.06) 100%);
 }
 
 .archive-year-wide {
@@ -2005,9 +1952,9 @@ section.product p {
 }
 
 .archive-year-card:hover {
-  border-color: #007bff;
+  border-color: #00f2fe;
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.2), 0 8px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 242, 254, 0.2), 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 .archive-year-top {
@@ -2029,9 +1976,9 @@ section.product p {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #007bff;
-  background: rgba(0, 123, 255, 0.15);
-  border: 1px solid rgba(0, 123, 255, 0.3);
+  color: #00f2fe;
+  background: rgba(0, 242, 254, 0.15);
+  border: 1px solid rgba(0, 242, 254, 0.3);
   padding: 3px 10px;
   border-radius: 12px;
 }
@@ -2046,7 +1993,7 @@ section.product p {
 .archive-year-link {
   font-size: 13.5px;
   font-weight: 600;
-  color: #007bff;
+  color: #00f2fe;
   display: inline-flex;
   align-items: center;
   gap: 6px;

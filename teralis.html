@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -18,16 +18,18 @@
     .produk-item .produk-text { padding-right: 3px !important; }
     .produk-item .produk-text h3, .produk-item .produk-button-wrapper { padding-right: 21px !important; box-sizing: border-box !important; }
     .produk-item .produk-text p { padding-right: 21px !important; color: #ffffff !important; text-transform: none !important; font-size: 14px !important; box-sizing: border-box !important; }
-    nav ul li a:hover, nav ul li a:focus, .dropbtn:hover, .dropdown:hover > .dropbtn { background: transparent !important; background-color: transparent !important; color: #007bff !important; box-shadow: none !important; }
+    
     .dropdown-content a { background: rgba(255,255,255,0.03) !important; border: 1px solid rgba(255,255,255,0.08) !important; }
-    .dropdown-content a:hover { background: #007bff !important; color: #ffffff !important; }
+    
     .produk-item .spesifikasi, ul.spesifikasi, .spesifikasi { width: 100% !important; margin-right: 0 !important; padding: 0 21px 0 18px !important; box-sizing: border-box !important; max-height: 85px !important; overflow-y: auto !important; scrollbar-width: thin !important; scrollbar-color: rgba(0,123,255,0.8) transparent !important; }
     .spesifikasi::-webkit-scrollbar-button, ul.spesifikasi::-webkit-scrollbar-button, .produk-item .spesifikasi::-webkit-scrollbar-button { display: none !important; width: 0 !important; height: 0 !important; }
     .spesifikasi::-webkit-scrollbar, ul.spesifikasi::-webkit-scrollbar, .produk-item .spesifikasi::-webkit-scrollbar { width: 6px !important; }
     .spesifikasi::-webkit-scrollbar-track, ul.spesifikasi::-webkit-scrollbar-track, .produk-item .spesifikasi::-webkit-scrollbar-track { background: rgba(255,255,255,0.05) !important; border-radius: 4px !important; }
-    .spesifikasi::-webkit-scrollbar-thumb, ul.spesifikasi::-webkit-scrollbar-thumb, .produk-item .spesifikasi::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#007bff,#0056b3) !important; border-radius: 4px !important; box-shadow: 0 0 8px rgba(0,123,255,0.8) !important; }
+    .spesifikasi::-webkit-scrollbar-thumb, ul.spesifikasi::-webkit-scrollbar-thumb, .produk-item .spesifikasi::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#00f2fe,#0056b3) !important; border-radius: 4px !important; box-shadow: 0 0 8px rgba(0,123,255,0.8) !important; }
     .spesifikasi::-webkit-scrollbar-thumb:hover, ul.spesifikasi::-webkit-scrollbar-thumb:hover, .produk-item .spesifikasi::-webkit-scrollbar-thumb:hover { background: #0056b3 !important; }
   </style>
+  <link rel="icon" type="image/png" href="assets/images/logo-cropped.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo-cropped.png" />
 </head>
 
 <body>
@@ -38,34 +40,119 @@
     <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4" loading="lazy" decoding="async">
   </div>
 
+    <!-- HEADER NAVIGASI -->
+    <!-- HEADER NAVIGASI -->
   <header>
-    <a href="beranda.html" class="brand-container">
-      <img src="assets/images/logo-cropped.png" alt="Logo Stainless Indah" class="site-logo">
-      <h1>Stainless Indah</h1>
+    <a href="index.html" class="brand-container">
+      <img src="assets/images/logo-cropped.png" alt="Logo STAINLESS INDAH" class="site-logo">
+      <h1>STAINLESS INDAH</h1>
     </a>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
-        <li><a href="beranda.html">Beranda</a></li>
+        <li><a href="index.html">Beranda</a></li>
         <li class="dropdown">
-          <b><a href="produk.html" class="dropbtn">Produk</a></b>
-          <div class="dropdown-content">
-            <a href="kanopi.html">Kanopi</a>
-            <a href="tangga.html">Railing Tangga</a>
-            <a href="pagar.html">Pagar</a>
-            <a href="anti maling.html">Anti Maling</a>
-            <a href="kaca.html">Kaca</a>
-            <a href="kontruksi baja.html">Kontruksi Baja</a>
-            <a href="balkon.html">Balkon</a>
-            <a href="teralis.html">Teralis</a>
-            <a href="fasad.html">Fasad</a>
-            <a href="pintu.html">Pintu</a>
-            <a href="kerangka meja.html">Kerangka Meja</a>
-            <a href="tempa.html">Tempa</a>
-            <a href="custom.html">Custom</a>
+          <b><a href="produk.html" class="dropbtn">Produk <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: 4px;"></i></a></b>
+          <div class="dropdown-mega-content">
+            <a href="kanopi.html" class="mega-item">
+              <i class="fa-solid fa-umbrella"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Kanopi</span>
+                <span class="mega-item-subtitle">ACP, Kaca, Mild Steel</span>
+              </div>
+            </a>
+            <a href="tangga.html" class="mega-item">
+              <i class="fa-solid fa-stairs"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Railing Tangga</span>
+                <span class="mega-item-subtitle">Stainless 304 & Kaca</span>
+              </div>
+            </a>
+            <a href="pagar.html" class="mega-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Pagar</span>
+                <span class="mega-item-subtitle">Dorong, Lipat, Minimalis</span>
+              </div>
+            </a>
+            <a href="anti maling.html" class="mega-item">
+              <i class="fa-solid fa-lock"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Anti Maling</span>
+                <span class="mega-item-subtitle">Pengaman Jendela & Pintu</span>
+              </div>
+            </a>
+            <a href="kaca.html" class="mega-item">
+              <i class="fa-solid fa-border-all"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Kaca Tempered</span>
+                <span class="mega-item-subtitle">Partisi & Shower Room</span>
+              </div>
+            </a>
+            <a href="kontruksi baja.html" class="mega-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Konstruksi Baja</span>
+                <span class="mega-item-subtitle">Baja WF & Gudang</span>
+              </div>
+            </a>
+            <a href="balkon.html" class="mega-item">
+              <i class="fa-solid fa-gopuram"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Balkon</span>
+                <span class="mega-item-subtitle">Railing Balkon Stainless</span>
+              </div>
+            </a>
+            <a href="teralis.html" class="mega-item">
+              <i class="fa-solid fa-bars-staggered"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Teralis</span>
+                <span class="mega-item-subtitle">Teralis Jendela Modern</span>
+              </div>
+            </a>
+            <a href="fasad.html" class="mega-item">
+              <i class="fa-solid fa-city"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Fasad</span>
+                <span class="mega-item-subtitle">ACP Cladding & Ornament</span>
+              </div>
+            </a>
+            <a href="pintu.html" class="mega-item">
+              <i class="fa-solid fa-door-closed"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Pintu</span>
+                <span class="mega-item-subtitle">Pintu Utama & Garasi</span>
+              </div>
+            </a>
+            <a href="kerangka meja.html" class="mega-item">
+              <i class="fa-solid fa-table"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Kerangka Meja</span>
+                <span class="mega-item-subtitle">Furniture & Resto</span>
+              </div>
+            </a>
+            <a href="tempa.html" class="mega-item">
+              <i class="fa-solid fa-hammer"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Besi Tempa</span>
+                <span class="mega-item-subtitle">Klasik & Ornamen Mewah</span>
+              </div>
+            </a>
+            <a href="custom.html" class="mega-item" class="mega-item full-width" style="grid-column: 1 / -1;">
+              <i class="fa-solid fa-compass-drafting"></i>
+              <div class="mega-item-text">
+                <span class="mega-item-title">Fabrikasi Custom</span>
+                <span class="mega-item-subtitle">Desain & Ukuran Khusus Sesuai Permintaan Proyek Anda</span>
+              </div>
+            </a>
           </div>
         </li>
         <li><a href="tentang.html">Tentang Kami</a></li>
+        <li>
+          <a href="https://wa.me/+62811569863" target="_blank" class="header-cta-btn">
+            <i class="fab fa-whatsapp"></i> Konsultasi WA
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -154,5 +241,13 @@
     }
     function hidePopup() { document.getElementById("imagePopup").style.display = "none"; }
   </script>
+  <!-- FLOATING WHATSAPP WIDGET -->
+  <div class="floating-wa-container">
+    <span class="floating-wa-tooltip">Tanya Produk &amp; Price List</span>
+    <a href="https://wa.me/+62811569863?text=Halo%20Stainless%20Indah,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20fabrikasi" target="_blank" class="floating-wa-btn" aria-label="Chat via WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
 </body>
 </html>

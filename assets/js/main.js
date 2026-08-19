@@ -22,6 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile Dropdown Tap Toggle ---
+    const dropBtns = document.querySelectorAll('.dropdown > .dropbtn');
+    dropBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                const dropdown = btn.closest('.dropdown');
+                if (dropdown) {
+                    if (!dropdown.classList.contains('active')) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                }
+            }
+        });
+    });
+
     // --- Dynamic Fullscreen Image Popup Modal Setup ---
     let modal = document.getElementById('imageModal') || document.getElementById('imagePopup');
     let modalImg = document.getElementById('popupImg');
@@ -34,20 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.cssText = 'display:none; position:fixed; z-index:100000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.93); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); justify-content:center; align-items:center; flex-direction:column; padding:20px; box-sizing:border-box; cursor:pointer;';
         
         modal.innerHTML = `
-            <span class="close" style="position:absolute; top:20px; right:30px; color:#ffffff; font-size:42px; font-weight:bold; cursor:pointer; z-index:100001; transition:transform 0.2s ease; line-height:1;">&times;</span>
-            <img class="popup-content" id="popupImg" style="width:92vw; max-width:1300px; height:clamp(340px, 60vh, 580px); object-fit:cover; object-position:center center; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.9); border:1px solid rgba(255,255,255,0.15); cursor:default; animation:popupZoom 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-            <div id="popupCaption" style="color:#e0e0e0; margin-top:14px; font-size:15px; font-weight:500; text-align:center; max-width:80%;"></div>
+            <span class="close" style="position:absolute; top:20px; right:30px; color:#ffffff; font-size:44px; font-weight:bold; cursor:pointer; z-index:100001; transition:transform 0.2s ease; line-height:1;">&times;</span>
+            <img class="popup-content" id="popupImg" style="width:auto; height:auto; max-width:95vw; max-height:95vh; object-fit:contain; border-radius:12px; box-shadow:0 25px 80px rgba(0,0,0,0.95), 0 0 35px rgba(0,242,254,0.25); border:1px solid rgba(0,242,254,0.4); cursor:default; animation:popupZoom 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
         `;
         document.body.appendChild(modal);
         modalImg = document.getElementById('popupImg');
         closeBtn = modal.querySelector('.close');
     }
 
-    function openPopup(src, alt = '') {
+    function openPopup(src) {
         if (modal && modalImg) {
             modalImg.src = src;
             const caption = document.getElementById('popupCaption');
-            if (caption) caption.textContent = alt || '';
+            if (caption) caption.style.display = 'none';
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Lock background scroll
         }
@@ -389,6 +404,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initFeaturedSlideshow();
+
+    // --- IntersectionObserver Scroll Reveal Animations ---
+    const revealElements = document.querySelectorAll('.section-header, .why-us-card, .category-card, .workflow-card, .testimonial-card, .stats-bar, .featured-project-container');
+    
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => {
+            el.classList.add('reveal-on-scroll');
+            revealObserver.observe(el);
+        });
+    } else {
+        revealElements.forEach(el => el.classList.add('visible'));
+    }
 });
 
 // Global Function for Needs-based Solution Selection on produk.html
@@ -568,58 +607,47 @@ window.selectNeedsCategory = function(type, event) {
 
 // Global Image Popup Lightbox Modal
 window.showPopup = function(imgElement) {
-    if (!imgElement || !imgElement.src) return;
+    if (!imgElement) return;
+    const src = (typeof imgElement === 'string') ? imgElement : (imgElement.src || '');
+    if (!src) return;
+
+    // Use primary modal if present
+    const modal = document.getElementById('imageModal') || document.getElementById('imagePopup');
+    const modalImg = document.getElementById('popupImg');
+    if (modal && modalImg) {
+        modalImg.src = src;
+        const caption = document.getElementById('popupCaption');
+        if (caption) caption.style.display = 'none';
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        return;
+    }
+
     const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    overlay.style.display = 'flex';
-    overlay.style.flexDirection = 'column';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = '999999';
-    overlay.style.cursor = 'pointer';
-    overlay.style.padding = '20px';
-    overlay.style.boxSizing = 'border-box';
-
-    const popupImg = document.createElement('img');
-    popupImg.src = imgElement.src;
-    popupImg.alt = imgElement.alt || 'Dokumentasi Proyek Stainless Indah';
-    popupImg.style.maxWidth = '90%';
-    popupImg.style.maxHeight = '80vh';
-    popupImg.style.borderRadius = '10px';
-    popupImg.style.objectFit = 'contain';
-    popupImg.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.8)';
-
-    const caption = document.createElement('div');
-    caption.textContent = (imgElement.alt || 'Dokumentasi Proyek Stainless Indah') + ' (Klik di mana saja untuk menutup)';
-    caption.style.color = '#ffffff';
-    caption.style.marginTop = '15px';
-    caption.style.fontSize = '15px';
-    caption.style.fontFamily = 'sans-serif';
-    caption.style.textAlign = 'center';
+    overlay.className = 'popup-overlay';
+    overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.95); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; z-index:999999; cursor:pointer; padding:15px; box-sizing:border-box;';
 
     const closeBtn = document.createElement('span');
-    closeBtn.innerHTML = '&times; Tutup Gambar';
-    closeBtn.style.color = '#007bff';
-    closeBtn.style.background = '#ffffff';
-    closeBtn.style.padding = '6px 16px';
-    closeBtn.style.borderRadius = '20px';
-    closeBtn.style.fontSize = '13px';
-    closeBtn.style.fontWeight = 'bold';
-    closeBtn.style.marginTop = '12px';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.cssText = 'position:absolute; top:20px; right:30px; color:#ffffff; font-size:44px; font-weight:bold; cursor:pointer; z-index:1000000; line-height:1; opacity:0.85; transition:all 0.2s ease;';
+    closeBtn.onmouseenter = () => closeBtn.style.color = '#00f2fe';
+    closeBtn.onmouseleave = () => closeBtn.style.color = '#ffffff';
 
-    overlay.appendChild(popupImg);
-    overlay.appendChild(caption);
+    const popupImg = document.createElement('img');
+    popupImg.src = src;
+    popupImg.style.cssText = 'width:auto; height:auto; max-width:95vw; max-height:95vh; object-fit:contain; border-radius:12px; box-shadow:0 25px 80px rgba(0,0,0,0.95), 0 0 35px rgba(0,242,254,0.25); border:1px solid rgba(0,242,254,0.4); animation:popupZoom 0.35s cubic-bezier(0.175,0.885,0.32,1.275); cursor:default;';
+
     overlay.appendChild(closeBtn);
+    overlay.appendChild(popupImg);
     document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
 
-    overlay.onclick = function() {
-        if (document.body.contains(overlay)) {
-            document.body.removeChild(overlay);
+    overlay.onclick = function(e) {
+        if (e.target === overlay || e.target === closeBtn) {
+            if (document.body.contains(overlay)) {
+                document.body.removeChild(overlay);
+            }
+            document.body.style.overflow = '';
         }
     };
 };
