@@ -1761,3 +1761,110 @@ h2.section-title,
 .archive-pill.active i {
     color: #000000 !important;
 }
+
+/* --- TESTIMONIAL & PORTFOLIO PROJECT CARDS --- */
+.testimoni-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+.testimoni-section .section-title {
+    font-size: clamp(24px, 3.5vw, 32px);
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 700;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project-card {
+    background: rgba(18, 18, 18, 0.85) !important;
+    border: 1px solid rgba(0, 242, 254, 0.25) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+    border-color: rgba(0, 242, 254, 0.6) !important;
+    box-shadow: 0 14px 40px rgba(0, 242, 254, 0.25) !important;
+    transform: translateY(-2px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.project-header h3 {
+    font-size: clamp(18px, 2.5vw, 22px) !important;
+    color: #00f2fe !important;
+    margin: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+}
+
+.project-date {
+    color: #a0a0a0 !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project-date i {
+    color: #00f2fe;
+}
+
+.project-gallery {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+    scroll-snap-type: x mandatory;
+}
+
+.project-gallery img {
+    flex: 0 0 280px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+    background: #111111;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.03);
+    border-color: #00f2fe;
+    box-shadow: 0 8px 24px rgba(0, 242, 254, 0.4);
+}
+
+.project-desc {
+    padding-top: 4px;
+}
+
+.project-desc p {
+    color: #e0e0e0 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    font-size: 14.5px !important;
+}
+
