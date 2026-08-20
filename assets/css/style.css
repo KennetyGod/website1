@@ -489,7 +489,7 @@ nav ul li a:not(.header-cta-btn):hover {
     white-space: nowrap !important;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .dropdown-mega-content,
     .dropdown-content {
         position: static !important;
@@ -497,7 +497,7 @@ nav ul li a:not(.header-cta-btn):hover {
         transform: none !important;
         width: 100% !important;
         max-width: 100% !important;
-        max-height: 60vh !important;
+        max-height: 65vh !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -527,7 +527,7 @@ nav ul li a:not(.header-cta-btn):hover {
         transform: none !important;
         width: 100% !important;
         max-width: 100% !important;
-        max-height: 60vh !important;
+        max-height: 65vh !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
         padding: 10px !important;
@@ -1680,4 +1680,84 @@ h2.section-title,
 .section-title::after {
     left: 50% !important;
     transform: translateX(-50%) !important;
+}
+
+/* ==========================================================================
+   PREMIUM GLASSMORPHISM PORTFOLIO YEAR ARCHIVE NAVIGATION
+   ========================================================================== */
+.portfolio-archive-card {
+    background: linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(0, 242, 254, 0.3) !important;
+    border-radius: 20px !important;
+    padding: 32px 24px !important;
+    margin: 50px auto 40px auto !important;
+    max-width: 1100px !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 242, 254, 0.15) !important;
+    box-sizing: border-box !important;
+}
+
+.portfolio-archive-card h3 {
+    font-size: clamp(18px, 3vw, 24px) !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 24px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+}
+
+.portfolio-archive-card h3 i {
+    color: #00f2fe !important;
+    font-size: 22px !important;
+}
+
+.portfolio-archive-pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.archive-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 12px 22px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.archive-pill:hover {
+    background: rgba(0, 242, 254, 0.15) !important;
+    border-color: #00f2fe !important;
+    color: #00f2fe !important;
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4) !important;
+}
+
+.archive-pill.active {
+    background: linear-gradient(135deg, #00f2fe 0%, #0099ff 100%) !important;
+    border-color: #00f2fe !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6) !important;
+}
+
+.archive-pill.active i {
+    color: #000000 !important;
 }

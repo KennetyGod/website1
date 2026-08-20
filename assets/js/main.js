@@ -1,41 +1,116 @@
 // Main JavaScript for Stainless Indah
 
+// --- Global Image Error Fallback Handler ---
+document.addEventListener('error', function (e) {
+    if (e.target && e.target.tagName === 'IMG') {
+        const src = e.target.getAttribute('src') || '';
+        if (src && !e.target.dataset.fallbackApplied) {
+            e.target.dataset.fallbackApplied = 'true';
+            const showcaseImages = [
+                'assets/images/kanopi21.png',
+                'assets/images/balkon21.jpg',
+                'assets/images/teralis21.jpg',
+                'assets/images/tangga21.png',
+                'assets/images/pagar-cat.jpg',
+                'assets/images/kaca21.jpg',
+                'assets/images/tempa21.jpg',
+                'assets/images/baja21.jpg',
+                'assets/images/fasad21.jpg',
+                'assets/images/pintu-cat.jpg',
+                'assets/images/custom-cat.jpg',
+                'assets/images/meja-cat.jpg'
+            ];
+
+            if (lower.includes('kanopi') || lower.includes('acp') || lower.includes('carport') || lower.includes('alderon')) {
+                e.target.src = 'assets/images/kanopi21.png';
+            } else if (lower.includes('balkon') || lower.includes('terras')) {
+                e.target.src = 'assets/images/balkon21.jpg';
+            } else if (lower.includes('teralis') || lower.includes('antimaling') || lower.includes('maling')) {
+                e.target.src = 'assets/images/teralis21.jpg';
+            } else if (lower.includes('tangga') || lower.includes('railing')) {
+                e.target.src = 'assets/images/tangga21.png';
+            } else if (lower.includes('tempa')) {
+                e.target.src = 'assets/images/tempa21.jpg';
+            } else if (lower.includes('baja') || lower.includes('konstruksi') || lower.includes('lest plang')) {
+                e.target.src = 'assets/images/baja21.jpg';
+            } else if (lower.includes('kaca') || lower.includes('partisi') || lower.includes('kusen') || lower.includes('etalase')) {
+                e.target.src = 'assets/images/kaca21.jpg';
+            } else if (lower.includes('fasad') || lower.includes('kisi')) {
+                e.target.src = 'assets/images/fasad21.jpg';
+            } else if (lower.includes('pintu') || lower.includes('folding') || lower.includes('garasi') || lower.includes('gate')) {
+                e.target.src = 'assets/images/pintu-cat.jpg';
+            } else if (lower.includes('lift') || lower.includes('meja') || lower.includes('custom') || lower.includes('rak')) {
+                e.target.src = lower.includes('meja') ? 'assets/images/meja-cat.jpg' : 'assets/images/custom-cat.jpg';
+            } else {
+                let hash = 0;
+                for (let i = 0; i < src.length; i++) {
+                    hash = (hash << 5) - hash + src.charCodeAt(i);
+                    hash |= 0;
+                }
+                const index = Math.abs(hash) % showcaseImages.length;
+                e.target.src = showcaseImages[index];
+            }
+        }
+    }
+}, true);
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Stainless Indah Modern Script Loaded");
 
-    // --- Mobile Menu Toggle ---
+    // --- Mobile & iPad Menu Toggle (Width <= 1024px) ---
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
 
     if (menuToggle && nav) {
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             nav.classList.toggle('active');
 
             const icon = menuToggle.querySelector('i');
-            if (nav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+            if (icon) {
+                if (nav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
     }
 
-    // --- Mobile Dropdown Tap Toggle ---
+    // --- Mobile & iPad Dropdown Tap Toggle (Width <= 1024px) ---
     const dropBtns = document.querySelectorAll('.dropdown > .dropbtn');
     dropBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
+            if (window.innerWidth <= 1024) {
                 const dropdown = btn.closest('.dropdown');
                 if (dropdown) {
-                    if (!dropdown.classList.contains('active')) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                    }
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
                 }
             }
         });
+    });
+
+    // Close Mobile / iPad Drawer & Dropdown When Clicking Outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1024) {
+            const isClickInsideNav = nav && nav.contains(e.target);
+            const isClickOnToggle = menuToggle && menuToggle.contains(e.target);
+
+            if (!isClickInsideNav && !isClickOnToggle) {
+                if (nav && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    const icon = menuToggle ? menuToggle.querySelector('i') : null;
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
+            }
+        }
     });
 
     // --- Dynamic Fullscreen Image Popup Modal Setup ---
@@ -458,37 +533,37 @@ window.selectNeedsCategory = function(type, event) {
                     title: 'Kanopi ACP Rumah Billy',
                     tag: 'Proyek Hunian · Carport',
                     desc: 'Dokumentasi pengerjaan kanopi rangka baja & ACP minimalis hunian.',
-                    img: 'assets/images/kanopi-cat.jpg'
+                    img: 'assets/images/kanopi21.png?v=20260820_photo2'
                 },
                 {
-                    title: 'Pagar Dorong Rumah Billy',
+                    title: 'Pagar Dorong Automatic Laser Cut',
                     tag: 'Proyek Hunian · Batas Rumah',
-                    desc: 'Pagar lipat & dorong besi motif laser cutting presisi.',
-                    img: 'assets/images/pagar-cat.jpg'
+                    desc: 'Pagar dorong motif laser cutting chevron dengan sistem pagar otomatis.',
+                    img: 'assets/images/pagar-cat.jpg?v=20260820_photo3'
                 },
                 {
-                    title: 'Railing Tangga Pak Nyap',
+                    title: 'Railing Tangga Stainless Outdoor',
                     tag: 'Proyek Hunian · Tangga Utama',
-                    desc: 'Pegangan tangga kombinasi tiang stainless, pipa, & kaca tempered.',
-                    img: 'assets/images/tangga-cat.jpg'
+                    desc: 'Pegangan tangga outdoor kombinasi tiang stainless & pipa besi tahan cuaca.',
+                    img: 'assets/images/tangga21.png?v=20260820_photo3'
                 },
                 {
                     title: 'Balkon Stainless Hakka',
                     tag: 'Proyek Hunian · Teras Atas',
                     desc: 'Pengaman balkon rumah tingkat desain minimalis tahan karat.',
-                    img: 'assets/images/balkon-cat.jpg'
+                    img: 'assets/images/balkon21.jpg?v=20260820_photo3'
                 },
                 {
                     title: 'Teralis Jendela Urbania',
                     tag: 'Proyek Hunian · Pengaman Jendela',
                     desc: 'Proteksi jendela rumah dengan teralis besi motif modern.',
-                    img: 'assets/images/teralis-cat.jpg'
+                    img: 'assets/images/teralis21.jpg?v=20260820_photo3'
                 },
                 {
-                    title: 'Pintu Kaca Tabrani Ahmad',
+                    title: 'Arsitektur Kaca Tempered Curved',
                     tag: 'Proyek Hunian · Akses Utama',
-                    desc: 'Pintu swing kaca tempered & frame aluminium hunian.',
-                    img: 'assets/images/pintu-cat.jpg'
+                    desc: 'Partisi & sekat kaca tempered lengkung kualitas presisi.',
+                    img: 'assets/images/kaca21.jpg?v=20260820_photo3'
                 }
             ]
         },
@@ -520,7 +595,7 @@ window.selectNeedsCategory = function(type, event) {
                     title: 'Momoyo Ngabang',
                     tag: 'Outlet & Fasad Toko',
                     desc: 'Pengerjaan etalase, fasad ACP, & pintu kaca tempered outlet Momoyo Ngabang.',
-                    img: 'assets/images/komersial-momoyo.jpg'
+                    img: 'assets/images/fasad21.jpg?v=20260820_photo1'
                 },
                 {
                     title: 'Gaia Mall Pontianak',
@@ -543,16 +618,16 @@ window.selectNeedsCategory = function(type, event) {
             tabId: 'btnTabCustom',
             products: [
                 {
-                    title: 'Lift Barang Gudang Lokale',
-                    tag: 'Pekerjaan Khusus Industri',
-                    desc: 'Konstruksi lift barang sederhana & aman untuk efisiensi operasional gudang.',
-                    img: 'assets/images/custom-cat.jpg'
+                    title: 'Ornamen Besi Tempa Mewah',
+                    tag: 'Pekerjaan Khusus Klasik',
+                    desc: 'Pagar & ornamen besi tempa desain klasik dengan ukiran tempa emas dan hitam.',
+                    img: 'assets/images/tempa21.jpg?v=20260820_photo1'
                 },
                 {
                     title: 'Konstruksi Baja Berat Perdana',
                     tag: 'Struktur Industri Heavy-Duty',
                     desc: 'Fabrikasi rangka baja bentang lebar, tiang pancang, & konstruksi gudang.',
-                    img: 'assets/images/baja-cat.jpg'
+                    img: 'assets/images/baja21.jpg?v=20260820_photo1'
                 },
                 {
                     title: 'Kerangka Meja Stainless MBG',
