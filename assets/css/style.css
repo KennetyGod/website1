@@ -2055,17 +2055,74 @@ h2.section-title,
     from { opacity: 0; transform: translateY(-15px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   UNIFIED TESTIMONIAL CARD STYLING
+   ========================================================================== */
+.testimonial-card, .ab-testi-card, .ab-testimonial-card {
+    background: rgba(18, 18, 18, 0.85) !important;
+    border: 1px solid rgba(0, 242, 254, 0.25) !important;
+    border-left: 4px solid #00f2fe !important;
+    border-radius: 14px !important;
+    padding: 28px 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.testimonial-card:hover, .ab-testi-card:hover, .ab-testimonial-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(0, 242, 254, 0.5) !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 242, 254, 0.2) !important;
+}
+
+.testimonial-card-header, .ab-testi-card-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 14px !important;
+}
+
 .user-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    background: rgba(0, 242, 254, 0.15);
-    color: #00f2fe;
-    border: 1px solid rgba(0, 242, 254, 0.3);
-    padding: 3px 8px;
-    border-radius: 12px;
-    margin-bottom: 10px;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    background: rgba(0, 242, 254, 0.12) !important;
+    color: #00f2fe !important;
+    border: 1px solid rgba(0, 242, 254, 0.3) !important;
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.rating-stars {
+    color: #ffc107 !important;
+    font-size: 14px !important;
+    letter-spacing: 1.5px !important;
+}
+
+.testimonial-quote, .ab-testi-quote, .ab-testimonial-quote {
+    font-size: 14.5px !important;
+    color: #e0e0e0 !important;
+    line-height: 1.65 !important;
+    font-style: italic !important;
+    margin-bottom: 20px !important;
+}
+
+.testimonial-author, .ab-testi-author, .ab-testimonial-author {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.testimonial-role, .ab-testi-role, .ab-testimonial-role {
+    font-size: 13px !important;
+    color: #00f2fe !important;
+    margin-top: 3px !important;
 }
 

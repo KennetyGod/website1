@@ -854,16 +854,19 @@ function renderSingleUserReview(rev, isNew = false) {
 
     const starsStr = '★'.repeat(rev.rating || 5);
     const card = document.createElement('div');
-    card.className = (grid.className.includes('ab-') ? 'ab-testimonial-card' : 'testimonial-card') + ' user-review-card';
+    const isAb = grid.className.includes('ab-');
+    card.className = (isAb ? 'ab-testi-card' : 'testimonial-card') + ' user-review-card';
     card.innerHTML = `
       <div>
-        <span class="user-badge">⭐ verified review</span>
-        <div style="color:#ffc107; font-size:14px; margin-bottom:8px;">${starsStr}</div>
-        <p class="${grid.className.includes('ab-') ? 'ab-testimonial-quote' : 'testimonial-quote'}">"${rev.quote}"</p>
+        <div class="${isAb ? 'ab-testi-card-header' : 'testimonial-card-header'}">
+          <span class="user-badge"><i class="fas fa-check-circle"></i> verified review</span>
+          <div class="rating-stars">${starsStr}</div>
+        </div>
+        <p class="${isAb ? 'ab-testi-quote' : 'testimonial-quote'}">"${rev.quote}"</p>
       </div>
       <div>
-        <div class="${grid.className.includes('ab-') ? 'ab-testimonial-author' : 'testimonial-author'}">${rev.author}</div>
-        <div class="${grid.className.includes('ab-') ? 'ab-testimonial-role' : 'testimonial-role'}">${rev.role}</div>
+        <div class="${isAb ? 'ab-testi-author' : 'testimonial-author'}">${rev.author}</div>
+        <div class="${isAb ? 'ab-testi-role' : 'testimonial-role'}">${rev.role}</div>
       </div>
     `;
 
