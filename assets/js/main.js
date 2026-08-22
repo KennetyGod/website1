@@ -897,20 +897,15 @@ function showReviewToast(msg) {
 document.addEventListener('DOMContentLoaded', () => {
     loadUserReviews();
 
-    const testimonialHeaders = document.querySelectorAll('.testimonial-header-wrapper, .rating-badge, .ab-section-header');
+    const testimonialHeaders = document.querySelectorAll('.testimonial-header-wrapper, .ab-section-header');
     testimonialHeaders.forEach(header => {
-        if (!header.querySelector('.btn-tulis-ulasan')) {
+        if (!header.querySelector('.btn-tulis-ulasan') && !header.parentNode.querySelector('.btn-tulis-ulasan')) {
             const btn = document.createElement('button');
             btn.className = 'btn-tulis-ulasan';
             btn.type = 'button';
             btn.onclick = window.openReviewModal;
             btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Tulis Ulasan';
-
-            if (header.classList.contains('rating-badge')) {
-                header.parentNode.insertBefore(btn, header.nextSibling);
-            } else {
-                header.appendChild(btn);
-            }
+            header.appendChild(btn);
         }
     });
 });
