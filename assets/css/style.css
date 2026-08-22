@@ -1868,3 +1868,204 @@ h2.section-title,
     font-size: 14.5px !important;
 }
 
+/* ==========================================================================
+   REVIEW SUBMISSION MODAL & BUTTON STYLES
+   ========================================================================== */
+.btn-tulis-ulasan {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, #00f2fe 0%, #007bff 100%) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+    border-radius: 30px !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 18px rgba(0, 242, 254, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-decoration: none !important;
+}
+.btn-tulis-ulasan:hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.6) !important;
+    color: #000000 !important;
+}
+
+.review-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeInModal 0.3s forwards ease-out;
+}
+@keyframes fadeInModal {
+    to { opacity: 1; }
+}
+
+.review-modal-card {
+    background: #141414;
+    border: 1px solid rgba(0, 242, 254, 0.4);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 242, 254, 0.2);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 540px;
+    padding: 32px;
+    box-sizing: border-box;
+    position: relative;
+    color: #ffffff;
+    transform: translateY(20px);
+    animation: slideUpModal 0.35s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes slideUpModal {
+    to { transform: translateY(0); }
+}
+
+.review-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 28px;
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+.review-modal-close:hover {
+    color: #00f2fe;
+}
+
+.review-modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00f2fe;
+    margin-bottom: 6px;
+}
+.review-modal-subtitle {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-bottom: 24px;
+}
+
+.review-form-group {
+    margin-bottom: 18px;
+}
+.review-form-group label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+}
+.review-form-input, .review-form-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+.review-form-input:focus, .review-form-textarea:focus {
+    border-color: #00f2fe;
+    background: rgba(0, 242, 254, 0.05);
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+}
+.review-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.star-rating-picker {
+    display: flex;
+    gap: 8px;
+    font-size: 28px;
+    color: #444444;
+    cursor: pointer;
+}
+.star-rating-picker span {
+    transition: color 0.2s ease, transform 0.15s ease;
+}
+.star-rating-picker span.active, .star-rating-picker span:hover {
+    color: #ffc107;
+    transform: scale(1.15);
+}
+
+.review-modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+.btn-submit-review {
+    flex: 1;
+    background: linear-gradient(135deg, #00f2fe 0%, #007bff 100%);
+    color: #000000;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.25s ease;
+}
+.btn-submit-review:hover {
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+    transform: translateY(-2px);
+}
+.btn-wa-review {
+    background: rgba(37, 211, 102, 0.15);
+    border: 1px solid #25d366;
+    color: #25d366;
+    font-weight: 600;
+    padding: 14px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+}
+.btn-wa-review:hover {
+    background: #25d366;
+    color: #000000;
+}
+
+.user-review-card {
+    border-left: 4px solid #00f2fe !important;
+    animation: fadeInCard 0.4s ease-out;
+}
+@keyframes fadeInCard {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.user-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(0, 242, 254, 0.15);
+    color: #00f2fe;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+

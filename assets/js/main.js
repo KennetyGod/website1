@@ -727,3 +727,191 @@ window.showPopup = function(imgElement) {
     };
 };
 
+// ==========================================================================
+// USER TESTIMONIAL SUBMISSION & LOCALSTORAGE DISPLAY HANDLER
+// ==========================================================================
+let currentSelectedRating = 5;
+
+window.openReviewModal = function() {
+    let modal = document.getElementById('userReviewModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'userReviewModal';
+        modal.className = 'review-modal-overlay';
+        modal.innerHTML = `
+          <div class="review-modal-card">
+            <span class="review-modal-close" onclick="closeReviewModal()">&times;</span>
+            <div class="review-modal-title">Tulis Ulasan Anda</div>
+            <div class="review-modal-subtitle">Berikan ulasan & pengalaman Anda menggunakan layanan Stainless Indah</div>
+            <form onsubmit="submitUserReview(event)">
+              <div class="review-form-group">
+                <label>Nama Lengkap / Panggilan *</label>
+                <input type="text" id="revNama" class="review-form-input" placeholder="Contoh: Bpk. Hendra / Ibu Siska" required>
+              </div>
+              <div class="review-form-group">
+                <label>Status / Kategori Proyek *</label>
+                <input type="text" id="revPeran" class="review-form-input" placeholder="Contoh: Pemilik Rumah — Pontianak" required>
+              </div>
+              <div class="review-form-group">
+                <label>Penilaian Bintang *</label>
+                <div class="star-rating-picker" id="starPicker">
+                  <span data-val="1" class="active">★</span>
+                  <span data-val="2" class="active">★</span>
+                  <span data-val="3" class="active">★</span>
+                  <span data-val="4" class="active">★</span>
+                  <span data-val="5" class="active">★</span>
+                </div>
+              </div>
+              <div class="review-form-group">
+                <label>Ulasan Anda *</label>
+                <textarea id="revKomentar" class="review-form-textarea" placeholder="Ceritakan pengalaman Anda mengenai kualitas pengerjaan, ketepatan waktu, dan pelayanan kami..." required></textarea>
+              </div>
+              <div class="review-modal-actions">
+                <button type="submit" class="btn-submit-review">Kirim Ulasan</button>
+                <button type="button" class="btn-wa-review" onclick="sendReviewViaWA()"><i class="fab fa-whatsapp"></i> Kirim ke WA</button>
+              </div>
+            </form>
+          </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Bind star picker
+        const stars = modal.querySelectorAll('#starPicker span');
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const val = parseInt(star.dataset.val);
+                currentSelectedRating = val;
+                stars.forEach(s => {
+                    if (parseInt(s.dataset.val) <= val) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
+    }
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeReviewModal = function() {
+    const modal = document.getElementById('userReviewModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+};
+
+window.sendReviewViaWA = function() {
+    const nama = document.getElementById('revNama')?.value.trim() || '';
+    const peran = document.getElementById('revPeran')?.value.trim() || '';
+    const komentar = document.getElementById('revKomentar')?.value.trim() || '';
+    if (!nama || !komentar) {
+        alert('Mohon isi nama dan komentar ulasan Anda terlebih dahulu.');
+        return;
+    }
+    const starsStr = '★'.repeat(currentSelectedRating);
+    const text = `Halo Stainless Indah, saya ingin memberikan ulasan:\n\nNama: ${nama}\nProyek/Lokasi: ${peran}\nRating: ${starsStr}\n\nUlasan:\n"${komentar}"`;
+    window.open(`https://wa.me/+62811569863?text=${encodeURIComponent(text)}`, '_blank');
+};
+
+window.submitUserReview = function(e) {
+    e.preventDefault();
+    const nama = document.getElementById('revNama').value.trim();
+    const peran = document.getElementById('revPeran').value.trim();
+    const quote = document.getElementById('revKomentar').value.trim();
+
+    if (!nama || !peran || !quote) return;
+
+    const newReview = {
+        id: Date.now(),
+        author: nama,
+        role: peran,
+        quote: quote,
+        rating: currentSelectedRating,
+        date: new Date().toLocaleDateString('id-ID')
+    };
+
+    // Save to localStorage
+    let saved = JSON.parse(localStorage.getItem('stainless_user_reviews') || '[]');
+    saved.unshift(newReview);
+    localStorage.setItem('stainless_user_reviews', JSON.stringify(saved));
+
+    // Render into current grid
+    renderSingleUserReview(newReview, true);
+
+    window.closeReviewModal();
+
+    // Notification toast
+    showReviewToast('Terima kasih! Ulasan Anda berhasil diterbitkan.');
+};
+
+function renderSingleUserReview(rev, isNew = false) {
+    const grid = document.querySelector('.testimonial-grid') || document.querySelector('.ab-testimonial-grid');
+    if (!grid) return;
+
+    const starsStr = '★'.repeat(rev.rating || 5);
+    const card = document.createElement('div');
+    card.className = (grid.className.includes('ab-') ? 'ab-testimonial-card' : 'testimonial-card') + ' user-review-card';
+    card.innerHTML = `
+      <div>
+        <span class="user-badge">⭐ verified review</span>
+        <div style="color:#ffc107; font-size:14px; margin-bottom:8px;">${starsStr}</div>
+        <p class="${grid.className.includes('ab-') ? 'ab-testimonial-quote' : 'testimonial-quote'}">"${rev.quote}"</p>
+      </div>
+      <div>
+        <div class="${grid.className.includes('ab-') ? 'ab-testimonial-author' : 'testimonial-author'}">${rev.author}</div>
+        <div class="${grid.className.includes('ab-') ? 'ab-testimonial-role' : 'testimonial-role'}">${rev.role}</div>
+      </div>
+    `;
+
+    if (isNew) {
+        grid.insertBefore(card, grid.firstChild);
+    } else {
+        grid.insertBefore(card, grid.firstChild);
+    }
+}
+
+function loadUserReviews() {
+    const saved = JSON.parse(localStorage.getItem('stainless_user_reviews') || '[]');
+    if (saved && saved.length > 0) {
+        saved.slice().reverse().forEach(rev => {
+            renderSingleUserReview(rev, false);
+        });
+    }
+}
+
+function showReviewToast(msg) {
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#00f2fe; color:#000; font-weight:700; padding:14px 28px; border-radius:30px; box-shadow:0 10px 30px rgba(0,242,254,0.5); z-index:1000000; font-size:14px; animation:fadeInModal 0.3s ease;';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        if (document.body.contains(toast)) document.body.removeChild(toast);
+    }, 3500);
+}
+
+// Auto-inject "+ Tulis Ulasan" button and load reviews on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    loadUserReviews();
+
+    const testimonialHeaders = document.querySelectorAll('.testimonial-header-wrapper, .rating-badge, .ab-section-header');
+    testimonialHeaders.forEach(header => {
+        if (!header.querySelector('.btn-tulis-ulasan')) {
+            const btn = document.createElement('button');
+            btn.className = 'btn-tulis-ulasan';
+            btn.type = 'button';
+            btn.onclick = window.openReviewModal;
+            btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Tulis Ulasan';
+
+            if (header.classList.contains('rating-badge')) {
+                header.parentNode.insertBefore(btn, header.nextSibling);
+            } else {
+                header.appendChild(btn);
+            }
+        }
+    });
+});
+
