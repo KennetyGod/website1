@@ -32,7 +32,33 @@ const mimeTypes = {
   '.txt': 'text/plain; charset=utf-8'
 };
 
-const server = http.createServer((req, res) => {
+const FOTO_PROYEK_DIR = path.join(PUBLIC_DIR, 'assets', 'images', 'foto proyek tahunan');
+const fotoFileMap = new Map();
+
+function scanFotoProyekDir(dir) {
+  if (!fs.existsSync(dir)) return;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      scanFotoProyekDir(fullPath);
+    } else {
+      const lowerName = entry.name.toLowerCase();
+      if (!fotoFileMap.has(lowerName)) {
+        fotoFileMap.set(lowerName, fullPath);
+      }
+    }
+  }
+}
+
+try {
+  scanFotoProyekDir(FOTO_PROYEK_DIR);
+  console.log(`Indexed ${fotoFileMap.size} annual project media files.`);
+} catch (err) {
+  console.error('Error indexing foto proyek tahunan:', err);
+}
+
+const requestHandler = (req, res) => {
   let reqUrl = req.url.split('?')[0];
   try {
     reqUrl = decodeURIComponent(reqUrl);
@@ -48,6 +74,29 @@ const server = http.createServer((req, res) => {
     filePath = path.join(filePath, 'index.html');
   } else if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
     filePath = filePath + '.html';
+  }
+
+  // Resolve media inside 'foto proyek tahunan'
+  if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+    if (reqUrl.startsWith('/assets/images/')) {
+      const relPath = reqUrl.substring('/assets/images/'.length);
+
+      let candidate = path.join(FOTO_PROYEK_DIR, relPath);
+      if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+        filePath = candidate;
+      } else {
+        const relAlt = relPath.replace(/^(2021|2022|2023)\//, '2021-2023/');
+        candidate = path.join(FOTO_PROYEK_DIR, relAlt);
+        if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+          filePath = candidate;
+        } else {
+          const baseName = path.basename(relPath).toLowerCase();
+          if (fotoFileMap.has(baseName)) {
+            filePath = fotoFileMap.get(baseName);
+          }
+        }
+      }
+    }
   }
 
   // Fallback for missing image files (e.g., Foto Proyek/...)
@@ -112,10 +161,18 @@ const server = http.createServer((req, res) => {
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || 'application/octet-stream';
+    
+    let cacheHeader = 'public, max-age=86400';
+    if (['.jpg', '.jpeg', '.png', '.webp', '.gif', '.woff', '.woff2', '.ttf', '.eot', '.ico'].includes(ext)) {
+      cacheHeader = 'public, max-age=31536000, immutable';
+    } else if (['.html', '.htm'].includes(ext)) {
+      cacheHeader = 'no-cache, must-revalidate';
+    }
+
     res.writeHead(200, {
       'Content-Type': contentType,
       'Access-Control-Allow-Origin': '*',
-      'Cache-Control': 'no-cache, no-store, must-revalidate'
+      'Cache-Control': cacheHeader
     });
     fs.createReadStream(filePath).pipe(res);
   } else {
@@ -132,8 +189,15 @@ const server = http.createServer((req, res) => {
       </html>
     `);
   }
-});
+};
 
+const server = http.createServer(requestHandler);
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`Server running at http://localhost:${PORT}/ and http://127.0.0.1:${PORT}/`);
 });
+
+const ipv6Server = http.createServer(requestHandler);
+ipv6Server.on('error', (err) => {
+  console.log('IPv6 listener note:', err.message);
+});
+ipv6Server.listen(PORT, '::1');
