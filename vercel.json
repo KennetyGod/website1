@@ -1,14 +1,22 @@
 {
+  "version": 2,
   "cleanUrls": true,
-  "outputDirectory": ".",
-  "rewrites": [
+  "builds": [
     {
-      "source": "/Foto%20Proyek/:path*",
-      "destination": "/assets/images/foto%20proyek%20tahunan/:path*"
+      "src": "*.html",
+      "use": "@vercel/static"
     },
     {
-      "source": "/Foto Proyek/:path*",
-      "destination": "/assets/images/foto%20proyek%20tahunan/:path*"
+      "src": "assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
     }
   ]
 }
