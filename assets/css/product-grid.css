@@ -441,11 +441,11 @@ ul.spesifikasi,
 .spesifikasi {
     width: 100% !important;
     margin: 0 0 12px 0 !important;
-    padding: 0 21px 0 18px !important;
+    padding: 4px 18px 10px 24px !important;
     color: #d0d0d0 !important;
     font-size: 13.5px !important;
     line-height: 1.6 !important;
-    max-height: 85px !important;
+    max-height: 120px !important;
     overflow-y: auto !important;
     box-sizing: border-box !important;
     scrollbar-width: thin !important;
@@ -488,9 +488,30 @@ ul.spesifikasi::-webkit-scrollbar-thumb:hover,
     background: #0099ff !important;
 }
 
-.produk-item .spesifikasi li {
-    margin-bottom: 3px !important;
-    list-style-type: disc !important;
+.produk-item .spesifikasi li,
+ul.spesifikasi li,
+.spesifikasi li {
+    margin-bottom: 5px !important;
+    padding-left: 18px !important;
+    position: relative !important;
+    list-style: none !important;
+    list-style-type: none !important;
+    color: #d0d0d0 !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+}
+
+.produk-item .spesifikasi li::before,
+ul.spesifikasi li::before,
+.spesifikasi li::before {
+    content: "•" !important;
+    color: #00f2fe !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: -2px !important;
+    line-height: 1 !important;
 }
 
 /* BUTTON AT VERY BOTTOM */
@@ -690,4 +711,28 @@ h2.section-title,
 .section-title::after {
     left: 50% !important;
     transform: translateX(-50%) !important;
+}
+
+/* REMOVE ALL NATIVE BROWSER WHITE BULLETS / MARKERS */
+ul, ol, li,
+.spesifikasi,
+.spesifikasi li,
+ul.spesifikasi,
+ul.spesifikasi li,
+.produk-item .spesifikasi,
+.produk-item .spesifikasi li {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+}
+
+ul::marker, ol::marker, li::marker,
+.spesifikasi::marker,
+.spesifikasi li::marker,
+ul.spesifikasi li::marker,
+.produk-item .spesifikasi li::marker {
+    display: none !important;
+    content: "" !important;
+    font-size: 0 !important;
+    color: transparent !important;
 }

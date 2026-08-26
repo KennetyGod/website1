@@ -997,3 +997,27 @@ body::before {
     grid-template-columns: 1fr;
   }
 }
+
+/* REMOVE ALL NATIVE BROWSER WHITE BULLETS / MARKERS */
+ul, ol, li,
+.spesifikasi,
+.spesifikasi li,
+ul.spesifikasi,
+ul.spesifikasi li,
+.produk-item .spesifikasi,
+.produk-item .spesifikasi li {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+}
+
+ul::marker, ol::marker, li::marker,
+.spesifikasi::marker,
+.spesifikasi li::marker,
+ul.spesifikasi li::marker,
+.produk-item .spesifikasi li::marker {
+    display: none !important;
+    content: "" !important;
+    font-size: 0 !important;
+    color: transparent !important;
+}
