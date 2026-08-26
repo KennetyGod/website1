@@ -96,20 +96,29 @@ body {
   align-items: center;
   justify-content: center;
   background: var(--accent-blue);
-  color: #ffffff !important;
+  color: #000000 !important;
   padding: 14px 32px;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 15px;
   text-decoration: none !important;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
 }
 
+.btn-primary-cta i {
+  color: #000000 !important;
+}
+
 .btn-primary-cta:hover {
   background: var(--accent-blue-hover);
+  color: #000000 !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+}
+
+.btn-primary-cta:hover i {
+  color: #000000 !important;
 }
 
 .btn-secondary-cta {

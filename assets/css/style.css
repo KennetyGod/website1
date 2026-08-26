@@ -444,6 +444,37 @@ nav ul li a:not(.header-cta-btn):hover {
     color: #000000 !important;
 }
 
+/* PRIMARY CTA BUTTON (KONSULTASI GRATIS) */
+.btn-primary-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #00f2fe 0%, #0099ff 100%) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    padding: 14px 32px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.35) !important;
+}
+
+.btn-primary-cta i {
+    color: #000000 !important;
+}
+
+.btn-primary-cta:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #00f2fe 100%) !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6) !important;
+}
+
+.btn-primary-cta:hover i {
+    color: #000000 !important;
+}
+
 /* FLOATING WHATSAPP WIDGET */
 .floating-wa-container {
     position: fixed !important;
