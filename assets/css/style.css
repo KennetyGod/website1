@@ -2181,3 +2181,190 @@ ul.spesifikasi li::marker,
     font-size: 0 !important;
     color: transparent !important;
 }
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE FIXES FOR TESTIMONI / PORTOFOLIO PAGES
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Headline Fixed (Hero Section) on Mobile */
+    .headline-fixed {
+        padding-top: 90px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        margin-bottom: 24px !important;
+        text-align: center !important;
+    }
+
+    .headline-fixed h2 {
+        font-size: clamp(22px, 5.5vw, 30px) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .headline-fixed p {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+        max-width: 100% !important;
+        margin: 10px auto 0 auto !important;
+        color: #b5b5b5 !important;
+    }
+
+    /* Testimoni Section & Container */
+    .testimoni-section {
+        padding: 0 12px 40px 12px !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .testimoni-section .section-title {
+        font-size: clamp(20px, 5vw, 26px) !important;
+        margin-bottom: 24px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .project-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 20px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Project Cards on Mobile */
+    .project-card {
+        background: rgba(18, 18, 18, 0.95) !important;
+        border: 1px solid rgba(0, 242, 254, 0.3) !important;
+        border-radius: 14px !important;
+        padding: 16px 14px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .project-card:hover {
+        transform: none !important;
+    }
+
+    /* Project Header on Mobile */
+    .project-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        margin-bottom: 14px !important;
+        padding-bottom: 10px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .project-header h3 {
+        font-size: 17px !important;
+        line-height: 1.35 !important;
+        color: #00f2fe !important;
+        margin: 0 !important;
+        font-weight: 700 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        width: 100% !important;
+    }
+
+    .project-date {
+        font-size: 12px !important;
+        padding: 4px 10px !important;
+        border-radius: 12px !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        color: #a0a0a0 !important;
+        align-self: flex-start !important;
+    }
+
+    /* Horizontal Slider Gallery on Mobile */
+    .project-gallery {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 12px !important;
+        margin-bottom: 14px !important;
+        padding-bottom: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .project-gallery::-webkit-scrollbar {
+        height: 4px !important;
+    }
+
+    .project-gallery::-webkit-scrollbar-thumb {
+        background: #00f2fe !important;
+        border-radius: 4px !important;
+    }
+
+    .project-gallery img {
+        flex: 0 0 82% !important;
+        max-width: 280px !important;
+        height: 185px !important;
+        object-fit: cover !important;
+        border-radius: 10px !important;
+        scroll-snap-align: start !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        box-sizing: border-box !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .project-gallery img:only-child {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    /* Project Description Box on Mobile */
+    .project-desc {
+        background: rgba(0, 0, 0, 0.45) !important;
+        padding: 12px 14px !important;
+        border-radius: 8px 10px 10px 8px !important;
+        border-left: 4px solid #00f2fe !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .project-desc p {
+        color: #d0d0d0 !important;
+        line-height: 1.55 !important;
+        font-size: 13px !important;
+        margin: 0 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-card {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .project-header h3 {
+        font-size: 16px !important;
+    }
+
+    .project-gallery img {
+        flex: 0 0 88% !important;
+        max-width: 250px !important;
+        height: 175px !important;
+    }
+
+    .project-gallery img:only-child {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 185px !important;
+    }
+}
