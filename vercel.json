@@ -1,3 +1,37 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/assets/images/2017/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/2017/:path*"
+    },
+    {
+      "source": "/assets/images/2018/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/2018/:path*"
+    },
+    {
+      "source": "/assets/images/2020/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/2020/:path*"
+    },
+    {
+      "source": "/assets/images/2021-2023/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/2021-2023/:path*"
+    },
+    {
+      "source": "/assets/images/2024/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/2024/:path*"
+    },
+    {
+      "source": "/assets/images/2025/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/2025/:path*"
+    },
+    {
+      "source": "/Foto%20Proyek/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/:path*"
+    },
+    {
+      "source": "/Foto Proyek/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/:path*"
+    }
+  ]
 }
