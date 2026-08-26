@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    {
+      "src": "/Foto%20Proyek/(.*)",
+      "dest": "/assets/images/foto proyek tahunan/$1"
+    },
+    {
+      "src": "/Foto Proyek/(.*)",
+      "dest": "/assets/images/foto proyek tahunan/$1"
+    },
+    {
+      "handle": "filesystem"
+    }
+  ]
+}
