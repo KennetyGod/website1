@@ -1,5 +1,8 @@
 {
   "name": "website1",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "node local-server.js"
+  }
 }
