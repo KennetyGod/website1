@@ -78,22 +78,25 @@ const requestHandler = (req, res) => {
 
   // Resolve media inside 'foto proyek tahunan'
   if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+    let relPath = reqUrl;
     if (reqUrl.startsWith('/assets/images/')) {
-      const relPath = reqUrl.substring('/assets/images/'.length);
+      relPath = reqUrl.substring('/assets/images/'.length);
+    } else if (reqUrl.toLowerCase().startsWith('/foto proyek/')) {
+      relPath = reqUrl.substring('/foto proyek/'.length);
+    }
 
-      let candidate = path.join(FOTO_PROYEK_DIR, relPath);
+    let candidate = path.join(FOTO_PROYEK_DIR, relPath);
+    if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+      filePath = candidate;
+    } else {
+      const relAlt = relPath.replace(/^(2021|2022|2023)\//, '2021-2023/');
+      candidate = path.join(FOTO_PROYEK_DIR, relAlt);
       if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
         filePath = candidate;
       } else {
-        const relAlt = relPath.replace(/^(2021|2022|2023)\//, '2021-2023/');
-        candidate = path.join(FOTO_PROYEK_DIR, relAlt);
-        if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
-          filePath = candidate;
-        } else {
-          const baseName = path.basename(relPath).toLowerCase();
-          if (fotoFileMap.has(baseName)) {
-            filePath = fotoFileMap.get(baseName);
-          }
+        const baseName = path.basename(relPath).toLowerCase();
+        if (fotoFileMap.has(baseName)) {
+          filePath = fotoFileMap.get(baseName);
         }
       }
     }
@@ -162,17 +165,13 @@ const requestHandler = (req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || 'application/octet-stream';
     
-    let cacheHeader = 'public, max-age=86400';
-    if (['.jpg', '.jpeg', '.png', '.webp', '.gif', '.woff', '.woff2', '.ttf', '.eot', '.ico'].includes(ext)) {
-      cacheHeader = 'public, max-age=31536000, immutable';
-    } else if (['.html', '.htm'].includes(ext)) {
-      cacheHeader = 'no-cache, must-revalidate';
-    }
-
+    let cacheHeader = 'no-cache, must-revalidate';
     res.writeHead(200, {
       'Content-Type': contentType,
       'Access-Control-Allow-Origin': '*',
-      'Cache-Control': cacheHeader
+      'Cache-Control': cacheHeader,
+      'Pragma': 'no-cache',
+      'Expires': '0'
     });
     fs.createReadStream(filePath).pipe(res);
   } else {

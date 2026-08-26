@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * STAINLESS INDAH - MODERN STYLE
  * Consolidated & Refined CSS
  */
@@ -1300,6 +1300,43 @@ section.product p {
   height: 100%;
   background: linear-gradient(180deg, transparent 40%, rgba(5, 5, 5, 0.85) 100%);
   pointer-events: none;
+/* 1. EDITORIAL HERO SECTION */
+.about-hero-editorial {
+  text-align: center;
+  padding: 50px 20px 30px;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+}
+
+.ab-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00f2fe;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.ab-hero-title {
+  font-size: clamp(36px, 5vw, 56px) !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  color: #ffffff !important;
+  margin-bottom: 18px !important;
+  text-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+}
+
+.ab-hero-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #b0b0b0;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 /* 2. TRUST BAR / COMPANY FACTS */

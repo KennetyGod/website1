@@ -896,20 +896,8 @@ function showReviewToast(msg) {
     }, 3500);
 }
 
-// Auto-inject "+ Tulis Ulasan" button and load reviews on DOMContentLoaded
+// Load reviews on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     loadUserReviews();
-
-    const testimonialHeaders = document.querySelectorAll('.testimonial-header-wrapper, .ab-section-header');
-    testimonialHeaders.forEach(header => {
-        if (!header.querySelector('.btn-tulis-ulasan') && !header.parentNode.querySelector('.btn-tulis-ulasan')) {
-            const btn = document.createElement('button');
-            btn.className = 'btn-tulis-ulasan';
-            btn.type = 'button';
-            btn.onclick = window.openReviewModal;
-            btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Tulis Ulasan';
-            header.appendChild(btn);
-        }
-    });
 });
 
