@@ -1,18 +1,13 @@
 {
-  "version": 2,
   "cleanUrls": true,
-  "trailingSlash": false,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/Foto%20Proyek/(.*)",
-      "dest": "/assets/images/foto proyek tahunan/$1"
+      "source": "/Foto%20Proyek/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/:path*"
     },
     {
-      "src": "/Foto Proyek/(.*)",
-      "dest": "/assets/images/foto proyek tahunan/$1"
-    },
-    {
-      "handle": "filesystem"
+      "source": "/Foto Proyek/:path*",
+      "destination": "/assets/images/foto%20proyek%20tahunan/:path*"
     }
   ]
 }
