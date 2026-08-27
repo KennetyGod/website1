@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Furniture Store</title>
+  <title>Folding Gate - Stainless Indah</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="folding gate.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,6 +14,20 @@
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css?v=10.0" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?v=10.0">
 
+  <style>
+    .produk-item .produk-text { padding-right: 3px !important; }
+    .produk-item .produk-text h3, .produk-item .produk-button-wrapper { padding-right: 21px !important; box-sizing: border-box !important; }
+    .produk-item .produk-text p { padding-right: 21px !important; color: #ffffff !important; text-transform: none !important; font-size: 14px !important; box-sizing: border-box !important; }
+    
+    .dropdown-content a { background: rgba(255,255,255,0.03) !important; border: 1px solid rgba(255,255,255,0.08) !important; }
+    
+    .produk-item .spesifikasi, ul.spesifikasi, .spesifikasi { width: 100% !important; margin-right: 0 !important; padding: 0 21px 0 18px !important; box-sizing: border-box !important; max-height: 85px !important; overflow-y: auto !important; scrollbar-width: thin !important; scrollbar-color: rgba(0,123,255,0.8) transparent !important; }
+    .spesifikasi::-webkit-scrollbar-button, ul.spesifikasi::-webkit-scrollbar-button, .produk-item .spesifikasi::-webkit-scrollbar-button { display: none !important; width: 0 !important; height: 0 !important; }
+    .spesifikasi::-webkit-scrollbar, ul.spesifikasi::-webkit-scrollbar, .produk-item .spesifikasi::-webkit-scrollbar { width: 6px !important; }
+    .spesifikasi::-webkit-scrollbar-track, ul.spesifikasi::-webkit-scrollbar-track, .produk-item .spesifikasi::-webkit-scrollbar-track { background: rgba(255,255,255,0.05) !important; border-radius: 4px !important; }
+    .spesifikasi::-webkit-scrollbar-thumb, ul.spesifikasi::-webkit-scrollbar-thumb, .produk-item .spesifikasi::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#00f2fe,#0056b3) !important; border-radius: 4px !important; box-shadow: 0 0 8px rgba(0,123,255,0.8) !important; }
+    .spesifikasi::-webkit-scrollbar-thumb:hover, ul.spesifikasi::-webkit-scrollbar-thumb:hover, .produk-item .spesifikasi::-webkit-scrollbar-thumb:hover { background: #0056b3 !important; }
+  </style>
   <link rel="icon" type="image/png" href="assets/images/logo-cropped.png" />
   <link rel="apple-touch-icon" href="assets/images/logo-cropped.png" />
 </head>
@@ -25,9 +40,7 @@
     <img src="assets/images/IMG_20200617_101125.jpg" alt="Slide 4" loading="lazy" decoding="async">
   </div>
 
-
-      <!-- HEADER NAVIGASI -->
-    <!-- HEADER NAVIGASI -->
+  <!-- HEADER NAVIGASI -->
   <header>
     <a href="index.html" class="brand-container">
       <img src="assets/images/logo-cropped.png" alt="Logo STAINLESS INDAH" class="site-logo" loading="lazy" decoding="async">
@@ -124,7 +137,7 @@
                 <span class="mega-item-subtitle">Klasik & Ornamen Mewah</span>
               </div>
             </a>
-            <a href="custom.html" class="mega-item" class="mega-item full-width" style="grid-column: 1 / -1;">
+            <a href="custom.html" class="mega-item full-width" style="grid-column: 1 / -1;">
               <i class="fa-solid fa-compass-drafting"></i>
               <div class="mega-item-text">
                 <span class="mega-item-title">Fabrikasi Custom</span>
@@ -147,120 +160,10 @@
     <main>
       <section class="headline-fixed">
         <h2>Folding Gate</h2>
-        <p>Spesialis pengerjaan Pagar, Kanopi, Teralis, dan Konstruksi Kustom bahan Stainless Steel, Besi, dan Baja
-          Ringan
-          di Pontianak. Rapi, Kuat, dan Indah.</p>
+        <p>Solusi pintu keamanan terbaik untuk ruko, toko, garasi, dan gudang. Terbuat dari bilah galvanis bermutu tinggi dengan mekanisme rel dan engsel harmonika yang lancar, kokoh, dan tahan lama.</p>
       </section>
 
       <div class="produk-container">
-        <a class="produk-item-link">
-          <div class="produk-item">
-            <div class="swiper-container produk-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/images/pintu-henderson-1.jpg"
-                    alt="Pintu Handerson 1" onclick="showPopup(this)" loading="lazy" decoding="async">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/images/pintu-henderson-2.jpg"
-                    alt="Pintu Handerson 2" onclick="showPopup(this)" loading="lazy" decoding="async">
-                </div>
-              </div>
-            <div class="produk-text">
-              <h3>Pintu Handerson</h3>
-              <p>Spesifikasi:</p>
-              <ul class="spesifikasi">
-                <li>Plat Besi 1.5mm - 2mm</li>
-                <li>Rel Heavy Duty</li>
-                <li>Finishing Cat Duco</li>
-              </ul>
-              <div class="produk-button-wrapper" style="margin-top: 10px;">
-                <button class="produk-button" onclick="window.open('https://wa.me/62811569863', '_blank')">Hubungi
-                  Kami</button>
-              </div>
-            </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </a>
-        <a class="produk-item-link">
-          <div class="produk-item">
-            <div class="swiper-container produk-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/images/pintu-cat.jpg" alt="Pintu Lipat 1"
-                    onclick="showPopup(this)" loading="lazy" decoding="async">
-                </div>
-              </div>
-            <div class="produk-text">
-              <h3>Pintu Lipat</h3>
-              <p>Spesifikasi:</p>
-              <ul class="spesifikasi">
-                <li>Frame Besi / Aluminium</li>
-                <li>Kaca / Plat Panel</li>
-                <li>Aksesoris Premium</li>
-              </ul>
-              <div class="produk-button-wrapper" style="margin-top: 10px;">
-                <button class="produk-button" onclick="window.open('https://wa.me/62811569863', '_blank')">Hubungi
-                  Kami</button>
-              </div>
-            </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </a>
-        <a class="produk-item-link">
-          <div class="produk-item">
-            <div class="swiper-container produk-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/images/komersial-jojo.jpg" alt="Pintu Tikung 1"
-                    onclick="showPopup(this)" loading="lazy" decoding="async">
-                </div>
-              </div>
-            <div class="produk-text">
-              <h3>Pintu Tikung</h3>
-              <p>Spesifikasi:</p>
-              <ul class="spesifikasi">
-                <li>Plat Press Motif</li>
-                <li>Rel Belok Halus</li>
-                <li>Kunci Keamanan Ganda</li>
-              </ul>
-              <div class="produk-button-wrapper" style="margin-top: 10px;">
-                <button class="produk-button" onclick="window.open('https://wa.me/62811569863', '_blank')">Hubungi
-                  Kami</button>
-              </div>
-            </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </a>
-        <a class="produk-item-link">
-          <div class="produk-item">
-            <div class="swiper-container produk-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/images/pintu-cat.jpg" alt="Rolling Door 1"
-                    onclick="showPopup(this)" loading="lazy" decoding="async">
-                </div>
-              </div>
-            <div class="produk-text">
-              <h3>Rolling Door</h3>
-              <p>Spesifikasi:</p>
-              <ul class="spesifikasi">
-                <li>Slat Besi / Aluminium</li>
-                <li>Manual / Automatic Motor</li>
-                <li>Plihan Warna Bervariasi</li>
-              </ul>
-              <div class="produk-button-wrapper" style="margin-top: 10px;">
-                <button class="produk-button" onclick="window.open('https://wa.me/62811569863', '_blank')">Hubungi
-                  Kami</button>
-              </div>
-            </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </a>
 
         <!-- Folding Gate / Harmonika -->
         <a class="produk-item-link">
@@ -268,38 +171,85 @@
             <div class="swiper-container produk-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img src="assets/images/folding-gate-1.jpg" alt="Folding Gate Ruko / Gudang 1"
-                    onclick="showPopup(this)" loading="lazy" decoding="async">
+                  <img src="assets/images/folding-gate-1.jpg" alt="Folding Gate Ruko / Gudang 1" onclick="showPopup(this)" loading="lazy" decoding="async">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/images/folding-gate-2.jpg" alt="Folding Gate Harmonika 2"
-                    onclick="showPopup(this)" loading="lazy" decoding="async">
+                  <img src="assets/images/folding-gate-2.jpg" alt="Folding Gate Harmonika 2" onclick="showPopup(this)" loading="lazy" decoding="async">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/images/folding-gate-3.jpg" alt="Folding Gate Harmonika Tikung 3"
-                    onclick="showPopup(this)" loading="lazy" decoding="async">
+                  <img src="assets/images/folding-gate-3.jpg" alt="Folding Gate Harmonika Tikung 3" onclick="showPopup(this)" loading="lazy" decoding="async">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/images/folding-gate-4.jpg" alt="Folding Gate Ruko B05 4" onclick="showPopup(this)" loading="lazy" decoding="async">
                 </div>
               </div>
-            <div class="produk-text">
-              <h3>Folding Gate / Harmonika</h3>
-              <p>Spesifikasi:</p>
-              <ul class="spesifikasi">
-                <li>Pintu 0.5mm / Standar</li>
-                <li>Pintu 0.8mm / Super</li>
-                <li>Sistem Harmonika / Rel Halus</li>
-              </ul>
-              <div class="produk-button-wrapper" style="margin-top: 10px;">
-                <button class="produk-button" onclick="window.open('https://wa.me/62811569863', '_blank')">Hubungi
-                  Kami</button>
+              <div class="produk-text">
+                <h3>Folding Gate / Harmonika</h3>
+                <p>Spesifikasi:</p>
+                <ul class="spesifikasi">
+                  <li>Pintu 0.5mm / Standar</li>
+                  <li>Pintu 0.8mm / Super</li>
+                  <li>Sistem Harmonika / Rel Halus</li>
+                </ul>
+                <div class="produk-button-wrapper">
+                  <button class="produk-button" onclick="window.open('https://wa.me/62811569863', '_blank')">Hubungi Kami</button>
+                </div>
               </div>
-            </div>
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </a>
+
       </div>
     </main>
-    <script src="assets/js/main.js"></script>
+
+    <!-- FOOTER UNIFORM -->
+    <footer class="site-footer">
+      <div class="main-container">
+        <div class="footer-top-grid">
+          <div class="footer-brand">
+            <h3>STAINLESS INDAH</h3>
+            <p>Bengkel las dan spesialis konstruksi stainless steel, besi, baja berat, serta kaca terpercaya di Pontianak. Mengutamakan presisi, kekuatan, dan estetika arsitektural.</p>
+          </div>
+          <div class="footer-services">
+            <h4>Layanan Fabrikasi</h4>
+            <p><a href="kanopi.html">Kanopi</a> · <a href="pagar.html">Pagar</a> · <a href="tangga.html">Railing Tangga</a> · <a href="balkon.html">Balkon</a> · <a href="teralis.html">Teralis</a> · <a href="fasad.html">Fasad</a> · <a href="pintu.html">Pintu</a> · <a href="kaca.html">Kaca</a> · <a href="anti maling.html">Anti Maling</a> · <a href="kerangka meja.html">Kerangka Meja</a> · <a href="tempa.html">Besi Tempa</a> · <a href="kontruksi baja.html">Konstruksi Baja</a> · <a href="custom.html">Fabrikasi Custom</a></p>
+          </div>
+          <div class="footer-socials">
+            <h4>Kontak &amp; Lokasi</h4>
+            <div class="footer-social-links">
+              <a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank"><i class="fa-solid fa-location-dot"></i> Pontianak, Kalimantan Barat</a>
+              <a href="https://wa.me/+62811569863" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Admin</a>
+              <a href="https://www.instagram.com/stainless.indah/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <span>&copy; 2026 STAINLESS INDAH. All Rights Reserved.</span>
+          <span>Pontianak, Kalimantan Barat, Indonesia</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div id="imagePopup" class="popup" onclick="hidePopup()">
+    <span class="close">&times;</span>
+    <img class="popup-content" id="popupImg" loading="lazy" decoding="async">
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var produkSwiper = new Swiper('.produk-swiper', {
+      loop: true, slidesPerView: 1,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true }
+    });
+    function showPopup(imgElement) {
+      document.getElementById("imagePopup").style.display = "flex";
+      document.getElementById("popupImg").src = imgElement.src;
+    }
+    function hidePopup() { document.getElementById("imagePopup").style.display = "none"; }
+  </script>
   <!-- FLOATING WHATSAPP WIDGET -->
   <div class="floating-wa-container">
     <span class="floating-wa-tooltip">Tanya Produk &amp; Price List</span>
@@ -309,81 +259,4 @@
   </div>
 
 </body>
-
-<div id="imagePopup" class="popup" onclick="hidePopup()">
-  <span class="close">&times;</span>
-  <img class="popup-content" id="popupImg" loading="lazy" decoding="async">
-</div>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var produkSwiper = new Swiper('.produk-swiper', {
-    loop: true,
-    slidesPerView: 1,       // ✅ hanya satu gambar tampil
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    }
-  });
-
-  function showPopup(imgElement) {
-    var popup = document.getElementById("imagePopup");
-    var popupImg = document.getElementById("popupImg");
-    popup.style.display = "block";
-    popupImg.src = imgElement.src;
-  }
-
-  function hidePopup() {
-    document.getElementById("imagePopup").style.display = "none";
-  }
-
-  function lihatDetail() {
-    alert("Tampilkan detail produk atau arahkan ke halaman lain.");
-    // Atau redirect:
-    // window.location.href = 'detail-produk.html';
-  }
-</script>
-      <!-- FOOTER UNIFORM -->
-  <footer class="site-footer">
-    <div class="main-container">
-      <div class="footer-top-grid">
-        <div class="footer-brand">
-          <h3>STAINLESS INDAH</h3>
-          <p>Bengkel las dan spesialis konstruksi stainless steel, besi, baja berat, serta kaca terpercaya di Pontianak.
-            Mengutamakan presisi, kekuatan, dan estetika arsitektural.</p>
-        </div>
-
-        <div class="footer-services">
-          <h4>Layanan Fabrikasi</h4>
-          <p><a href="kanopi.html">Kanopi</a> · <a href="pagar.html">Pagar</a> · <a href="tangga.html">Railing Tangga</a> · <a href="balkon.html">Balkon</a> · <a href="teralis.html">Teralis</a> · <a href="fasad.html">Fasad</a> · <a href="pintu.html">Pintu</a> · <a href="kaca.html">Kaca</a> · <a href="anti maling.html">Anti Maling</a> · <a href="kerangka meja.html">Kerangka Meja</a> · <a href="tempa.html">Besi Tempa</a> · <a href="kontruksi baja.html">Konstruksi Baja</a> · <a href="custom.html">Fabrikasi Custom</a></p>
-        </div>
-
-        <div class="footer-socials">
-          <h4>Kontak &amp; Lokasi</h4>
-          <div class="footer-social-links">
-            <a href="https://maps.app.goo.gl/dvd4R8Zd3u8aXGx97" target="_blank">
-              <i class="fa-solid fa-location-dot"></i> Pontianak, Kalimantan Barat
-            </a>
-            <a href="https://wa.me/+62811569863" target="_blank">
-              <i class="fab fa-whatsapp"></i> WhatsApp Admin
-            </a>
-            <a href="https://www.instagram.com/stainless.indah/" target="_blank">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-</div>
-        </div>
-      </div>
-
-      <div class="footer-bottom-bar">
-        <span>© 2026 STAINLESS INDAH. All Rights Reserved.</span>
-        <span>Pontianak, Kalimantan Barat, Indonesia</span>
-      </div>
-    </div>
-  </footer>
-</div>
-
 </html>
